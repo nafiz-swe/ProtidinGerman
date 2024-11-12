@@ -1,7 +1,7 @@
 <?php 
   include("conn.php");
   include("query/selectData.php");
- ?>
+?>
 
 <!doctype html>
 <html lang="en">
@@ -13,67 +13,69 @@
     <title>CEE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, shrink-to-fit=no" />
      
-    <!-- MAIN CSS NIYA -->
+    <!-- MAIN CSS FILES -->
     <link href="./main.css" rel="stylesheet">
     <link href="css/sweetalert.css" rel="stylesheet">
 </head>
-<body id="body">
-    <div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
-        <div class="app-header header-shadow">
-            <div class="app-header__logo">
-                <div class="site-logo mr-auto w-25"><a href="../index.php"><img src="../webImg/PritidinGermanWeb.png" style="width:75px; height:55px;"></img></a></div>
 
-                <div class="header__pane ml-auto">
-                    <div>
-                        <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
-                            <span class="hamburger-box">
-                                <span class="hamburger-inner"></span>
-                            </span>
-                        </button>
-                    </div>
-                </div>
+<!-- TooltipDemo button fixed at top for color options, visible in both desktop and mobile view -->
+<div id="TooltipDemo" class="btn-open-options btn btn-warning" style="position: fixed; top: 9px;right: 100px; z-index: 1000; padding: 0px 20px; border-radius: 30px;background:#7971ea;border:none;color:#fff;">
+    <i class="fa fa-moon fa-w-16 fa-2x" style="margin-top: -2px;font-size: 22px;"></i>
+</div>
+
+<div class="app-container app-theme-white body-tabs-shadow fixed-sidebar fixed-header">
+    <div class="app-header header-shadow">
+        <div class="app-header__logo">
+            <div class="site-logo mr-auto w-25">
+                <a href="../index.php">
+                    <img src="../webImg/PritidinGermanWeb.png" style="width:75px; height:55px;">
+                </a>
             </div>
-            <div class="app-header__mobile-menu">
+            <div class="header__pane ml-auto">
                 <div>
-                    <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                    <button type="button" class="hamburger close-sidebar-btn hamburger--elastic" data-class="closed-sidebar">
                         <span class="hamburger-box">
                             <span class="hamburger-inner"></span>
                         </span>
                     </button>
                 </div>
             </div>
-            <div class="app-header__menu">
-                <span>
-                    <button type="button" class="btn-icon btn-icon-only btn btn-primary btn-sm mobile-toggle-header-nav">
-                        <span class="btn-icon-wrapper">
-                            <i class="fa fa-ellipsis-v fa-w-6"></i>
-                        </span>
-                    </button>
-                </span>
-            </div>    <div class="app-header__content">
-                <div class="app-header-left">
-                   
-                   
-                          </div>
+        </div>
+        <div class="app-header__mobile-menu">
+            <div>
+                <button type="button" class="hamburger hamburger--elastic mobile-toggle-nav">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="app-header__menu">
+            <div class="btn-group">
+                <?php 
+                echo strtoupper($selExmneeData['exmne_fullname']);
+                ?>
+            </div>
+        </div>
+
+        <div class="app-header__content">
+            <div class="app-header-left">
                 <div class="app-header-right">
                     <div class="header-btn-lg pr-0">
                         <div class="widget-content p-0">
                             <div class="widget-content-wrapper">
                                 <div class="widget-content-left">
                                     <div class="btn-group">
-                                            <?php 
-                                                echo strtoupper($selExmneeData['exmne_fullname']);
-                                             ?>
-                                        </a>
-                                        <!-- <div tabindex="-1" role="menu" aria-hidden="true" class="dropdown-menu dropdown-menu-right">
-                                            <button type="button" tabindex="0" class="dropdown-item">My Account</button>
-                                            <div tabindex="-1" class="dropdown-divider"></div>
-                                            <a href="query/logoutExe.php" class="dropdown-item">LOG OUT</a>
-                                        </div> -->
+                                        <?php 
+                                        echo strtoupper($selExmneeData['exmne_fullname']);
+                                        ?>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>        </div>
+                    </div>
+                </div>
             </div>
-        </div>  
+        </div>
+    </div>
+
