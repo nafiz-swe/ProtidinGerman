@@ -26,10 +26,10 @@ INSTALLATION GUIDE
 
 admin
 url:http://localhost/folder-name/adminpanel/admin/
-Username: 
-Password: 
+Username: admin@mail.com
+Password: alphacodecamp
 
 user
 url: http://localhost/folder-name/
-Username:
-Password:
+Username: nafiz@gmail.com
+Password: mmmm
