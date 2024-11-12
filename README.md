@@ -1,4 +1,4 @@
-# Edu-Home-Virtual-Classroom
+# ProtidinGerman
 
 SYNOPSIS
 
