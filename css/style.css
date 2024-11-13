@@ -122,9 +122,6 @@ h1, h2, h3, h4, h5,
 
 .site-section {
   padding: 2.5em 0; }
-  @media (min-width: 768px) {
-    .site-section {
-      padding: 5em 0; } }
   .site-section.site-section-sm {
     padding: 4em 0; }
 
@@ -677,17 +674,13 @@ h1, h2, h3, h4, h5,
   border-radius: 7px; }
 
 .site-section {
-  padding: 4em 0;
   position: relative; }
-  @media (max-width: 991.98px) {
-    .site-section {
-      padding: 4em 0; } }
 
 .cta a span {
   border-color: #7971ea;
   padding: 14px 20px;
   color: #fff;
-  background: #7971ea;
+  background: #8BC34A;
   border-radius: 30px;
   font-size: .7rem;
   font-weight: 900;
@@ -699,7 +692,7 @@ h1, h2, h3, h4, h5,
     color: #fff; }
 
 .cta a:hover span {
-  background: #4f45e3;
+  background: #689F38;
   color: #fff; }
 
 .cta a.active {
@@ -718,12 +711,10 @@ h1, h2, h3, h4, h5,
 
 .section-title {
   font-size: 3rem;
-  color: #000;
+  color: #fff;
   margin-bottom: 1.8rem;
-  font-weight: 900; }
-  @media (max-width: 991.98px) {
-    .section-title {
-      font-size: 1.5rem; } }
+  font-weight: 900;
+  text-align: center; }
 
 .counter .icon-wrap {
   margin-right: 1.5rem; }
@@ -991,18 +982,19 @@ h1, h2, h3, h4, h5,
 .custom-icon-wrap.custom-icon-light h3 {
   color: #343a40;
   font-size: 1rem; }
-
-.courses-title {
-  padding-bottom: 6rem;
-  background: #8a41ff; }
-  .courses-title .section-title {
+  #courses-section {
+    scroll-margin-top: 20px; /* Navbar থেকে 20px নিচে offset করবে */
+}
+.courses-title, .teachers-title, .programs-title, .contact-title  {
+  padding: 40px 0 150px 0;
+  background: #8BC34A; }
+  .courses-title .section-title, .teachers-title .section-title, .programs-title .section-title, .contact-title .section-title  {
     color: #fff; }
 
 .courses-entry-wrap {
-  margin-top: -250px; }
-  @media (max-width: 1199.98px) {
-    .courses-entry-wrap {
-      margin-top: -246px; } }
+  margin-top: -220px; }
+   .teachers-entry-wrap, .programs-entry-wrap, .contact-entry-wrap {
+    margin-top: -110px; }
 .book-title {
   padding-bottom: 5rem;
   background: #000000; opacity: 1; }
@@ -1076,7 +1068,7 @@ h1, h2, h3, h4, h5,
     position: absolute; }
 
 .teacher {
-  border: 1px solid #e9ecef;
+  border: 1px solid #689F38;
   padding: 30px;
   margin-bottom: 5rem; }
   .teacher img {
@@ -1150,7 +1142,6 @@ h1, h2, h3, h4, h5,
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
 	margin: -20px 0 50px;
@@ -1209,11 +1200,9 @@ h1, h2, h3, h4, h5,
 
 .sign form {
 	background-color: #FFFFFF;
-	display: flex;
 	align-items: center;
 	justify-content: center;
-	flex-direction: column;
-	padding: 0 50px;
+	padding: 40px 20px;
 	height: 100%;
 	text-align: center;
 }
@@ -1225,6 +1214,9 @@ h1, h2, h3, h4, h5,
 	margin: 8px 0;
 	width: 100%;
 }
+.std-signin{
+  margin-top: 15px;
+}
 
 .sign .container {
 	background-color: #fff;
@@ -1233,9 +1225,8 @@ h1, h2, h3, h4, h5,
 			0 10px 10px rgba(0,0,0,0.22);
 	position: relative;
 	overflow: hidden;
-	width: 768px;
+	width: 400px;
 	max-width: 100%;
-	min-height: 480px;
 }
 
 .sign .form-container {

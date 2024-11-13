@@ -20,7 +20,6 @@
 
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-
   <div class="site-wrap">
 
     <div class="site-mobile-menu site-navbar-target">
@@ -44,8 +43,8 @@
               <ul class="site-menu main-menu js-clone-nav mx-auto d-none d-lg-block  m-0 p-0">
                 <li><a href="#home-section" class="nav-link">Home</a></li>
                 <li><a href="#courses-section" class="nav-link">Courses</a></li>
-                <li><a href="#programs-section" class="nav-link">Programs</a></li>
                 <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
+                <li><a href="#programs-section" class="nav-link">Programs</a></li>
                 <li><a href="#book-section" class="nav-link">Book-Shop</a></li>
               </ul>
             </nav>
@@ -63,261 +62,296 @@
           </div>
         </div>
       </div>
-
     </header>
 
     <div class="intro-section" id="home-section">
-
       <div class="slide-1" style="background-image: url('images/hero_1.jpg');" data-stellar-background-ratio="0.5">
         <div class="container">
           <div class="row align-items-center">
-            <div class="col-12">
-              <div class="sign">
-                <!--sign-->
-                <div class="container <?php echo (isset($_GET['errorp']) || isset($_GET['signup']))? 'right-panel-active':''; ?>" id="container">
-                  <div class="form-container sign-up-container">
-                    <form action="includes/signup1.inc.php" method="post" id="signup_form">
-                      <h1 class="title">Sign Up</h1>
-                      <br>
-                      <?php
-                      if (isset($_GET['errorp'])){
-                        if ($_GET['errorp']=="emptyfields"){
-                          echo '<div style="color:red;">Fill in all fields !</div>';
-                        }else if ($_GET['errorp']=="invalidmailuid"){
-                          echo '<div style="color:red;">Invalid username and e-mail !</div>';
-                        }else if ($_GET['errorp']=="invaliduid"){
-                          echo '<div style="color:red;">Invalid username !</div>';
-                        }else if ($_GET['errorp']=="invalidmail"){
-                          echo '<div style="color:red;">Invalid e-mail !</div>';
-                        }else if ($_GET['errorp']=="passwordcheck"){
-                          echo '<div style="color:red;">Passwords don\'t match!</div>';
-                        }else if ($_GET['errorp']=="usertaken"){
-                          echo '<div style="color:red;">Username is already taken!</div>';
-                        }
-                      }elseif (isset($_GET['signup']) ) {
-                        if ($_GET['signup']=="success")
-                          echo '<div style="color:green;">Signup Successful ! Feel free to login !</div>';
-                      }
-                       ?>
-                      <div id="error_signup_name"></div>
-                      <input type="text" id="name_signup" name="uid" placeholder="Name" value="<?php if (isset($_GET['errorp'])){
-                        if ($_GET['errorp']=='invalidmail' || $_GET['errorp']=='passwordcheck' || $_GET['errorp']=='emptyfields'){
-                          echo  isset($_GET['uid']) ? $_GET['uid']:'';
-                        }else {
-                          echo '';
-                        }
-                      }  ?>" />
-                      <div id="error_signup_email"></div>
-                      <input type="email" id="mail_signup" name="mail" placeholder="E-mail"
-                        value="<?php if (isset($_GET['errorp'])){
-                        if ($_GET['errorp']=='invaliduid' || $_GET['errorp']=='passwordcheck' || $_GET['errorp']=='emptyfields' || $_GET['errorp']=='usertaken'){
-                          echo  isset($_GET['mail']) ? $_GET['mail']:'';
-                        }else {
-                          echo '';
-                        }
-                      }  ?>" />
-                      <div id="error_signup_pwd1"></div>
-                      <input type="password" id="pwd1_signup" name="pwd" placeholder="Password" />
-                      <div id="error_signup_pwd2"></div>
-                      <input type="password" id="pwd2_signup" name="pwd-repeat" placeholder="Repeat Password" />
-                      <button>Sign Up</button>
-                    </form>
-
-                  </div>
-                  <div class="form-container sign-in-container">
-                    <form action="includes/login.inc.php" method="post" id="signin_form">
-                      <h1 class="title">Sign in</h1>
-                      <br>
-                      <?php
-                      if (isset($_GET['error'])){
-                        if ($_GET['error']=="emptyfields"){
-                          echo '<div style="color:red;">Fill in all fields !</div>';
-                        }else if ($_GET['error']=="wrongpwd"){
-                          echo '<div style="color:red;">Wrong password!</div>';
-                        }else if ($_GET['error']=="nomatch"){
-                          echo '<div style="color:red;">There\'s no match for your email !</div>';
-
-                      }elseif (isset($_GET['login']) ) {
-                        if ($_GET['signup']=="success")
-                          echo '<div style="color:green;">Sign in Successful !</div>';
-                      }
-                  }?>
-                      <div id="error_signin_mail"></div>
-                      <input type="email" id="mailsignin" placeholder="Email" name="mailuid" placeholder="Username/E-mail"
-                        value="<?php if (isset($_GET['error'])){
-                                        if ($_GET['error']=="wrongpwd" || $_GET['error']=="emptyfields"){
-                                              echo  isset($_GET['mail'])?$_GET['mail']:'';
-                                        }else {
-                                              echo '';
-                                             }
-                    }  ?>" />
-                      <div id="error_signin_pwd"></div>
-                      <input type="password" id="pwdsignin" name="pwd" placeholder="Password" />
-                      <a href="mail_input.php">Forgot your password?</a>
-                      <button>Sign In</button>
-                    </form>
-                  </div>
-                  <div class="overlay-container">
-                    <div class="overlay">
-                    <div id="overlay-left" class="overlay-panel overlay-left">
-                          <h1>Welcome Back!</h1>
-                          <p>To keep connected with us please login with your personal info</p>
-                          <button class="ghost" id="signIn">Sign In</button>
-                        </div>
-                        <div class="overlay-panel overlay-right">
-                          <h1>Hey, Learner!</h1>
-                          <p>Welcome to EduHome, Signup for free today and start journey with us</p>
-                          <button class="ghost" id="signUp">Sign Up</button>
-                        </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
-            <!--end-->
-          </div>
-          </div>
-          </div>
           </div>
         </div>
       </div>
     </div>
 
 
-    <div class="site-section courses-title" id="courses-section">
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-            <h2 class="section-title">Courses</h2>
+
+
+    <style>
+    /* Card Styles */
+    .course-card {
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        margin: 50px 15px;
+        width: 100%;
+        max-width: 333px;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .course-card:hover {
+        transform: scale(1.02);
+    }
+
+    .course-card img {
+        width: 165px;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+        display: block;
+        margin: auto;
+        padding-bottom: 10px;
+    }
+
+    .course-details {
+        padding: 15px;
+        text-align: center;
+    }
+
+    .course-details h3 {
+      color: #689F38;
+    }
+
+    .course-details p {
+      margin-top: 0;
+      margin-bottom: 0px;
+      font-size: 16px;
+      color: #000;
+      text-align: left;
+    }
+
+    #courses-section {
+    scroll-margin-top: 50px; /* Navbar থেকে 20px নিচে offset করবে */
+}
+    /* Offer Tag Styling */
+    .offer-tag {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #ff5a5f;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+
+    /* Original Price Styling */
+    .original-price {
+      font-size: 1rem;
+      color: gray;
+      text-decoration: line-through;
+      text-decoration-color: red; 
+      margin-right: 8px;
+    }
+
+    /* Offer Price Styling */
+    .course-price {
+        font-size: 1.4rem;
+        color: #ff5a5f;
+        font-weight: bold;
+    }
+
+    .meta {
+      color: gray;
+      padding: 2px 20px;
+      text-align: justify;
+      margin: auto;
+      font-size: 15.5px;
+    }
+
+    .meta i {
+      padding-right: 8px;
+    }
+
+    .container p {
+      color: #fff;
+    }
+
+    .course-stats{
+      padding:0 35px 15px 35px;
+    }
+
+    .course-stats button {
+      width: 100%;
+      padding: 6px;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      background: #8BC34A;
+      color: #fff;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    .course-stats button:hover {
+      background: #689F38;
+      border: 1px solid #ccc;
+    }
+
+    .courses-container, .teachers-container, .programs-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 150px;
+    }
+
+    @media (max-width: 768px) {
+        .course-card {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .course-card {
+            max-width: 333px;
+        }
+    }
+</style>
+
+
+
+<div class="site-section courses-title" id="courses-section">
+  <div class="container" data-aos="fade-up" data-aos-delay="">
+      <h2 class="section-title">Learn German</h2>
+  </div>
+</div>
+
+<div class="site-section courses-entry-wrap">
+    <div class="container">
+        <div class="courses-container">
+            <!-- Course Card 1 -->
+            <div class="course-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="webimg/DeutschA1.png" alt="Deutsch A1">
+                  <div class="course-details">
+                    <div class="offer-tag">15% OFF</div>
+                    <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
+                    <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+                    <h3>Goethe-Zertifikat A1</h3>
+                    <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
+                    <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Duration 2 Months / 24 Class</div>
+                    <div class="meta"><i class="far fa-calendar-check"></i> Weekly 3days (Sat,Mon,Wed)</div>
+                    <div class="meta"><i class="far fa-closed-captioning"></i> Class Record Available</div>
+                    <div class="meta"><i class="fas fa-edit"></i> With Exam Preparation</div>
+                  </div>
+                  <div class="course-stats">
+                    <a href="deutsch-a1.php"><button>Views Course Details</button></a>
+                  </div>
+            </div>
+
+            <!-- Course Card 2 -->
+            <div class="course-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="webimg/DeutschA2.png" alt="Deutsch A2">
+                <div class="course-details">
+                    <div class="offer-tag">17% OFF</div>
+                    <span class="original-price"><span class="taka-symbol">TK</span> 7952</span>
+                    <span class="course-price"><span class="taka-symbol">TK</span> 6600</span>
+                    <h3>Goethe-Zertifikat A2</h3>
+                    <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
+                    <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Duration 2 Months / 24 Class</div>
+                    <div class="meta"><i class="far fa-calendar-check"></i> Weekly 3days (Sat,Mon,Wed)</div>
+                    <div class="meta"><i class="far fa-closed-captioning"></i> Class Record Available</div>
+                    <div class="meta"><i class="fas fa-edit"></i> With Exam Preparation</div>
+                </div>
+                <div class="course-stats">
+                  <a href="deutsch-a2.php"><button>Views Course Details</button></a>
+                </div>
+            </div>
+
+            <!-- Course Card 3 -->
+            <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="webimg/DeutschB1.png" alt="Deutsch B1">
+                <div class="course-details">
+                    <div class="offer-tag">20% OFF</div>
+                    <span class="original-price"><span class="taka-symbol">TK</span> 9625</span>
+                    <span class="course-price"><span class="taka-symbol">TK</span> 7700</span> <!-- &#2547; -->
+                    <h3>Goethe-Zertifikat B1</h3>
+                    <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
+                    <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Duration 2 Months / 24 Class</div>
+                    <div class="meta"><i class="far fa-calendar-check"></i> Weekly 3days (Sat,Mon,Wed)</div>
+                    <div class="meta"><i class="far fa-closed-captioning"></i> Class Record Available</div>
+                    <div class="meta"><i class="fas fa-edit"></i> With Exam Preparation</div>
+                </div>
+                <div class="course-stats">
+                  <a href="deutsch-b1.php"><button>Views Course Details</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+        <div class="site-section teachers-title" id="teachers-section">
+          <div class="container" data-aos="fade-up" data-aos-delay="">
+              <h2 class="section-title">Our Teachers</h2>
           </div>
+        </div>
+
+
+        <div class="site-section teachers-entry-wrap">
+        <div class="container">
+        <div class="teachers-container">
+
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="teacher text-center">
+              <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <div class="py-2">
+                <h3 class="text-black">Nafizul Islam</h3>
+                <p class="position">Cloud Computing</p>
+                <p>Explore the essentials of cloud and fundamentals.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="teacher text-center">
+            <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <div class="py-2">
+              <h3 class="text-black">Nafizul Islam</h3>
+                <p class="position">Subject Expert</p>
+                <p>Fundamentals of Class 1 to 10th CBSE/ StateBoard.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="teacher text-center">
+            <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
+              <div class="py-2">
+              <h3 class="text-black">Nafizul Islam</h3>
+                <p class="position">Language Professor</p>
+                <p>Expert domain of different Languages</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div class="site-section courses-entry-wrap"  data-aos="fade-up" data-aos-delay="100">
-      <div class="container">
-        <div class="row">
 
-          <div class="owl-carousel col-12 nonloop-block-14">
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/gimg1.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <span class="course-price">&#8377 2999</span>
-                <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 3 week</div>
-                <h3><a href="#">German</a></h3>
-                <p>Learn German in order to pass IELTS exam. </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 2,193 students</div>
-                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-              </div>
-            </div>
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/img2.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <span class="course-price">&#8377 1999</span>
-                <div class="meta"><span class="icon-clock-o"></span>20 Lessons / 4 week</div>
-                <h3><a href="#">Introduction to Chemical Engineering</a></h3>
-                <p>Discover the world of chemical engineering </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 2,100 students</div>
-                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 9</div>
-              </div>
-            </div>
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/img4.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <span class="course-price">&#8377 999</span>
-                <div class="meta"><span class="icon-clock-o"></span>4 Lessons / 12 week</div>
-                <h3><a href="#">English</a></h3>
-                <p>Learn the basics of the English language . </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 3,193 students</div>
-                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 2</div>
-              </div>
-            </div>
-
-
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <span class="course-price">&#8377 699</span>
-                <div class="meta"><span class="icon-clock-o"></span>3 Lessons / 9 week</div>
-                <h3><a href="#">C++</a></h3>
-                <p>Learn the most famous programming language. </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 1,123 students</div>
-                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 8</div>
-              </div>
-            </div>
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/img_5.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <span class="course-price">&#8377 1499</span>
-                <div class="meta"><span class="icon-clock-o"></span>2 Lessons / 5 week</div>
-                <h3><a href="#">JAVA</a></h3>
-                <p>java is a must learn versatile language. </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 1,523 students</div>
-                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 6</div>
-              </div>
-            </div>
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/img_6.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                <span class="course-price">&#8377 2000</span>
-                <div class="meta"><span class="icon-clock-o"></span>5 Lessons / 7 week</div>
-                <h3><a href="#">Python</a></h3>
-                <p>Begin your journey in the world of AI. </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 2,453 students</div>
-                <div class="py-3 px-4 w-25 ml-auto border-left"><span class="icon-chat"></span> 5</div>
-              </div>
-            </div>
-
-          </div>
-
-
-
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-7 text-center">
-            <button class="customPrevBtn btn btn-primary m-1">Prev</button>
-            <button class="customNextBtn btn btn-primary m-1">Next</button>
-          </div>
-        </div>
       </div>
-    </div>
 
-    <div class="site-section" id="programs-section">
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-lg-7 text-center"  data-aos="fade-up" data-aos-delay="">
-            <h2 class="section-title">Our Programs</h2>
-            <p>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</p>
-          </div>
-        </div>
+
+
+
+
+<div class="site-section programs-title" id="programs-section">
+  <div class="container" data-aos="fade-up" data-aos-delay="">
+      <h2 class="section-title">Our Programs</h2>
+      <p>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</p>
+  </div>
+</div>
+
+
+      <div class="site-section programs-entry-wrap">
+        <div class="container">
+        <div class="programs-container">
+        
         <div class="row mb-5 align-items-center">
           <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
             <img src="images/cou1.png" alt="Image" class="img-fluid">
@@ -325,17 +359,14 @@
           <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
             <h2 class="text-black mb-4">We Are Excellent In Education</h2>
             <p class="mb-4">Education is an art and we are the artists.</p>
-
             <div class="d-flex align-items-center custom-icon-wrap mb-3">
               <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
               <div><h3 class="m-0">2,931 Yearly Graduates</h3></div>
             </div>
-
             <div class="d-flex align-items-center custom-icon-wrap">
               <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
               <div><h3 class="m-0">50 Universities Worldwide</h3></div>
             </div>
-
           </div>
         </div>
 
@@ -346,17 +377,14 @@
           <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
             <h2 class="text-black mb-4">Strive for Excellent</h2>
             <p class="mb-4">our goal is your success.</p>
-
             <div class="d-flex align-items-center custom-icon-wrap mb-3">
               <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
               <div><h3 class="m-0">2,931 Yearly Graduates</h3></div>
             </div>
-
             <div class="d-flex align-items-center custom-icon-wrap">
               <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
               <div><h3 class="m-0">50 Universities Worldwide</h3></div>
             </div>
-
           </div>
         </div>
 
@@ -367,85 +395,35 @@
           <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
             <h2 class="text-black mb-4">Education is life</h2>
             <p class="mb-4">Beginning of a never ending journey of learning.</p>
-
             <div class="d-flex align-items-center custom-icon-wrap mb-3">
               <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
               <div><h3 class="m-0">2,931 Yearly Graduates</h3></div>
             </div>
-
             <div class="d-flex align-items-center custom-icon-wrap">
               <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
               <div><h3 class="m-0">50 Universities Worldwide</h3></div>
             </div>
-
           </div>
         </div>
 
-      </div>
-    </div>
 
-    <div class="site-section" id="teachers-section">
-      <div class="container">
-
-        <div class="row mb-5 justify-content-center">
-          <div class="col-lg-7 mb-5 text-center"  data-aos="fade-up" data-aos-delay="">
-            <h2 class="section-title">Our Professors</h2>
-            <p class="mb-5">The best we promise the best professor for EDU-Home Virtual Classrooom!</p>
-          </div>
         </div>
 
-        <div class="row">
-
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="teacher text-center">
-              <img src="images/person_1.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-              <div class="py-2">
-                <h3 class="text-black">Abdul Shaikh</h3>
-                <p class="position">Cloud Computing</p>
-                <p>Explore the essentials of cloud and fundamentals.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="teacher text-center">
-              <img src="images/person_2.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-              <div class="py-2">
-                <h3 class="text-black">Saurabh Jain</h3>
-                <p class="position">Subject Expert</p>
-                <p>Fundamentals of Class 1 to 10th CBSE/ StateBoard.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="teacher text-center">
-              <img src="images/person_3.png" alt="Image" class="img-fluid w-50 rounded-circle mx-auto mb-4">
-              <div class="py-2">
-                <h3 class="text-black">Pooja Joshi</h3>
-                <p class="position">Language Professor</p>
-                <p>Expert domain of different Languages</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="site-section bg-image overlay" style="background-image: url('images/hero_1.jpg');">
-      <div class="container">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-md-10 text-center testimony">
-            <img src="images/abhinav.jpg" alt="Image" class="img-fluid w-25 mb-4 rounded-circle">
-            <h3 class="mb-4">Abhinav Jha</h3>
-            <blockquote>
-              <p>&ldquo; Meet our Founder and CEO at Edu-Home; Innovation to bring Knowledge at Home. &rdquo;</p>
-            </blockquote>
-          </div>
-        </div>
       </div>
     </div>
     
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="site-section book-title" id="book-section">
       <div class="container">
         <div class="row mb-1 justify-content-center">
@@ -544,6 +522,18 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
     <div class="site-section pb-0">
 
       <div class="future-blobs">
@@ -605,16 +595,29 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="site-section bg-light" id="contact-section">
-      <div class="container">
 
-        <div class="row justify-content-center">
-          <div class="col-md-7">
 
-            <h2 class="section-title mb-3">Message Us</h2>
-            <p class="mb-5">We are more than happy to receive your suggestions.</p>
+
+
+
+
+
+
+
+  <div class="site-section contact-title" id="contact-section">
+  <div class="container" data-aos="fade-up" data-aos-delay="">
+      <h2 class="section-title">Message Us</h2>
+      <p>Describe your problems. We are very intarested for serving you.</p>
+  </div>
+</div>
+
+
+
+      <div class="site-section contact-entry-wrap">
+        <div class="container">
+        <div class="contact-container">
             <!-- Beginning of the php for the contact form -->
             <?php
             // Message Vars
@@ -639,7 +642,7 @@
                   $msgClass = 'alert-danger';
                 } else {
                   // Passed
-                  $toEmail = 'abhinavjha.india@gmail.com';
+                  $toEmail = 'ProtidinGerman@gmail.com';
                   $body = $subject.'<h4>Name</h4><p>'.$name.'</p>
                     <h4>Email</h4><p>'.$email.'</p>
                     <h4>Message</h4><p>'.$message.'</p>';
@@ -672,7 +675,7 @@
                  <div class="alert <?php echo $msgClass; ?>"><?php echo $msg; ?></div>
                <?php endif; ?>
             <!-- End of the php for the contact form -->
-            <form method="post" action="index.php#contact-section" data-aos="fade" id="contact_form">
+            <form method="post" action="index.php#contact-section" id="contact_form" data-aos="fade-up" data-aos-delay="100">
               <div class="form-group row">
                 <div class="col-md-12">
                   <div id="error_contact_fullname"></div>
@@ -696,6 +699,13 @@
 
               <div class="form-group row">
                 <div class="col-md-12">
+                  <div id="error_whatsapp"></div>
+                  <input type="number" id="appointment_whatsapp" name="whatsapp"  class="form-control" placeholder="WhatsApp" value="<?php echo isset($_POST['whatsapp']) ? $whatsapp : ''; ?>">
+                </div>
+              </div>
+
+              <div class="form-group row">
+                <div class="col-md-12">
                   <div id="error_contact_message"></div>
                   <textarea class="form-control" id="contact_message" name="message" cols="30" rows="10" placeholder="Write your message here."><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
                 </div>
@@ -711,7 +721,8 @@
           </div>
         </div>
       </div>
-    </div>
+
+
 
 
     <footer class="footer-section bg-white">
