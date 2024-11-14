@@ -327,11 +327,11 @@ h1, h2, h3, h4, h5,
       display: inline-block; }
       .site-navbar .site-navigation .site-menu > li > a {
         padding: 5px 10px;
-        color: #fff;
+        color: #000;
         display: inline-block;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #fff; }
+          color: #689F38; }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -578,11 +578,11 @@ h1, h2, h3, h4, h5,
     .sticky-wrapper .site-navbar .site-menu > li {
       display: inline-block; }
       .sticky-wrapper .site-navbar .site-menu > li > a.active {
-        color: #fff;
+        color: #000;
         position: relative; }
         .sticky-wrapper .site-navbar .site-menu > li > a.active:after {
           height: 2px;
-          background: #fff;
+          background: #689F38;
           content: "";
           position: absolute;
           bottom: 0;
@@ -602,15 +602,15 @@ h1, h2, h3, h4, h5,
         display: inline-block;
         text-decoration: none !important; }
         .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover {
-          color: #7971ea; }
+          color: #689F38; }
         .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a.active:after {
-          background: #7971ea; }
+          background: #689F38; }
   .sticky-wrapper .shrink {
     padding-top: 5px !important;
     padding-bottom: 5px !important; }
 
 /* Blocks */
-.intro-section {
+/* .intro-section {
   position: relative; }
   .intro-section, .intro-section .container > .row {
     height: 100vh;
@@ -625,7 +625,7 @@ h1, h2, h3, h4, h5,
     margin-bottom: 1.5rem; }
   .intro-section p {
     color: rgba(255, 255, 255, 0.5);
-    font-size: 1.1rem; }
+    font-size: 1.1rem; } */
 
 .img-absolute {
   position: absolute;
@@ -642,7 +642,7 @@ h1, h2, h3, h4, h5,
       .img-absolute img {
         max-width: 100%; } }
 
-.slide-1 {
+/* .slide-1 {
   background-size: cover;
   background-position: center; }
   .slide-1:before {
@@ -650,7 +650,7 @@ h1, h2, h3, h4, h5,
     position: absolute;
     height: 100%;
     width: 100%;
-    background: #343a40;
+    /* background: #343a40; * /
     opacity: .9;
     border-bottom-right-radius: 0px; }
     @media (max-width: 991.98px) {
@@ -666,7 +666,7 @@ h1, h2, h3, h4, h5,
     .slide-1 .slide-text.active {
       opacity: 1;
       visibility: visible;
-      margin-top: 0px; }
+      margin-top: 0px; } */
 
 .form-box {
   padding: 40px;
@@ -985,27 +985,30 @@ h1, h2, h3, h4, h5,
   #courses-section {
     scroll-margin-top: 20px; /* Navbar থেকে 20px নিচে offset করবে */
 }
-.courses-title, .teachers-title, .programs-title, .contact-title  {
+.courses-title,
+.teachers-title,
+.programs-title,
+.contact-title,
+.book-title  {
   padding: 40px 0 150px 0;
   background: #8BC34A; }
-  .courses-title .section-title, .teachers-title .section-title, .programs-title .section-title, .contact-title .section-title  {
+
+  .courses-title .section-title,
+  .teachers-title .section-title,
+  .programs-title .section-title,
+  .contact-title .section-title,
+  .book-title .section-title  {
     color: #fff; }
 
-.courses-entry-wrap {
-  margin-top: -220px; }
-   .teachers-entry-wrap, .programs-entry-wrap, .contact-entry-wrap {
-    margin-top: -110px; }
-.book-title {
-  padding-bottom: 5rem;
-  background: #000000; opacity: 1; }
-  .book-title .section-title {
-    color: #fff; }
-
+.courses-entry-wrap,
 .book-entry-wrap {
-  margin-top: -200px; }
-  @media (max-width: 1199.98px) {
-    .book-entry-wrap {
-      margin-top: -200px; } }
+  margin-top: -220px;
+}
+.teachers-entry-wrap,
+.programs-entry-wrap,
+.contact-entry-wrap {
+  margin-top: -110px;
+}
 
 .nonloop-block-14 .owl-stage {
   padding-top: 5rem;

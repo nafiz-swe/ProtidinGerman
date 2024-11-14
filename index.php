@@ -36,7 +36,7 @@
 
       <div class="container-fluid">
         <div class="d-flex align-items-center">
-          <div class="site-logo mr-auto w-25"><a href="index.php"><img src="webImg/PritidinGermanWeb.png" style="width:75px; height:55px;"></img></a></div>
+          <div class="site-logo mr-auto w-25"><a href="index.php"><img src="webImg/Protidn-german-Home.svg" style="width:102px; height:55px;"></img></a></div>
 
           <div class="mx-auto text-center">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -44,8 +44,8 @@
                 <li><a href="#home-section" class="nav-link">Home</a></li>
                 <li><a href="#courses-section" class="nav-link">Courses</a></li>
                 <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
-                <li><a href="#programs-section" class="nav-link">Programs</a></li>
                 <li><a href="#book-section" class="nav-link">Book-Shop</a></li>
+                <li><a href="#programs-section" class="nav-link">Services</a></li>
               </ul>
             </nav>
           </div>
@@ -65,10 +65,9 @@
     </header>
 
     <div class="intro-section" id="home-section">
-      <div class="slide-1" style="background-image: url('images/hero_1.jpg');" data-stellar-background-ratio="0.5">
+      <div class="slide-1" style="background-image: url('webimg/Protidin-German-Banner.webp');" data-stellar-background-ratio="0.5">
         <div class="container">
-          <div class="row align-items-center">
-          </div>
+          <div class="row align-items-center"></div>
         </div>
       </div>
     </div>
@@ -77,8 +76,93 @@
 
 
     <style>
+
+      /* Header styling */
+.site-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff; /* Slightly transparent background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for better visibility */
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+.site-navbar .container-fluid {
+  padding: 0 1.5rem; /* Reduce padding for a sleek look */
+}
+
+.site-navbar.py-4 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .site-navbar .container-fluid {
+    padding: 0 1rem;
+  }
+  
+  .site-navbar {
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
+  }
+}
+
+
+
+
+      /* Banner section styling */
+.intro-section {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Initial height for desktop */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.slide-1 {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .intro-section {
+    height: 50vh; /* Reduce height for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-section {
+    height: 40vh; /* Further reduce height for mobile devices */
+  }
+}
+
     /* Card Styles */
-    .course-card {
+    .course-card,
+    .book-card {
         background: white;
         border-radius: 8px;
         overflow: hidden;
@@ -91,7 +175,8 @@
         position: relative;
     }
 
-    .course-card:hover {
+    .course-card:hover,
+    .book-card:hover {
         transform: scale(1.02);
     }
 
@@ -102,6 +187,16 @@
         display: block;
         margin: auto;
         padding-bottom: 10px;
+    }
+
+    .book-card img {
+      width: 95%;
+      height: 270px;
+      display: block;
+      margin: auto;
+      padding-bottom: 10px;
+      padding-top: 8px;
+      border-radius: 15px 15px 0 0;
     }
 
     .course-details {
@@ -189,7 +284,10 @@
       border: 1px solid #ccc;
     }
 
-    .courses-container, .teachers-container, .programs-container {
+    .courses-container,
+    .teachers-container,
+    .programs-container,
+    .book-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -197,13 +295,15 @@
     }
 
     @media (max-width: 768px) {
-        .course-card {
+        .course-card,
+        .book-card {
             max-width: 100%;
         }
     }
 
     @media (min-width: 769px) {
-        .course-card {
+        .course-card,
+        .book-card {
             max-width: 333px;
         }
     }
@@ -340,6 +440,99 @@
 
 
 
+
+
+
+
+
+      
+    <div class="site-section book-title" id="book-section">
+  <div class="container" data-aos="fade-up" data-aos-delay="">
+      <h2 class="section-title">Book Shop</h2>
+      <p>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</p>
+  </div>
+</div>
+
+    <div class="site-section book-entry-wrap">
+      <div class="container">
+        <div class="book-container">
+
+          <!-- Netzwerk-Neu-A1 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <h3>Netzwerk-Neu-A1</h3>
+              <div class="meta"><i class="fa fa-book"></i>3 Books (Übungs,Kurs,Glossar)</div>
+              <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>Buy Now</button></a>
+            </div>
+          </div>
+
+          <!-- Netzwerk-Neu-A2 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="webimg/German-Netzwerk-Neu-A2.jpg" alt="Netzwerk-Neu-A2" class="img-fluid">
+            <div class="course-details">
+              <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <h3>Netzwerk-Neu-A2</h3>
+              <div class="meta"><i class="fa fa-book"></i>3 Books (Übungs,Kurs,Glossar)</div>
+              <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>Buy Now</button></a>
+            </div>
+          </div>
+
+          <!-- Netzwerk-Neu-B1 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="webimg/German-Netzwerk-Neu-B1.jpg" alt="Netzwerk-Neu-B1" class="img-fluid">
+            <div class="course-details">
+              <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <h3>Netzwerk-Neu-B1</h3>
+              <div class="meta"><i class="fa fa-book"></i>3 Books (Übungs,Kurs,Glossar)</div>
+              <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>Buy Now</button></a>
+            </div>
+          </div>
+
+          <!-- German-Sarfuddin-Ahmed-->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="320">
+            <img src="webimg/German-grammar-Sarfuddin-Ahmed.jpg" alt="German-Sarfuddin-Ahmed" class="img-fluid">
+            <div class="course-details">
+              <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <h3>Bangla to German</h3>
+              <div class="meta"><i class="fa fa-book"></i>1 Book (3rd Editions)</div>
+              <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>Buy Now</button></a>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
 <div class="site-section programs-title" id="programs-section">
   <div class="container" data-aos="fade-up" data-aos-delay="">
       <h2 class="section-title">Our Programs</h2>
@@ -406,7 +599,6 @@
           </div>
         </div>
 
-
         </div>
 
       </div>
@@ -417,107 +609,6 @@
 
 
 
-
-
-
-
-
-
-
-    <div class="site-section book-title" id="book-section">
-      <div class="container">
-        <div class="row mb-1 justify-content-center">
-          <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="">
-            <h2 class="section-title">Book Shop | EduHome</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="site-section book-entry-wrap"  data-aos="fade-up" data-aos-delay="100">
-      <div class="container">
-        <div class="row">
-
-          <div class="owl-carousel col-12 nonloop-block-14">
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/c4.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                
-              
-                <h3><a href="#">Core Java</a></h3>
-                <p>Core Java ? An Integrated Approach covers all core concepts in a methodical way. </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 4.5 Rating</div>
-                <a href="uploads/files/java.pdf" target="_blank"><div class="py-3 px-4 w-25 ml-auto border-left"><span class=""><button class="button-55" role="button">EBook</button></div></a>
-              </div>
-            </div>
-
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/c2.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                
-                
-                <h3><a href="#">Object-Oriented Programming</a></h3>
-                <p>Object-oriented programming with C++, 8th edition is here with some valuable updates.. </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 4.8 Rating </div>
-                <a href="uploads/files/cprog.pdf" target="_blank"><div class="py-3 px-4 w-25 ml-auto border-left"><span class=""><button class="button-55" role="button">EBook</button></div></a>
-              </div>
-            </div>
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/c5.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                
-                
-                <h3><a href="#">Territorial Army Officer</a></h3>
-                <p>Serve the nation in two capacities– as a civilian and as a soldier. Applications though gov channel only. </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 4.1 Rating</div>
-                <a href="grocery%20store/shop.php"><div class="py-3 px-4 w-25 ml-auto border-left"><span class=""><button class="button-55" role="button">Buy</button></div></a>
-              </div>
-            </div>
-
-            <div class="course bg-white h-100 align-self-stretch">
-              <figure class="m-0">
-                <img src="images/c3.jpg" alt="Image" class="img-fluid">
-              </figure>
-              <div class="course-inner-text py-4 px-4">
-                
-                
-                <h3><a href="#">The Everything Learning German Book</a></h3>
-                <p>Order das beste Bier at Oktoberfest! Hitch a ride on der Autobahn! Say "Wilkommen" to your neuen deutschen  </p>
-              </div>
-              <div class="d-flex border-top stats">
-                <div class="py-3 px-4"><span class="icon-users"></span> 4.3 Rating</div>
-                <a href="uploads/files/german.pdf" target="_blank"><div class="py-3 px-4 w-25 ml-auto border-left"><span class=""><button class="button-55" role="button">EBook</button></div></a>
-              </div>
-            </div>
-
-          </div>
-
-
-
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-7 text-center">
-            <button class="customPrevBtn btn btn-primary m-1">Prev</button>
-            <button class="customNextBtn btn btn-primary m-1">Next</button>
-            <a href="grocery%20store/login.php"> <button class="button-55">Signup for EduHome-BookShop</button></a>
-          </div>
-        </div>
-      </div>
-    </div>
 
 
 
