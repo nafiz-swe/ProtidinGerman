@@ -331,11 +331,11 @@
 
     .ft-link{
       padding: 5px 0;
-      color: #689F38;
+      color: #fff;
     }
     .ft-link:hover{
       text-decoration: underline;
-      color: #689F38;
+      color: #fff;
     }
     .footer-links i {
       background: #689F38;

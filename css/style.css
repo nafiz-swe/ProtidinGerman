@@ -859,15 +859,16 @@ h1, h2, h3, h4, h5,
 
 .footer-section {
   padding: 50px 0 0 0;
-  background-color: #fafafa; }
+  background: #5f676b !important; }
 
   .footer-section p {
-    font-size: 1rem; }
+    font-size: 1rem;
+    color: #fff; }
   .footer-section h3 {
     font-size: .9rem;
     letter-spacing: .1rem;
     text-transform: uppercase;
-    color: #000;
+    color: #fff;
     margin-bottom: 1.5rem;
     font-weight: 900; }
   .footer-section .footer-links li {
