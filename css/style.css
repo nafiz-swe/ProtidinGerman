@@ -10,7 +10,7 @@ body {
   color: #fff; }
 
 ::selection {
-  background: #000;
+  background: #689F38;
   color: #fff; }
 
 a {
@@ -132,10 +132,6 @@ h1, h2, h3, h4, h5,
   margin-bottom: 0px;
   position: relative;
   font-size: 2.5rem; }
-  @media (min-width: 768px) {
-    .site-section-heading {
-      font-size: 3rem; } }
-
 .border-top {
   border-top: 1px solid #edf0f5 !important; }
 
@@ -143,6 +139,8 @@ h1, h2, h3, h4, h5,
   padding: 4em 0;
   background: #333333; }
   @media (min-width: 768px) {
+    .site-section-heading {
+      font-size: 3rem; }
     .site-footer {
       padding: 8em 0; } }
   .site-footer .border-top {
@@ -710,7 +708,6 @@ h1, h2, h3, h4, h5,
   font-weight: 900;
   display: block;
   margin-bottom: 1.5rem; }
-
 .section-title {
   font-size: 3rem;
   color: #fff;
@@ -861,8 +858,9 @@ h1, h2, h3, h4, h5,
       background-color: #7971ea; }
 
 .footer-section {
-  padding: 7em 0;
+  padding: 50px 0 0 0;
   background-color: #fafafa; }
+
   .footer-section p {
     font-size: 1rem; }
   .footer-section h3 {
@@ -873,7 +871,7 @@ h1, h2, h3, h4, h5,
     margin-bottom: 1.5rem;
     font-weight: 900; }
   .footer-section .footer-links li {
-    margin-bottom: 10px; }
+    margin-bottom: 5px; }
 
 .footer-subscribe .btn {
   height: 43px;
@@ -1002,13 +1000,18 @@ h1, h2, h3, h4, h5,
   .book-title .section-title  {
     color: #fff; }
 
-.courses-entry-wrap,
-.book-entry-wrap {
+.courses-entry-wrap{
   margin-top: -220px;
 }
-.teachers-entry-wrap,
 .programs-entry-wrap,
+.book-entry-wrap {
+  margin-top: -200px;
+}
 .contact-entry-wrap {
+  margin-top: -160px;
+  margin-bottom: 150px;
+}
+.teachers-entry-wrap{
   margin-top: -110px;
 }
 
@@ -1075,7 +1078,7 @@ h1, h2, h3, h4, h5,
 .teacher {
   border: 1px solid #689F38;
   padding: 30px;
-  margin-bottom: 5rem; }
+  margin-bottom: 1.5rem; }
   .teacher img {
     position: relative;
     margin-top: -100px; }

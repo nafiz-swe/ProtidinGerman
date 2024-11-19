@@ -45,8 +45,8 @@
                 <li><a href="#home-section" class="nav-link">Home</a></li>
                 <li><a href="#courses-section" class="nav-link">Courses</a></li>
                 <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
-                <li><a href="#book-section" class="nav-link">Book-Shop</a></li>
                 <li><a href="#programs-section" class="nav-link">Services</a></li>
+                <li><a href="#book-section" class="nav-link">Book-Shop</a></li>
               </ul>
             </nav>
           </div>
@@ -166,6 +166,7 @@
     .book-card {
         background: white;
         border-radius: 8px;
+        border: 1px solid #8BC34A;
         overflow: hidden;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s;
@@ -265,7 +266,12 @@
       padding:0 35px 15px 35px;
     }
 
-    .course-stats button {
+    .message-us {
+      padding: 0;
+    }
+
+    .course-stats button,
+    .message-us button{
       width: 100%;
       padding: 6px;
       border-radius: 3px;
@@ -276,7 +282,8 @@
       font-size: 16px;
     }
 
-    .course-stats button:hover {
+    .course-stats button:hover,
+    .message-us button:hover {
       background: #689F38;
       border: 1px solid #ccc;
     }
@@ -316,6 +323,75 @@
     .py-2 .position {
       color: gray;
     }
+
+    .border-top p{
+      padding: 20px 0;
+      margin: auto;
+    }
+
+    .ft-link{
+      padding: 5px 0;
+      color: #689F38;
+    }
+    .ft-link:hover{
+      text-decoration: underline;
+      color: #689F38;
+    }
+    .footer-links i {
+      background: #689F38;
+      color: #fff;
+      border-radius: 5px;
+    }
+    .container h6{
+  color: #fff;
+}
+.ribbon {
+  position: absolute;
+  background-color: #689F38;
+  color: #fff;
+  padding: 5px 30px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transform: rotate(-45deg); /* বাঁকা করার জন্য */
+  margin: 23px 0px 0px -38px;
+}
+
+/* .ribbon.left-bottom {
+  bottom: 0px;
+  left: 0px;
+}
+
+.ribbon.right-top {
+  top: 0px;
+  right: 0px;
+} */
+
+@media (max-width: 600px) {
+    .meta{
+      padding: 2px 0px;
+      font-size: 14px;
+    }
+    .container{
+      width: 100%;
+    }
+    .course-details {
+      padding: 20px 10px;
+  }
+  .course-details h3{
+    font-size: 23px;
+  }
+  .book-card img {
+    width: 100%;
+    height: 215px;
+    padding-top: 0;
+  }
+  .py-2 p{
+    padding: 0;
+  }
+  }
 </style>
 
 
@@ -389,8 +465,10 @@
                 </div>
             </div>
 
-                        <!-- Course Card 3 -->
-                        <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+              <!-- Course Card 3 -->
+              <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="ribbon">Recommended</div> <!-- Recommended Ribbon -->
+
                 <img src="webimg/Deutsch-A1A2B1.webp" alt="Deutsch B1">
                 <div class="course-details">
                     <div class="offer-tag">22% OFF</div>
@@ -400,14 +478,14 @@
                     <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
                     <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
                     <div class="meta"><i class="fa fa-clock-o"></i> Duration 3 Months / 48 Class</div>
-                    <div class="meta"><i class="far fa-calendar-check"></i> Weekly 4days (Sat,Mon,Wed,Thu)</div>
+                    <div class="meta"><i class="far fa-calendar-check"></i> Weekly 4days (Sat,Mon,Wed,Th)</div>
                     <div class="meta"><i class="far fa-closed-captioning"></i> Class Record Available</div>
                     <div class="meta"><i class="fas fa-edit"></i> With Exam Preparation</div>
                 </div>
                 <div class="course-stats">
                   <a href="deutsch-shortCourse.php"><button>Views Course Details</button></a>
                 </div>
-            </div>
+              </div>
 
         </div>
     </div>
@@ -485,13 +563,179 @@
 
 
 
+<div class="site-section programs-title" id="programs-section">
+  <div class="container" data-aos="fade-up" data-aos-delay="">
+      <h2 class="section-title">German Services</h2>
+      <h6>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</h6>
+  </div>
+</div>
 
+
+    <div class="site-section programs-entry-wrap">
+      <div class="container">
+        <div class="programs-container">
+
+          <!-- Netzwerk-Neu-A1 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="webimg/ausbildung.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div> -->
+              <!-- <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 95,500</span>
+              <h3>Ausbildung Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum B1 certificate</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- Netzwerk-Neu-A1 -->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="webimg/bfd.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 90,500</span>
+              <h3>BFD Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum A2 certificate</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- Netzwerk-Neu-A1 -->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="webimg/fsj.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 85,500</span>
+              <h3>FSJ Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum A2 certificate</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+                      <!-- Netzwerk-Neu-A1 -->
+                      <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="webimg/university.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 25,500</span>
+              <h3>Varsity Offer Letter</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum IELTS 6.00</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- Netzwerk-Neu-A1 -->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="webimg/german-home.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 15,500</span>
+              <h3>Living House Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 2 weeks</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required any offer letter</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          <!-- Netzwerk-Neu-A2 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="webimg/europus-resume-cv.webp" alt="Netzwerk-Neu-A2" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 850</span>
+              <h3>Resume/CV</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          <!-- Netzwerk-Neu-B1 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="webimg/motivation-letter.webp" alt="Netzwerk-Neu-B1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 750</span>
+              <h3>Motivation Letter</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          <!-- German-Sarfuddin-Ahmed-->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="webimg/cover-letter.webp" alt="German-Sarfuddin-Ahmed" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 750</span>
+              <h3>Cover Letter</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- German-Sarfuddin-Ahmed-->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="webimg/applications-email.webp" alt="German-Sarfuddin-Ahmed" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 450</span>
+              <h3>Application or Email</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+    
 
       
     <div class="site-section book-title" id="book-section">
   <div class="container" data-aos="fade-up" data-aos-delay="">
       <h2 class="section-title">Book Shop</h2>
-      <p>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</p>
+      <h6>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</h6>
   </div>
 </div>
 
@@ -572,322 +816,6 @@
 
 
 
-<div class="site-section programs-title" id="programs-section">
-  <div class="container" data-aos="fade-up" data-aos-delay="">
-      <h2 class="section-title">German Services</h2>
-      <p>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</p>
-  </div>
-</div>
-
-
-    <div class="site-section book-entry-wrap">
-      <div class="container">
-        <div class="book-container">
-
-          <!-- Netzwerk-Neu-A1 -->
-          <div class="book-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="webimg/ausbildung.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div> -->
-              <!-- <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 95,500</span>
-              <h3>Ausbildung Manage</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
-              <div class="meta"><i class="far fa-file-alt"></i> Required minimum B1 certificate</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-            <!-- Netzwerk-Neu-A1 -->
-            <div class="book-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 90,500</span>
-              <h3>BFD Manage</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
-              <div class="meta"><i class="far fa-file-alt"></i> Required minimum A2 certificate</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-            <!-- Netzwerk-Neu-A1 -->
-            <div class="book-card" data-aos="fade-up" data-aos-delay="300">
-            <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 85,500</span>
-              <h3>FSJ Manage</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
-              <div class="meta"><i class="far fa-file-alt"></i> Required minimum A2 certificate</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-                      <!-- Netzwerk-Neu-A1 -->
-                      <div class="book-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="webimg/university.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 25,500</span>
-              <h3>Varsity Offer Latter</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
-              <div class="meta"><i class="far fa-file-alt"></i> Required minimum IELTS 6.00</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-            <!-- Netzwerk-Neu-A1 -->
-            <div class="book-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 15,500</span>
-              <h3>Living House Manage</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 2 weeks</div>
-              <div class="meta"><i class="fa fa-file-alt"></i> Required any offer latter</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-          <!-- Netzwerk-Neu-A2 -->
-          <div class="book-card" data-aos="fade-up" data-aos-delay="300">
-            <img src="webimg/German-Netzwerk-Neu-A2.jpg" alt="Netzwerk-Neu-A2" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 850</span>
-              <h3>Resume/CV</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
-              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-          <!-- Netzwerk-Neu-B1 -->
-          <div class="book-card" data-aos="fade-up" data-aos-delay="100">
-            <img src="webimg/German-Netzwerk-Neu-B1.jpg" alt="Netzwerk-Neu-B1" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 750</span>
-              <h3>Motivation Latter</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
-              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-          <!-- German-Sarfuddin-Ahmed-->
-          <div class="book-card" data-aos="fade-up" data-aos-delay="200">
-            <img src="webimg/German-grammar-Sarfuddin-Ahmed.jpg" alt="German-Sarfuddin-Ahmed" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 750</span>
-              <h3>Cover Latter</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
-              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-            <!-- German-Sarfuddin-Ahmed-->
-            <div class="book-card" data-aos="fade-up" data-aos-delay="300">
-            <img src="webimg/German-grammar-Sarfuddin-Ahmed.jpg" alt="German-Sarfuddin-Ahmed" class="img-fluid">
-            <div class="course-details">
-              <!-- <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
-              <span class="course-price"><span class="taka-symbol">Tk</span> 450</span>
-              <h3>Application or Email</h3>
-              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
-              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
-            </div>
-            <div class="course-stats">
-              <a href="deutsch-a1.php"><button>View Details</button></a>
-            </div>
-          </div>
-
-          
-        </div>
-      </div>
-    </div>
-
-
-
-
-
-      <div class="site-section programs-entry-wrap">
-        <div class="container">
-        <div class="programs-container">
-        
-        <div class="row mb-5 align-items-center">
-          <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/cou1.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="text-black mb-4">We Are Excellent In Education</h2>
-            <p class="mb-4">Education is an art and we are the artists.</p>
-            <div class="d-flex align-items-center custom-icon-wrap mb-3">
-              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
-              <div><h3 class="m-0">2,931 Yearly Graduates</h3></div>
-            </div>
-            <div class="d-flex align-items-center custom-icon-wrap">
-              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
-              <div><h3 class="m-0">50 Universities Worldwide</h3></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-5 align-items-center">
-          <div class="col-lg-7 mb-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/cou5.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-lg-4 mr-auto order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="text-black mb-4">Strive for Excellent</h2>
-            <p class="mb-4">our goal is your success.</p>
-            <div class="d-flex align-items-center custom-icon-wrap mb-3">
-              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
-              <div><h3 class="m-0">2,931 Yearly Graduates</h3></div>
-            </div>
-            <div class="d-flex align-items-center custom-icon-wrap">
-              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
-              <div><h3 class="m-0">50 Universities Worldwide</h3></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row mb-5 align-items-center">
-          <div class="col-lg-7 mb-5" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/cou4.png" alt="Image" class="img-fluid">
-          </div>
-          <div class="col-lg-4 ml-auto" data-aos="fade-up" data-aos-delay="200">
-            <h2 class="text-black mb-4">Education is life</h2>
-            <p class="mb-4">Beginning of a never ending journey of learning.</p>
-            <div class="d-flex align-items-center custom-icon-wrap mb-3">
-              <span class="custom-icon-inner mr-3"><span class="icon icon-graduation-cap"></span></span>
-              <div><h3 class="m-0">2,931 Yearly Graduates</h3></div>
-            </div>
-            <div class="d-flex align-items-center custom-icon-wrap">
-              <span class="custom-icon-inner mr-3"><span class="icon icon-university"></span></span>
-              <div><h3 class="m-0">50 Universities Worldwide</h3></div>
-            </div>
-          </div>
-        </div>
-
-        </div>
-
-      </div>
-    </div>
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-    <div class="site-section pb-0">
-
-      <div class="future-blobs">
-        <div class="blob_2">
-          <img src="images/blob_2.svg" alt="Image">
-        </div>
-        <div class="blob_1">
-          <img src="images/blob_1.svg" alt="Image">
-        </div>
-      </div>
-      
-      <div class="container">
-        <div class="row mb-5 justify-content-center" data-aos="fade-up" data-aos-delay="">
-          <div class="col-lg-7 text-center">
-            <h2 class="section-title">Why Choose Us</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4 ml-auto align-self-start"  data-aos="fade-up" data-aos-delay="100">
-
-            <div class="p-4 rounded bg-white why-choose-us-box">
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
-                <div><h3 class="m-0">2,931 Yearly Graduates</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
-                <div><h3 class="m-0">50 Universities Worldwide</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
-                <div><h3 class="m-0">Top Professionals in The World</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
-                <div><h3 class="m-0">Expand Your Knowledge</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light mb-3">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-graduation-cap"></span></span></div>
-                <div><h3 class="m-0">Best Online Teaching Assistant Courses</h3></div>
-              </div>
-
-              <div class="d-flex align-items-center custom-icon-wrap custom-icon-light">
-                <div class="mr-3"><span class="custom-icon-inner"><span class="icon icon-university"></span></span></div>
-                <div><h3 class="m-0">Best Teachers</h3></div>
-              </div>
-
-            </div>
-
-
-          </div>
-          <div class="col-lg-7 align-self-end"  data-aos="fade-left" data-aos-delay="200">
-            <img src="images/person_transparent.png" alt="Image" class="img-fluid">
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-
-
-
-
 
 
 
@@ -896,14 +824,14 @@
   <div class="site-section contact-title" id="contact-section">
   <div class="container" data-aos="fade-up" data-aos-delay="">
       <h2 class="section-title">Message Us</h2>
-      <p>Describe your problems. We are very intarested for serving you.</p>
+      <h6>Describe your problems. We are very intarested for serving you.</h6>
   </div>
 </div>
 
 
 
       <div class="site-section contact-entry-wrap">
-        <div class="container">
+        <div class="container" style="max-width: 500px;">
         <div class="contact-container">
             <!-- Beginning of the php for the contact form -->
             <?php
@@ -994,15 +922,15 @@
               <div class="form-group row">
                 <div class="col-md-12">
                   <div id="error_contact_message"></div>
-                  <textarea class="form-control" id="contact_message" name="message" cols="30" rows="10" placeholder="Write your message here."><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
+                  <textarea class="form-control" id="contact_message" name="message" cols="30" rows="5" placeholder="Write your message here..."><?php echo isset($_POST['message']) ? $message : ''; ?></textarea>
                 </div>
               </div>
 
-              <div class="form-group row">
-                <div class="col-md-6">
-                  <input type="submit" name="submit" class="btn btn-primary py-3 px-5 btn-block btn-pill" value="Send Message">
+              <!-- <div class="form-group row"> -->
+                <div class="message-us">
+                  <button type="submit" name="submit">Send Message</button></a>
                 </div>
-              </div>
+              <!-- </div> -->
 
             </form>
           </div>
@@ -1013,45 +941,38 @@
 
 
     <footer class="footer-section bg-white">
-      <div class="container">
-        <div class="row">
+      <div class="container" data-aos="fade-down" data-aos-delay="">
+        <div class="row" style="text-align: right;">
           <div class="col-md-4">
-            <h3>About EduHome</h3>
+            <h3>About Protidin German</h3>
             <p>An E-Learning platform rich of resources, We make learning easy and simple for Everyone.</p>
           </div>
 
           <div class="col-md-3 ml-auto">
-            <h3>Links</h3>
+            <h3>Follow Us</h3>
             <ul class="list-unstyled footer-links">
-              <li><a href="#home-section" class="nav-link">Home</a></li>
-              <li><a href="#courses-section" class="nav-link">Courses</a></li>
-              
-             
+              <li><a href="https://www.whatsapp.com/ProtidinGerman" target="_blank" class="ft-link">WhatsApp <i class="fa fa-whatsapp" style="padding: 4px 5px;"></i></a></li>
+              <li><a href="https://www.instagram.com/ProtidinGerman" target="_blank" class="ft-link">Instagram <i class="fa fa-instagram" style="padding: 4px 5px;"></i></a></li>
+              <li><a href="https://www.facebook.com/ProtidinGerman/" target="_blank" class="ft-link">Facebook <i class="fa fa-facebook" style="padding: 4px 7px;"></i></a></li>
+              <li><a href="https://www.telegram.com/ProtidinGerman" target="_blank" class="ft-link">Telegram <i class="fa fa-telegram" style="padding: 4px 4px;"></i></a></li>
+              <li><a href="https://www.youtube.com/@ProtidinGerman" target="_blank" class="ft-link">Youtube <i class="fa fa-youtube" style="padding: 4px 3px;"></i></a></li>
             </ul>
           </div>
 
           <div class="col-md-4">
-            <h3>Subscribe</h3>
-            <p>Keep yourself up to date and receive all kind of news about EduHome.</p>
-            <form action="" target="_blank" class="footer-subscribe">
-              <div class="d-flex mb-5">
-
-                <input type="submit" class="btn btn-primary rounded-0" value="Subscribe">
-              </div>
-            </form>
+            <h3>Quick Links</h3>
+            <ul class="list-unstyled footer-links">
+              <li><a href="#home-section" class="ft-link">Term & Conditions</a></li>
+              <li><a href="#home-section" class="ft-link">Privacy Policy</a></li>
+              <li><a href="#home-section" class="ft-link">About Us</a></li>
+              <li><a href="#home-section" class="ft-link">Reviews</a></li>
+              <li><a href="#home-section" class="ft-link">Blogs</a></li>
+            </ul>
           </div>
-
         </div>
 
-        <div class="row pt-1 mt-1 text-center">
-          <div class="col-md-10">
-            <div class="border-top pt-5" >
-            <p>
-        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved ProtidinGerman
-      </p>
-            </div>
-          </div>
-
+        <div class="border-top">
+          <p> Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved ProtidinGerman</p>
         </div>
       </div>
     </footer>
