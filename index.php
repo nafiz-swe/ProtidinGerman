@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>EduHome</title>
+    <title>Protidin German</title>
+    <link rel="icon" type="webImg/png" href="webImg/protidin-german-icon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
@@ -260,10 +261,6 @@
       padding-right: 8px;
     }
 
-    .container p {
-      color: #fff;
-    }
-
     .course-stats{
       padding:0 35px 15px 35px;
     }
@@ -307,6 +304,18 @@
             max-width: 333px;
         }
     }
+
+    .py-2 p{
+    font-size: 16px;
+    color: #000;
+    margin: auto;
+    text-align: justify;
+    padding: 0 35px;
+    }
+
+    .py-2 .position {
+      color: gray;
+    }
 </style>
 
 
@@ -325,8 +334,8 @@
                 <img src="webimg/DeutschA1.png" alt="Deutsch A1">
                   <div class="course-details">
                     <div class="offer-tag">15% OFF</div>
-                    <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
-                    <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+                    <span class="original-price"><span class="taka-symbol">Tk</span> 9058</span>
+                    <span class="course-price"><span class="taka-symbol">Tk</span> 7700</span>
                     <h3>Goethe-Zertifikat A1</h3>
                     <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
                     <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
@@ -345,8 +354,8 @@
                 <img src="webimg/DeutschA2.png" alt="Deutsch A2">
                 <div class="course-details">
                     <div class="offer-tag">17% OFF</div>
-                    <span class="original-price"><span class="taka-symbol">TK</span> 7952</span>
-                    <span class="course-price"><span class="taka-symbol">TK</span> 6600</span>
+                    <span class="original-price"><span class="taka-symbol">TK</span> 10602</span>
+                    <span class="course-price"><span class="taka-symbol">TK</span> 8800</span>
                     <h3>Goethe-Zertifikat A2</h3>
                     <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
                     <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
@@ -365,8 +374,8 @@
                 <img src="webimg/DeutschB1.png" alt="Deutsch B1">
                 <div class="course-details">
                     <div class="offer-tag">20% OFF</div>
-                    <span class="original-price"><span class="taka-symbol">TK</span> 9625</span>
-                    <span class="course-price"><span class="taka-symbol">TK</span> 7700</span> <!-- &#2547; -->
+                    <span class="original-price"><span class="taka-symbol">TK</span> 12375</span>
+                    <span class="course-price"><span class="taka-symbol">TK</span> 9900</span> <!-- &#2547; -->
                     <h3>Goethe-Zertifikat B1</h3>
                     <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
                     <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
@@ -379,6 +388,27 @@
                   <a href="deutsch-b1.php"><button>Views Course Details</button></a>
                 </div>
             </div>
+
+                        <!-- Course Card 3 -->
+                        <div class="course-card" data-aos="fade-up" data-aos-delay="300">
+                <img src="webimg/Deutsch-A1A2B1.webp" alt="Deutsch B1">
+                <div class="course-details">
+                    <div class="offer-tag">22% OFF</div>
+                    <span class="original-price"><span class="taka-symbol">TK</span> 32,692</span>
+                    <span class="course-price"><span class="taka-symbol">TK</span> 25,500</span> <!-- &#2547; -->
+                    <h3>Short time Course</h3>
+                    <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
+                    <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Duration 3 Months / 48 Class</div>
+                    <div class="meta"><i class="far fa-calendar-check"></i> Weekly 4days (Sat,Mon,Wed,Thu)</div>
+                    <div class="meta"><i class="far fa-closed-captioning"></i> Class Record Available</div>
+                    <div class="meta"><i class="fas fa-edit"></i> With Exam Preparation</div>
+                </div>
+                <div class="course-stats">
+                  <a href="deutsch-shortCourse.php"><button>Views Course Details</button></a>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
@@ -403,8 +433,12 @@
               <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
                 <h3 class="text-black">Nafizul Islam</h3>
-                <p class="position">Cloud Computing</p>
-                <p>Explore the essentials of cloud and fundamentals.</p>
+                <p class="position">Position: Ausbildung</p>
+                <p>Subject: Software Techniker</p>
+                <p>Company: ABCD</p>
+                <p>Stay: Frankfurt, Germany</p>
+                <p>Stay from: 03 August 2025</p>
+                <p>German Proficiency: B1</p>
               </div>
             </div>
           </div>
@@ -414,8 +448,12 @@
             <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
               <h3 class="text-black">Nafizul Islam</h3>
-                <p class="position">Subject Expert</p>
-                <p>Fundamentals of Class 1 to 10th CBSE/ StateBoard.</p>
+                <p class="position">Position: Ausbildung</p>
+                <p>Subject: Software Techniker</p>
+                <p>Company: ABCD</p>
+                <p>Stay: Munich, Germany</p>
+                <p>Stay from: 05 August 2025</p>
+                <p>German Proficiency: B1</p>
               </div>
             </div>
           </div>
@@ -425,8 +463,12 @@
             <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
               <h3 class="text-black">Nafizul Islam</h3>
-                <p class="position">Language Professor</p>
-                <p>Expert domain of different Languages</p>
+                <p class="position">Position: Ausbildung</p>
+                <p>Subject: Software Techniker</p>
+                <p>Company: ABCD</p>
+                <p>Stay: Berlin, Germany</p>
+                <p>Stay from: 07 August 2025</p>
+                <p>German Proficiency: B1</p>
               </div>
             </div>
           </div>
@@ -530,15 +572,169 @@
 
 
 
-
-
-
 <div class="site-section programs-title" id="programs-section">
   <div class="container" data-aos="fade-up" data-aos-delay="">
-      <h2 class="section-title">Our Programs</h2>
+      <h2 class="section-title">German Services</h2>
       <p>We aim to make studying SIMPLE, EASY and ACCESSIBLE to EVERYONE thus we collected the BEST COURSES in the world in one place.</p>
   </div>
 </div>
+
+
+    <div class="site-section book-entry-wrap">
+      <div class="container">
+        <div class="book-container">
+
+          <!-- Netzwerk-Neu-A1 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="webimg/ausbildung.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div> -->
+              <!-- <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 95,500</span>
+              <h3>Ausbildung Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum B1 certificate</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- Netzwerk-Neu-A1 -->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 90,500</span>
+              <h3>BFD Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum A2 certificate</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- Netzwerk-Neu-A1 -->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 85,500</span>
+              <h3>FSJ Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum A2 certificate</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+                      <!-- Netzwerk-Neu-A1 -->
+                      <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="webimg/university.webp" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 25,500</span>
+              <h3>Varsity Offer Latter</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 3 weeks</div>
+              <div class="meta"><i class="far fa-file-alt"></i> Required minimum IELTS 6.00</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- Netzwerk-Neu-A1 -->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 15,500</span>
+              <h3>Living House Manage</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Manage within 2 weeks</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required any offer latter</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          <!-- Netzwerk-Neu-A2 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="webimg/German-Netzwerk-Neu-A2.jpg" alt="Netzwerk-Neu-A2" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 850</span>
+              <h3>Resume/CV</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          <!-- Netzwerk-Neu-B1 -->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="100">
+            <img src="webimg/German-Netzwerk-Neu-B1.jpg" alt="Netzwerk-Neu-B1" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 750</span>
+              <h3>Motivation Latter</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          <!-- German-Sarfuddin-Ahmed-->
+          <div class="book-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="webimg/German-grammar-Sarfuddin-Ahmed.jpg" alt="German-Sarfuddin-Ahmed" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 750</span>
+              <h3>Cover Latter</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+            <!-- German-Sarfuddin-Ahmed-->
+            <div class="book-card" data-aos="fade-up" data-aos-delay="300">
+            <img src="webimg/German-grammar-Sarfuddin-Ahmed.jpg" alt="German-Sarfuddin-Ahmed" class="img-fluid">
+            <div class="course-details">
+              <!-- <div class="offer-tag">15% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span> -->
+              <span class="course-price"><span class="taka-symbol">Tk</span> 450</span>
+              <h3>Application or Email</h3>
+              <div class="meta"><i class="fa fa-clock-o"></i>Provide within 2 working days</div>
+              <div class="meta"><i class="fa fa-file-alt"></i> Required personal informations</div>
+            </div>
+            <div class="course-stats">
+              <a href="deutsch-a1.php"><button>View Details</button></a>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+
+
 
 
       <div class="site-section programs-entry-wrap">
