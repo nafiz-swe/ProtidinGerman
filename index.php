@@ -37,7 +37,7 @@
 
       <div class="container-fluid">
         <div class="d-flex align-items-center">
-          <div class="site-logo mr-auto w-25"><a href="index.php"><img src="webImg/Protidn-german-Home.svg" style="width:102px; height:55px;"></img></a></div>
+          <div class="site-logo mr-auto w-20"><a href="index.php"><img src="webImg/Protidn-german-Home.svg" style="width:102px; height:55px;"></img></a></div>
 
           <div class="mx-auto text-center">
             <nav class="site-navigation position-relative text-right" role="navigation">
@@ -47,11 +47,12 @@
                 <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
                 <li><a href="#programs-section" class="nav-link">Services</a></li>
                 <li><a href="#book-section" class="nav-link">Book-Shop</a></li>
+                <li><a href="#reviews-section" class="nav-link">Reviews</a></li>
               </ul>
             </nav>
           </div>
 
-          <div class="ml-auto w-25">
+          <div class="ml-auto w-35">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-lg-block m-0 p-0">
                 <li class="cta"><a href="#contact-section" class="nav-link"><span>Contact Us</span></a></li>
@@ -298,6 +299,20 @@
         margin-bottom: 150px;
     }
 
+    .footer-services{
+      display: flex;
+      flex-wrap: nowrap;
+      margin: auto;
+      width: 100%;
+      border-top: 1px solid #edf0f5 !important;
+      padding: 0px 0 30px 0;
+      margin-top: 25px;
+    }
+
+    .ft-service{
+      margin: auto;
+    }
+
     @media (max-width: 768px) {
         .course-card,
         .book-card {
@@ -327,11 +342,13 @@
     .border-top p{
       padding: 20px 0;
       margin: auto;
+      color: #ccc;
     }
 
     .ft-link{
       padding: 5px 0;
       color: #fff;
+      font-size: 15px;
     }
     .ft-link:hover{
       text-decoration: underline;
@@ -370,6 +387,13 @@
 } */
 
 @media (max-width: 600px) {
+  .footer-services{
+      display: block;
+  }
+  .footer-section .footer-links li,
+  .footer-section p {
+    font-size: 14px;
+  }
     .meta{
       padding: 2px 0px;
       font-size: 14px;
@@ -968,6 +992,23 @@
               <li><a href="#home-section" class="ft-link">Reviews</a></li>
               <li><a href="#home-section" class="ft-link">Blogs</a></li>
             </ul>
+          </div>
+          <div class="footer-services">
+            <div class="col-md-4 ft-service" style="text-align: left;">
+              <h3>Direct Contact</h3>
+              <p> 01737226404 (Only WhatsApp)</p>
+              <p> ProtidinGerman@gmail.com</p>
+            </div>
+            <div class="col-md-4 ft-service" style="text-align: center;">
+              <h3>Office Time</h3>
+              <p> Germany Time: Sat-Thu (8am-8pm)</p>
+              <p> Bangladesh Time: Sat-Thu (11am-11pm)</p>
+            </div>
+            <div class="col-md-4 ft-service" style="text-align: right;">
+              <h3>Questions & Answers</h3>
+              <li><a href="https://www.youtube.com/@ProtidinGerman" target="_blank" class="ft-link">German Youtube Blog (Every Sunday)</a></li>
+              <li><a href="https://www.zoom.com/ProtidinGerman" target="_blank" class="ft-link">Zoom Meeting (Tuesday 9pm-BD time)</a></li>
+            </div>
           </div>
         </div>
 
