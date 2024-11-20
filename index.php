@@ -47,7 +47,7 @@
                 <li><a href="#teachers-section" class="nav-link">Teachers</a></li>
                 <li><a href="#programs-section" class="nav-link">Services</a></li>
                 <li><a href="#book-section" class="nav-link">Book-Shop</a></li>
-                <li><a href="#reviews-section" class="nav-link">Reviews</a></li>
+                <li><a href="reviews.php" class="nav-link">Reviews</a></li>
               </ul>
             </nav>
           </div>
@@ -312,6 +312,16 @@
     .ft-service{
       margin: auto;
     }
+    .footer-top {
+      background: #8BC34A;
+      height: 50px;
+      width: 100%;
+      border-radius: 100% 100% 0 0;
+}
+
+li {
+  list-style: none;
+}
 
     @media (max-width: 768px) {
         .course-card,
@@ -347,8 +357,11 @@
 
     .ft-link{
       padding: 5px 0;
-      color: #fff;
+      color: #ccc;
       font-size: 15px;
+    }
+    .ft-link i {
+      margin-left: 10px;
     }
     .ft-link:hover{
       text-decoration: underline;
@@ -962,7 +975,8 @@
       </div>
 
 
-
+      <div class="footer-top">
+      </div>
 
     <footer class="footer-section bg-white">
       <div class="container" data-aos="fade-down" data-aos-delay="">
@@ -970,8 +984,8 @@
           <div class="col-md-4">
             <h3>About Protidin German</h3>
             <p>An E-Learning platform rich of resources, We make learning easy and simple for Everyone.</p>
+            <div class="site-logo mr-auto w-20"><a href="index.php"><img src="webImg/ProtidinGerman-footer.webp" style="width:150px; height:65px; border-radius:5px; margin:20px auto;"></img></a></div>
           </div>
-
           <div class="col-md-3 ml-auto">
             <h3>Follow Us</h3>
             <ul class="list-unstyled footer-links">
@@ -993,22 +1007,23 @@
               <li><a href="#home-section" class="ft-link">Blogs</a></li>
             </ul>
           </div>
-          <div class="footer-services">
-            <div class="col-md-4 ft-service" style="text-align: left;">
-              <h3>Direct Contact</h3>
-              <p> 01737226404 (Only WhatsApp)</p>
-              <p> ProtidinGerman@gmail.com</p>
-            </div>
-            <div class="col-md-4 ft-service" style="text-align: center;">
-              <h3>Office Time</h3>
-              <p> Germany Time: Sat-Thu (8am-8pm)</p>
-              <p> Bangladesh Time: Sat-Thu (11am-11pm)</p>
-            </div>
-            <div class="col-md-4 ft-service" style="text-align: right;">
-              <h3>Questions & Answers</h3>
-              <li><a href="https://www.youtube.com/@ProtidinGerman" target="_blank" class="ft-link">German Youtube Blog (Every Sunday)</a></li>
-              <li><a href="https://www.zoom.com/ProtidinGerman" target="_blank" class="ft-link">Zoom Meeting (Tuesday 9pm-BD time)</a></li>
-            </div>
+        </div>
+
+        <div class="footer-services">
+          <div class="col-md-4 ft-service" style="text-align: left;">
+            <h3>Direct Contact</h3>
+            <p> ProtidinGerman@gmail.com</p>
+            <p> 01737226404 (Only WhatsApp)</p>
+          </div>
+          <div class="col-md-4 ft-service" style="text-align: center;">
+            <h3>Office Time</h3>
+            <p> Germany Time: Sat-Thu (8am-8pm)</p>
+            <p> Bangladesh Time: Sat-Thu (11am-11pm)</p>
+          </div>
+          <div class="col-md-4 ft-service" style="text-align: right;">
+            <h3>Questions & Answers</h3>
+            <li><a href="https://www.youtube.com/@ProtidinGerman" target="_blank" class="ft-link">German Youtube Blog (Every Sunday)</a></li>
+            <li><a href="https://www.zoom.com/ProtidinGerman" target="_blank" class="ft-link">Join Zoom Meeting (Every Friday 9pm BD)</a></li>
           </div>
         </div>
 
