@@ -19,17 +19,11 @@
                             <h5 class="pb-2">Navbar Color
                             </h5>
                             <div class="theme-settings-swatches">
-
                                 <div class="swatch-holder bg-heavy-rain switch-header-cs-class" data-class="bg-heavy-rain header-text-dark">
                                 </div>
-
                                 <div class="swatch-holder bg-vicious-stance switch-header-cs-class" data-class="bg-vicious-stance header-text-light">
                                 </div>
-
                                 <div class="swatch-holder bg-midnight-bloom switch-header-cs-class" data-class="bg-midnight-bloom header-text-light">
-                                </div>
-
-                                <div class="swatch-holder bg-plum-plate switch-header-cs-class" data-class="bg-plum-plate header-text-light">
                                 </div>
                             </div>
                             <h3 class="themeoptions-heading">
@@ -48,14 +42,9 @@
                             <div class="theme-settings-swatches">
                                 <div class="swatch-holder bg-heavy-rain switch-sidebar-cs-class" data-class="bg-heavy-rain sidebar-text-dark">
                                 </div>
-
                                 <div class="swatch-holder bg-vicious-stance switch-sidebar-cs-class" data-class="bg-vicious-stance sidebar-text-light">
                                 </div>
-
                                 <div class="swatch-holder bg-midnight-bloom switch-sidebar-cs-class" data-class="bg-midnight-bloom sidebar-text-light">
-                                </div>
-
-                                <div class="swatch-holder bg-plum-plate switch-sidebar-cs-class" data-class="bg-plum-plate sidebar-text-light">
                                 </div>
                             </div>
                             <h3 class="themeoptions-heading">

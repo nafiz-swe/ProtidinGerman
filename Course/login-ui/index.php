@@ -33,7 +33,7 @@
         <div class="container-fluid">
           <div class="d-flex align-items-center">
             <div class="site-logo mr-auto w-25">
-              <a href="index.php"><img src="../webImg/PritidinGermanWeb.png" style="width:75px; height:55px;"></img></a>
+              <a href="index.php"><img src="../webImg/Protidn-german-Home.svg" style="width:92px; height:50px;"></img></a>
             </div>
             <div class="mx-auto text-center">
               <nav class="site-navigation position-relative text-right" role="navigation">
@@ -66,7 +66,7 @@
             <div class="row align-items-center">
               <div class="col-12">
                 <div class="sign">
-                  <div class="container <?php echo (isset($_GET['errorp']) || isset($_GET['signup']))? 'right-panel-active':''; ?>" id="container">
+                  <div class="container">
                     <form method="post" id="examineeLoginFrm" class="login100-form validate-form">
                       <h1 class="title">Sign in</h1> <br>
                       <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">

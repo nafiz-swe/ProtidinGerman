@@ -26,7 +26,7 @@
         <div class="app-header header-shadow">
             <div class="app-header__logo">
                 <div class="logo-src"></div>
-                <div class="site-logo mr-auto w-25"><a href="../index.php"><img src="../webImg/PritidinGermanWeb.png" style="width:75px; height:55px;"></img></a></div>
+                <div class="site-logo mr-auto w-25"><a href="../index.php"><img src="../webImg/Protidn-german-Home.svg" style="width:92px; height:50px;"></img></a></div>
 
                 <div class="header__pane ml-auto">
                     <div>
@@ -200,7 +200,7 @@
                 <div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
                         <div class="logo-src"></div>
-                        <div class="site-logo mr-auto w-25"><a href="../index.php"><img src="../webImg/PritidinGermanWeb.png" style="width:75px; height:55px;"></img></a></div>
+                        <div class="site-logo mr-auto w-25"><a href="../index.php"><img src="../webImg/Protidn-german-Home.svg" style="width:75px; height:55px;"></img></a></div>
 
                         <div class="header__pane ml-auto">
                             <div>

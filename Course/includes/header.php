@@ -19,7 +19,7 @@
 </head>
 
 <!-- TooltipDemo button fixed at top for color options, visible in both desktop and mobile view -->
-<div id="TooltipDemo" class="btn-open-options btn btn-warning" style="position: fixed; top: 9px;right: 100px; z-index: 1000; padding: 0px 20px; border-radius: 30px;background:#7971ea;border:none;color:#fff;">
+<div id="TooltipDemo" class="btn-open-options btn btn-warning" style="position: fixed; top: 9px;right: 100px; z-index: 1000; padding: 0px 20px; border-radius: 30px;background:#8BC34A;border:none;color:#fff;">
     <i class="fa fa-moon fa-w-16 fa-2x" style="margin-top: -2px;font-size: 22px;"></i>
 </div>
 
@@ -28,7 +28,7 @@
         <div class="app-header__logo">
             <div class="site-logo mr-auto w-25">
                 <a href="../index.php">
-                    <img src="../webImg/PritidinGermanWeb.png" style="width:75px; height:55px;">
+                    <img src="../webImg/Protidn-german-Home.svg" style="width:92px; height:50px;">
                 </a>
             </div>
             <div class="header__pane ml-auto">

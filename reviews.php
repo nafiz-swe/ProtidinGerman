@@ -139,7 +139,7 @@ body {
 .review .stars {
     color: gold;
     font-size: 20px;
-    margin: 5px 0;
+    margin: -7px 0 -0 0;
 }
 
 .total-stars {
@@ -164,7 +164,8 @@ body {
 
 .review small {
     display: block;
-    margin-top: 8px;
+    margin-top: -6px;
+    margin-bottom: 10px;
     color: #689F38;
 }
 
@@ -235,53 +236,6 @@ body {
 
     
     
-    
-    <?php
-// Include database connection
-include './Course/conn.php';
-
-$message = ""; // Initialize the message variable
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Sanitize and validate inputs
-    $rating = isset($_POST['rating']) ? intval($_POST['rating']) : 0;
-    $review_text = htmlspecialchars(trim($_POST['review_text']));
-
-    if ($rating < 1 || $rating > 5) {
-        $message = "Invalid rating. Please select a rating between 1 and 5.";
-    } else {
-        // Prepare SQL query using PDO
-        $query = "INSERT INTO reviews (rating, review_text) VALUES (:rating, :review_text)";
-        $stmt = $conn->prepare($query);
-
-        // Bind the parameters
-        $stmt->bindValue(':rating', $rating, PDO::PARAM_INT);
-        $stmt->bindValue(':review_text', $review_text, PDO::PARAM_STR);
-
-        // Execute the query
-        if ($stmt->execute()) {
-            $message = "Thanks! Review submitted successfully!";
-        } else {
-            $message = "Error: " . $stmt->errorInfo()[2];
-        }
-    }
-}
-?>
-
-
-    <script>
-        // JavaScript to handle the popup
-        function showPopup(message) {
-            document.getElementById('popup-message').innerText = message;
-            document.getElementById('popup').style.display = 'block';
-            document.getElementById('overlay').style.display = 'block';
-        }
-
-        function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            document.getElementById('overlay').style.display = 'none';
-        }
-    </script>
 
 
 <!DOCTYPE html>
@@ -535,6 +489,18 @@ li {
 }
 
 @media (max-width: 600px) {
+  .review-form h2,
+  .review-display h2{
+    font-size: 25px;
+  }
+  .review-form label{
+    font-size: 17px;
+  }
+  .star-count p,
+  .filter-reviews label,
+  select {
+    font-size: 15px;
+  }
   .footer-services{
       display: block;
   }
@@ -567,63 +533,164 @@ li {
 </style>
 
     
-    <!-- Review Form -->
-    <div class="review-form">
-        <h2>Submit Your Review</h2>
-        <form method="POST" action="">
-            <label for="rating">Rating</label>
-            <div class="star-rating">
-                <span class="star" data-value="1"></span>
-                <span class="star" data-value="2"></span>
-                <span class="star" data-value="3"></span>
-                <span class="star" data-value="4"></span>
-                <span class="star" data-value="5"></span>
-            </div>
-            <input type="hidden" name="rating" id="rating-value" required>
-            <br><br>
 
-            <script>
-                const stars = document.querySelectorAll('.star-rating .star');
-                const ratingInput = document.getElementById('rating-value');
 
-                stars.forEach((star) => {
-                    star.addEventListener('click', (e) => {
-                        const value = e.target.dataset.value;
 
-                        // Reset all stars
-                        stars.forEach((s) => s.classList.remove('active'));
 
-                        // Activate clicked stars and those before it
-                        for (let i = 0; i < value; i++) {
-                            stars[i].classList.add('active');
-                        }
 
-                        // Set the value of the hidden input
-                        ratingInput.value = value;
-                    });
-                });
-            </script>
 
-            <label for="review_text">Your Review</label>
-            <textarea name="review_text" rows="5" cols="30" placeholder="Write your reviews here..." required></textarea><br>
 
-            <button type="submit">Submit Review</button>
-        </form>
-    </div>
 
-    <!-- Popup and Overlay -->
-    <div id="overlay"></div>
-    <div id="popup">
-        <h3 id="popup-message"></h3>
-        <button onclick="closePopup()">OK</button>
-    </div>
 
-    <?php if (!empty($message)): ?>
+
+
+
+
+<?php
+// Include database connection
+include './Course/conn.php';
+
+// Initialize the message variable
+$message = "";
+
+// Check if the form is submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Sanitize and validate inputs
+    $rating = isset($_POST['rating']) ? intval($_POST['rating']) : 0;
+    $review_text = htmlspecialchars(trim($_POST['review_text']));
+    $email = $_POST['email'];
+
+    // Prepare SQL query to check the examinee email
+    $query = "SELECT exmne_id FROM examinee_tbl WHERE exmne_email = :email";
+    $stmt = $conn->prepare($query);
+    $stmt->bindValue(':email', $email, PDO::PARAM_STR);
+    $stmt->execute();
+
+    if ($stmt->rowCount() > 0) {
+        // Email exists, retrieve exmne_id
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $exmne_id = $row['exmne_id'];
+
+        // Validate rating
+        if ($rating < 1 || $rating > 5) {
+            $message = "Invalid rating. Please select a rating between 1 Star and 5 Stars.";
+        } else {
+            // Set timezone to Dhaka (GMT+6)
+            date_default_timezone_set('Asia/Dhaka');
+
+            // Format the current date as "25 January 2024, 10:46 PM" in Dhaka time
+            $created_at = date("d F Y, h:i A");
+
+            // Prepare SQL query to insert the review along with the exmne_id and created_at
+            $query = "INSERT INTO reviews (rating, review_text, exmne_id, created_at) VALUES (:rating, :review_text, :exmne_id, :created_at)";
+            $stmt = $conn->prepare($query);
+
+            // Bind the parameters
+            $stmt->bindValue(':rating', $rating, PDO::PARAM_INT);
+            $stmt->bindValue(':review_text', $review_text, PDO::PARAM_STR);
+            $stmt->bindValue(':exmne_id', $exmne_id, PDO::PARAM_INT);
+            $stmt->bindValue(':created_at', $created_at, PDO::PARAM_STR);  // Bind the created_at value
+
+            // Execute the query
+            if ($stmt->execute()) {
+                $message = "Thanks! Your review has been submitted successfully.";
+            } else {
+                $message = "Error: " . $stmt->errorInfo()[2];
+            }
+        }
+    } else {
+        // Email does not exist in the database
+        $message = "You are not registered. Please contact support to register your account.";
+    }
+}
+?>
+
+<script>
+    // JavaScript to handle the popup
+    function showPopup(message) {
+        document.getElementById('popup-message').innerText = message;
+        document.getElementById('popup').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
+
+<!-- Review Form -->
+<div class="review-form">
+    <h2>Submit Your Review</h2>
+    <form method="POST" action="">
+        <label for="email">Email Address</label>
+        <input type="email" name="email" required>
+        <label for="rating">Rating</label>
+        <div class="star-rating">
+            <span class="star" data-value="1"></span>
+            <span class="star" data-value="2"></span>
+            <span class="star" data-value="3"></span>
+            <span class="star" data-value="4"></span>
+            <span class="star" data-value="5"></span>
+        </div>
+        <input type="hidden" name="rating" id="rating-value" required>
+        <br><br>
+
         <script>
-            // Display the popup with the message
-            showPopup("<?php echo $message; ?>");
+            const stars = document.querySelectorAll('.star-rating .star');
+            const ratingInput = document.getElementById('rating-value');
+
+            stars.forEach((star) => {
+                star.addEventListener('click', (e) => {
+                    const value = e.target.dataset.value;
+
+                    // Reset all stars
+                    stars.forEach((s) => s.classList.remove('active'));
+
+                    // Activate clicked stars and those before it
+                    for (let i = 0; i < value; i++) {
+                        stars[i].classList.add('active');
+                    }
+
+                    // Set the value of the hidden input
+                    ratingInput.value = value;
+                });
+            });
         </script>
-    <?php endif; ?>
+
+        <label for="review_text">Your Review</label>
+        <textarea name="review_text" rows="5" cols="30" placeholder="Write your review here..." required></textarea><br>
+
+        <button type="submit">Submit Review</button>
+    </form>
+</div>
+
+<!-- Popup and Overlay -->
+<div id="overlay"></div>
+<div id="popup">
+    <h3 id="popup-message"></h3>
+    <button onclick="closePopup()">OK</button>
+</div>
+
+<?php if (!empty($message)): ?>
+    <script>
+        // Display the popup with the message
+        showPopup("<?php echo $message; ?>");
+    </script>
+<?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <?php
@@ -633,8 +700,10 @@ include './Course/conn.php';
 // Set default order to 'newest'
 $order = isset($_GET['order']) ? $_GET['order'] : 'DESC';  // Default to descending order (newest first)
 
-// Fetch reviews from the database, sorted by date
-$query = "SELECT * FROM reviews ORDER BY created_at $order";  
+// Fetch reviews from the database, sorted by date (created_at)
+$query = "SELECT reviews.*, examinee_tbl.exmne_fullname FROM reviews 
+          JOIN examinee_tbl ON reviews.exmne_id = examinee_tbl.exmne_id 
+          ORDER BY reviews.created_at $order";  
 $result = $conn->query($query);
 
 // Check if the query is successful
@@ -662,6 +731,7 @@ $averageScore = $totalReviews > 0 ? round($totalScore / $totalReviews, 2) : 0;
 
 // Calculate percentage based on the average score (1 star = 20%)
 $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%, 2 stars = 40%, etc.)
+
 ?>
 
 <!-- Display Reviews -->
@@ -696,9 +766,10 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
     <?php if (count($reviews) > 0): ?>
         <?php foreach ($reviews as $row): ?>
             <div class="review">
+                <p><i class="fa fa-user" style="margin-right: 7px;"></i>User: <?php echo htmlspecialchars($row['exmne_fullname']); ?></p> <!-- Display full name here -->
                 <p class="stars"><?php echo str_repeat('★', $row['rating']); ?></p>
+                <small><?php echo $row['created_at']; ?></small>
                 <p><?php echo htmlspecialchars($row['review_text']); ?></p>
-                <small>Reviewed on <?php echo $row['created_at']; ?></small>
                 <hr>
             </div>
         <?php endforeach; ?>
@@ -706,6 +777,10 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
         <p>No reviews yet.</p>
     <?php endif; ?>
 </div>
+
+
+
+
 
 <div class="footer-top">
       </div>
