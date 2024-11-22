@@ -60,7 +60,7 @@ body {
 /* Review form container */
 .review-form {
     background-color: #fff;
-    margin: 150px auto 90px auto;
+    margin: 120px auto 90px auto;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -82,6 +82,7 @@ body {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
+    font-size: 15px;
 }
 
 .review-form input,
@@ -89,7 +90,7 @@ body {
 .review-form textarea {
     width: calc(100% - 10px);
     padding: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -151,8 +152,13 @@ body {
     margin-bottom: 40px;
 }
 
-.star-count p{
+.star-count p,
+.filter-reviews label {
     margin: 0;
+    font-size: 15px;
+}
+#order {
+    font-size: 13px;
 }
 
 .review p {
@@ -493,14 +499,6 @@ li {
   .review-display h2{
     font-size: 25px;
   }
-  .review-form label{
-    font-size: 17px;
-  }
-  .star-count p,
-  .filter-reviews label,
-  select {
-    font-size: 15px;
-  }
   .footer-services{
       display: block;
   }
@@ -545,7 +543,6 @@ li {
 
 
 
-
 <?php
 // Include database connection
 include './Course/conn.php';
@@ -556,6 +553,7 @@ $message = "";
 // Check if the form is submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Sanitize and validate inputs
+    $service_name = htmlspecialchars(trim($_POST['service_name']));
     $rating = isset($_POST['rating']) ? intval($_POST['rating']) : 0;
     $review_text = htmlspecialchars(trim($_POST['review_text']));
     $email = $_POST['email'];
@@ -582,14 +580,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $created_at = date("d F Y, h:i A");
 
             // Prepare SQL query to insert the review along with the exmne_id and created_at
-            $query = "INSERT INTO reviews (rating, review_text, exmne_id, created_at) VALUES (:rating, :review_text, :exmne_id, :created_at)";
+            $query = "INSERT INTO reviews (service_name, rating, review_text, exmne_id, created_at) VALUES (:service_name, :rating, :review_text, :exmne_id, :created_at)";
             $stmt = $conn->prepare($query);
 
             // Bind the parameters
+            $stmt->bindValue(':service_name', $service_name, PDO::PARAM_STR);
             $stmt->bindValue(':rating', $rating, PDO::PARAM_INT);
             $stmt->bindValue(':review_text', $review_text, PDO::PARAM_STR);
             $stmt->bindValue(':exmne_id', $exmne_id, PDO::PARAM_INT);
-            $stmt->bindValue(':created_at', $created_at, PDO::PARAM_STR);  // Bind the created_at value
+            $stmt->bindValue(':created_at', $created_at, PDO::PARAM_STR);
 
             // Execute the query
             if ($stmt->execute()) {
@@ -600,31 +599,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         // Email does not exist in the database
-        $message = "You are not registered. Please contact support to register your account.";
+        $message = "You are not our user. Only users who availed our service can leave reviews.";
     }
 }
 ?>
-
-<script>
-    // JavaScript to handle the popup
-    function showPopup(message) {
-        document.getElementById('popup-message').innerText = message;
-        document.getElementById('popup').style.display = 'block';
-        document.getElementById('overlay').style.display = 'block';
-    }
-
-    function closePopup() {
-        document.getElementById('popup').style.display = 'none';
-        document.getElementById('overlay').style.display = 'none';
-    }
-</script>
 
 <!-- Review Form -->
 <div class="review-form">
     <h2>Submit Your Review</h2>
     <form method="POST" action="">
+        <label for="service_name">Service Name</label>
+        <input type="text" name="service_name" placeholder="Enter service name" required><br>
+
         <label for="email">Email Address</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" required><br>
+
         <label for="rating">Rating</label>
         <div class="star-rating">
             <span class="star" data-value="1"></span>
@@ -633,8 +622,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <span class="star" data-value="4"></span>
             <span class="star" data-value="5"></span>
         </div>
-        <input type="hidden" name="rating" id="rating-value" required>
-        <br><br>
+        <input type="hidden" name="rating" id="rating-value" required><br><br>
 
         <script>
             const stars = document.querySelectorAll('.star-rating .star');
@@ -659,7 +647,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </script>
 
         <label for="review_text">Your Review</label>
-        <textarea name="review_text" rows="5" cols="30" placeholder="Write your review here..." required></textarea><br>
+        <textarea name="review_text" rows="4" cols="30" placeholder="Write your review here..." required></textarea><br>
 
         <button type="submit">Submit Review</button>
     </form>
@@ -701,9 +689,10 @@ include './Course/conn.php';
 $order = isset($_GET['order']) ? $_GET['order'] : 'DESC';  // Default to descending order (newest first)
 
 // Fetch reviews from the database, sorted by date (created_at)
-$query = "SELECT reviews.*, examinee_tbl.exmne_fullname FROM reviews 
+$query = "SELECT reviews.*, examinee_tbl.exmne_fullname 
+          FROM reviews 
           JOIN examinee_tbl ON reviews.exmne_id = examinee_tbl.exmne_id 
-          ORDER BY reviews.created_at $order";  
+          ORDER BY reviews.created_at DESC";  // Always show newest first
 $result = $conn->query($query);
 
 // Check if the query is successful
@@ -731,7 +720,6 @@ $averageScore = $totalReviews > 0 ? round($totalScore / $totalReviews, 2) : 0;
 
 // Calculate percentage based on the average score (1 star = 20%)
 $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%, 2 stars = 40%, etc.)
-
 ?>
 
 <!-- Display Reviews -->
@@ -766,9 +754,13 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
     <?php if (count($reviews) > 0): ?>
         <?php foreach ($reviews as $row): ?>
             <div class="review">
-                <p><i class="fa fa-user" style="margin-right: 7px;"></i>User: <?php echo htmlspecialchars($row['exmne_fullname']); ?></p> <!-- Display full name here -->
+                <p style="font-weight: bold; font-size: 16px;"><i class="fa fa-user" style="margin-right: 7px;"></i> <?php echo htmlspecialchars($row['exmne_fullname']); ?></p> <!-- Display full name here -->
                 <p class="stars"><?php echo str_repeat('★', $row['rating']); ?></p>
                 <small><?php echo $row['created_at']; ?></small>
+                <p style="background: #8BC34A; color: #fff; display: inline-block; padding: 0 5px; border-radius: 2px;">
+                    <strong>Service:</strong> <?php echo htmlspecialchars($row['service_name']); ?>
+                </p>
+
                 <p><?php echo htmlspecialchars($row['review_text']); ?></p>
                 <hr>
             </div>
