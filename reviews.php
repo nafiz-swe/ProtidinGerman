@@ -543,6 +543,8 @@ li {
 
 
 
+
+
 <?php
 // Include database connection
 include './Course/conn.php';
@@ -612,7 +614,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="service_name" placeholder="Enter service name" required><br>
 
         <label for="email">Email Address</label>
-        <input type="email" name="email" required><br>
+        <input type="email" name="email" placeholder="Enter user email" required><br>
 
         <label for="rating">Rating</label>
         <div class="star-rating">
@@ -654,11 +656,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <!-- Popup and Overlay -->
-<div id="overlay"></div>
-<div id="popup">
+<div id="overlay" style="display: none;"></div>
+<div id="popup" style="display: none;">
     <h3 id="popup-message"></h3>
     <button onclick="closePopup()">OK</button>
 </div>
+
+<script>
+    function showPopup(message) {
+        document.getElementById('popup-message').innerText = message;
+        document.getElementById('overlay').style.display = 'block';
+        document.getElementById('popup').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
+</script>
 
 <?php if (!empty($message)): ?>
     <script>
@@ -681,6 +696,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
 
+
+
+
+
 <?php
 // Include database connection
 include './Course/conn.php';
@@ -688,11 +707,16 @@ include './Course/conn.php';
 // Set default order to 'newest'
 $order = isset($_GET['order']) ? $_GET['order'] : 'DESC';  // Default to descending order (newest first)
 
+// Validate order input to avoid SQL injection
+if (!in_array($order, ['ASC', 'DESC'])) {
+    $order = 'DESC';  // Fallback to default
+}
+
 // Fetch reviews from the database, sorted by date (created_at)
 $query = "SELECT reviews.*, examinee_tbl.exmne_fullname 
           FROM reviews 
           JOIN examinee_tbl ON reviews.exmne_id = examinee_tbl.exmne_id 
-          ORDER BY reviews.created_at DESC";  // Always show newest first
+          ORDER BY reviews.created_at $order";  // Order dynamically based on user selection
 $result = $conn->query($query);
 
 // Check if the query is successful
@@ -758,7 +782,7 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
                 <p class="stars"><?php echo str_repeat('★', $row['rating']); ?></p>
                 <small><?php echo $row['created_at']; ?></small>
                 <p style="background: #8BC34A; color: #fff; display: inline-block; padding: 0 5px; border-radius: 2px;">
-                    <strong>Service:</strong> <?php echo htmlspecialchars($row['service_name']); ?>
+                    <strong>Service taken:</strong> <?php echo htmlspecialchars($row['service_name']); ?>
                 </p>
 
                 <p><?php echo htmlspecialchars($row['review_text']); ?></p>
@@ -768,7 +792,7 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
     <?php else: ?>
         <p>No reviews yet.</p>
     <?php endif; ?>
-</div>
+</div> 
 
 
 
@@ -801,7 +825,7 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
               <li><a href="#home-section" class="ft-link">Term & Conditions</a></li>
               <li><a href="#home-section" class="ft-link">Privacy Policy</a></li>
               <li><a href="#home-section" class="ft-link">About Us</a></li>
-              <li><a href="#home-section" class="ft-link">Reviews</a></li>
+              <li><a href="reviews.php" class="ft-link">Reviews</a></li>
               <li><a href="#home-section" class="ft-link">Blogs</a></li>
             </ul>
           </div>

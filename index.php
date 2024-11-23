@@ -194,10 +194,10 @@
 
     .book-card img {
       width: 95%;
-      height: 270px;
+      height: 265px;
       display: block;
       margin: auto;
-      padding-bottom: 10px;
+      padding-bottom: 0;
       padding-top: 8px;
       border-radius: 15px 15px 0 0;
     }
@@ -422,8 +422,9 @@ li {
   }
   .book-card img {
     width: 100%;
-    height: 215px;
-    padding-top: 0;
+    height: 285px;
+    padding: 0;
+    border-radius: 0;
   }
   .py-2 p{
     padding: 0;
@@ -785,8 +786,8 @@ li {
             <img src="webimg/German-Netzwerk-Neu-A1.jpg" alt="Netzwerk-Neu-A1" class="img-fluid">
             <div class="course-details">
               <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
-              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 700</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 595</span>
               <h3>Netzwerk-Neu-A1</h3>
               <div class="meta"><i class="fa fa-book"></i>3 Books (Übungs,Kurs,Glossar)</div>
               <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
@@ -801,8 +802,8 @@ li {
             <img src="webimg/German-Netzwerk-Neu-A2.jpg" alt="Netzwerk-Neu-A2" class="img-fluid">
             <div class="course-details">
               <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
-              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 700</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 595</span>
               <h3>Netzwerk-Neu-A2</h3>
               <div class="meta"><i class="fa fa-book"></i>3 Books (Übungs,Kurs,Glossar)</div>
               <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
@@ -817,8 +818,8 @@ li {
             <img src="webimg/German-Netzwerk-Neu-B1.jpg" alt="Netzwerk-Neu-B1" class="img-fluid">
             <div class="course-details">
               <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
-              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 700</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 595</span>
               <h3>Netzwerk-Neu-B1</h3>
               <div class="meta"><i class="fa fa-book"></i>3 Books (Übungs,Kurs,Glossar)</div>
               <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
@@ -832,9 +833,9 @@ li {
           <div class="book-card" data-aos="fade-up" data-aos-delay="320">
             <img src="webimg/German-grammar-Sarfuddin-Ahmed.jpg" alt="German-Sarfuddin-Ahmed" class="img-fluid">
             <div class="course-details">
-              <div class="offer-tag">15% OFF</div>
-              <span class="original-price"><span class="taka-symbol">Tk</span> 6471</span>
-              <span class="course-price"><span class="taka-symbol">Tk</span> 5500</span>
+              <div class="offer-tag">7% OFF</div>
+              <span class="original-price"><span class="taka-symbol">Tk</span> 800</span>
+              <span class="course-price"><span class="taka-symbol">Tk</span> 744</span>
               <h3>Bangla to German</h3>
               <div class="meta"><i class="fa fa-book"></i>1 Book (3rd Editions)</div>
               <div class="meta"><i class="fa fa-book-open"></i> Color Print</div>
@@ -1003,7 +1004,7 @@ li {
               <li><a href="#home-section" class="ft-link">Term & Conditions</a></li>
               <li><a href="#home-section" class="ft-link">Privacy Policy</a></li>
               <li><a href="#home-section" class="ft-link">About Us</a></li>
-              <li><a href="#home-section" class="ft-link">Reviews</a></li>
+              <li><a href="reviews.php" class="ft-link">Reviews</a></li>
               <li><a href="#home-section" class="ft-link">Blogs</a></li>
             </ul>
           </div>
