@@ -512,7 +512,7 @@ li {
                     <div class="offer-tag">22% OFF</div>
                     <span class="original-price"><span class="taka-symbol">TK</span> 32,692</span>
                     <span class="course-price"><span class="taka-symbol">TK</span> 25,500</span> <!-- &#2547; -->
-                    <h3>Short time Course</h3>
+                    <h3>AB German Express</h3>
                     <div class="meta"><i class="far fa-calendar-alt"></i> Start 1 June, 2025</div>
                     <div class="meta"><i class="fas fa-chalkboard-teacher"></i> Online Class (Zoom)</div>
                     <div class="meta"><i class="fa fa-clock-o"></i> Duration 3 Months / 48 Class</div>

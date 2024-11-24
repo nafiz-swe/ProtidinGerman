@@ -1172,12 +1172,13 @@ h1, h2, h3, h4, h5,
 
 .sign p {
 	font-size: 14px;
-	font-weight: 100;
-	line-height: 20px;
-	letter-spacing: 0.5px;
-	margin: 20px 0 30px;
 }
 
+.forgot-password-text {
+  font-size: 14px;
+  padding: 0;
+  text-align: left;
+}
 
 .sign a {
 	color: #333;
@@ -1185,20 +1186,25 @@ h1, h2, h3, h4, h5,
 	text-decoration: none;
 	margin: 15px 0;
 }
-
+.container-login100-form-btn{
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
 .sign button {
-	border-radius: 20px;
-	border: 1px solid #7971ea;
-	background-color: #7971ea;
+	border-radius: 5px;
+	border: 1px solid #8BC34A;
+	background-color: #8BC34A;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
-	padding: 12px 45px;
+	padding: 12px 40px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
-
+.sign button:hover {
+	background: #689F38;
+}
 .sign button:active {
 	transform: scale(0.95);
 }
@@ -1216,7 +1222,7 @@ h1, h2, h3, h4, h5,
 	background-color: #FFFFFF;
 	align-items: center;
 	justify-content: center;
-	padding: 40px 20px;
+	padding: 20px 20px;
 	height: 100%;
 	text-align: center;
 }
@@ -1391,4 +1397,361 @@ h1, h2, h3, h4, h5,
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
 
+
+
+
 /***********************************************************sign**********************************************************************/
+
+
+
+      /* Header styling */
+      .site-navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        background-color: #fff; /* Slightly transparent background */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for better visibility */
+        transition: background-color 0.3s, padding 0.3s;
+      }
+      
+      .site-navbar .container-fluid {
+        padding: 0 1.5rem; /* Reduce padding for a sleek look */
+      }
+      
+      .site-navbar.py-4 {
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;
+      }
+      
+      .nav-link {
+        padding: 0.5rem 1rem;
+        font-size: 16px;
+      }
+      
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .site-navbar .container-fluid {
+          padding: 0 1rem;
+        }
+        
+        .site-navbar {
+          padding-top: 0.3rem !important;
+          padding-bottom: 0.3rem !important;
+        }
+      }
+      
+      
+      
+      
+            /* Banner section styling */
+      .intro-section {
+        position: relative;
+        width: 100%;
+        height: 100vh; /* Initial height for desktop */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      
+      .slide-1 {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 100px;
+      
+      }
+      
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      
+      @media (max-width: 768px) {
+        .intro-section {
+          height: 50vh; /* Reduce height for tablets */
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .intro-section {
+          height: 40vh; /* Further reduce height for mobile devices */
+        }
+      }
+      
+          /* Card Styles */
+          .course-card,
+          .book-card {
+              background: white;
+              border-radius: 8px;
+              border: 1px solid #8BC34A;
+              overflow: hidden;
+              box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+              transition: transform 0.3s;
+              margin: 50px 15px;
+              width: 100%;
+              max-width: 333px;
+              box-sizing: border-box;
+              position: relative;
+          }
+      
+          .course-card:hover,
+          .book-card:hover {
+              transform: scale(1.02);
+          }
+      
+          .course-card img {
+              width: 165px;
+              height: auto;
+              border-bottom: 1px solid #ddd;
+              display: block;
+              margin: auto;
+              padding-bottom: 10px;
+          }
+      
+          .book-card img {
+            width: 95%;
+            height: 265px;
+            display: block;
+            margin: auto;
+            padding-bottom: 0;
+            padding-top: 8px;
+            border-radius: 15px 15px 0 0;
+          }
+      
+          .course-details {
+              padding: 15px;
+              text-align: center;
+          }
+      
+          .course-details h3 {
+            color: #689F38;
+          }
+      
+          .course-details p {
+            margin-top: 0;
+            margin-bottom: 0px;
+            font-size: 16px;
+            color: #000;
+            text-align: left;
+          }
+      
+          #courses-section {
+          scroll-margin-top: 50px; /* Navbar থেকে 20px নিচে offset করবে */
+      }
+          /* Offer Tag Styling */
+          .offer-tag {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              background-color: #ff5a5f;
+              color: white;
+              padding: 5px 10px;
+              border-radius: 5px;
+              font-size: 0.9rem;
+              font-weight: bold;
+          }
+      
+          /* Original Price Styling */
+          .original-price {
+            font-size: 1rem;
+            color: gray;
+            text-decoration: line-through;
+            text-decoration-color: red; 
+            margin-right: 8px;
+          }
+      
+          /* Offer Price Styling */
+          .course-price {
+              font-size: 1.4rem;
+              color: #ff5a5f;
+              font-weight: bold;
+          }
+      
+          .meta {
+            color: gray;
+            padding: 2px 20px;
+            text-align: justify;
+            margin: auto;
+            font-size: 15.5px;
+          }
+      
+          .meta i {
+            padding-right: 8px;
+          }
+      
+          .course-stats{
+            padding:0 35px 15px 35px;
+          }
+      
+          .message-us {
+            padding: 0;
+          }
+      
+          .course-stats button,
+          .message-us button{
+            width: 100%;
+            padding: 6px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            background: #8BC34A;
+            color: #fff;
+            text-align: center;
+            font-size: 16px;
+          }
+      
+          .course-stats button:hover,
+          .message-us button:hover {
+            background: #689F38;
+            border: 1px solid #ccc;
+          }
+      
+          .courses-container,
+          .teachers-container,
+          .programs-container,
+          .book-container {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              margin-bottom: 150px;
+          }
+      
+          .footer-services{
+            display: flex;
+            flex-wrap: nowrap;
+            margin: auto;
+            width: 100%;
+            border-top: 1px solid #edf0f5 !important;
+            padding: 0px 0 30px 0;
+            margin-top: 25px;
+          }
+      
+          .ft-service{
+            margin: auto;
+          }
+          .footer-top {
+            background: #8BC34A;
+            height: 50px;
+            width: 100%;
+            border-radius: 100% 100% 0 0;
+      }
+      
+      li {
+        list-style: none;
+      }
+      
+          @media (max-width: 768px) {
+              .course-card,
+              .book-card {
+                  max-width: 100%;
+              }
+          }
+      
+          @media (min-width: 769px) {
+              .course-card,
+              .book-card {
+                  max-width: 333px;
+              }
+          }
+      
+          .py-2 p{
+          font-size: 16px;
+          color: #000;
+          margin: auto;
+          text-align: justify;
+          padding: 0 35px;
+          }
+      
+          .py-2 .position {
+            color: gray;
+          }
+      
+          .border-top p{
+            padding: 20px 0;
+            margin: auto;
+            color: #ccc;
+          }
+      
+          .ft-link{
+            padding: 5px 0;
+            color: #ccc;
+            font-size: 15px;
+          }
+          .ft-link i {
+            margin-left: 10px;
+          }
+          .ft-link:hover{
+            text-decoration: underline;
+            color: #fff;
+          }
+          .footer-links i {
+            background: #689F38;
+            color: #fff;
+            border-radius: 5px;
+          }
+          .container h6{
+        color: #fff;
+      }
+      .ribbon {
+        position: absolute;
+        background-color: #689F38;
+        color: #fff;
+        padding: 5px 30px;
+        font-size: 12px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border-radius: 3px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transform: rotate(-45deg); /* বাঁকা করার জন্য */
+        margin: 23px 0px 0px -38px;
+      }
+      
+      /* .ribbon.left-bottom {
+        bottom: 0px;
+        left: 0px;
+      }
+      
+      .ribbon.right-top {
+        top: 0px;
+        right: 0px;
+      } */
+      
+      @media (max-width: 600px) {
+        .footer-services{
+            display: block;
+        }
+        .footer-section .footer-links li,
+        .footer-section p {
+          font-size: 14px;
+        }
+          .meta{
+            padding: 2px 0px;
+            font-size: 14px;
+          }
+          .container{
+            width: 100%;
+          }
+          .course-details {
+            padding: 20px 10px;
+        }
+        .course-details h3{
+          font-size: 23px;
+        }
+        .book-card img {
+          width: 100%;
+          height: 285px;
+          padding: 0;
+          border-radius: 0;
+        }
+        .py-2 p{
+          padding: 0;
+        }
+        }

@@ -23,6 +23,7 @@
                                 <th>Course</th>
                                 <th>Year level</th>
                                 <th>Email</th>
+                                <th>Phone Number</th>
                                 <th>Password</th>
                                 <th>status</th>
                                 <th></th>
@@ -47,6 +48,7 @@
                                             </td>
                                            <td><?php echo $selExmneRow['exmne_year_level']; ?></td>
                                            <td><?php echo $selExmneRow['exmne_email']; ?></td>
+                                           <td><?php echo $selExmneRow['phone_number']; ?></td>
                                            <td><?php echo $selExmneRow['exmne_password']; ?></td>
                                            <td><?php echo $selExmneRow['exmne_status']; ?></td>
                                            <td>

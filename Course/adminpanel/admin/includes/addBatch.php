@@ -136,7 +136,7 @@
    <form class="refreshFrm" id="addExamineeFrm" method="post">
      <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Add Student | Student Details</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -172,24 +172,26 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Language Level</label>
+            <label>Course Name</label>
             <select class="form-control" name="year_level" id="year_level">
               <option value="0">Select level</option>
+              <option value="B2">AB German Express</option>
               <option value="A1">A1</option>
               <option value="A2">A2</option>
               <option value="B1">B1</option>
-              <option value="B2">B2</option>
-              <option value="C1">C1</option>
-              <option value="C2">C2</option>
             </select>
           </div>
           <div class="form-group">
             <label>Email</label>
-            <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email" autocomplete="off" required="">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Enter email" autocomplete="off" required="">
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="number" name="phone_number" id="phone_number" class="form-control" placeholder="Enter phone number" autocomplete="off" required="">
           </div>
           <div class="form-group">
             <label>Password</label>
-            <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password" autocomplete="off" required="">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" required="">
           </div>
         </div>
       </div>

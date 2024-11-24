@@ -59,6 +59,11 @@
      </div>
 
      <div class="form-group">
+        <legend>Phone Number</legend>
+        <input type="" name="exPhone" class="form-control" required="" value="<?php echo $selExmne['phone_number']; ?>" >
+     </div>
+
+     <div class="form-group">
         <legend>Password</legend>
         <input type="" name="exPass" class="form-control" required="" value="<?php echo $selExmne['exmne_password']; ?>" >
      </div>
@@ -68,7 +73,7 @@
         <input type="hidden" name="course_id" value="<?php echo $id; ?>">
         <input type="" name="newCourseName" class="form-control" required="" value="<?php echo $selExmne['exmne_status']; ?>" >
      </div>
-  <div class="form-group" align="right">
+  <div class="form-group">
     <button type="submit" class="btn btn-sm btn-primary">Update Now</button>
   </div>
 </form>

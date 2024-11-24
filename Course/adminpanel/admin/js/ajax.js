@@ -291,35 +291,35 @@ $(document).on("submit","#addQuestionFrm" , function(){
 // Add Examinee
 $(document).on("submit","#addExamineeFrm" , function(){
   $.post("query/addExamineeExe.php", $(this).serialize() , function(data){
-    if(data.res == "noGender")
+    if(data.res == "fullnameExist")
     {
       Swal.fire(
-          'No Gender',
-          'Please select gender',
+          'Fullname Already Exist',
+          data.msg + ' are already exist',
           'error'
        )
     }
-    else if(data.res == "noCourse")
+    else if(data.res == "noGender")
     {
       Swal.fire(
-          'No Course',
-          'Please select course',
+          'Gender Empty',
+          'Please select gender',
           'error'
        )
     }
     else if(data.res == "noLevel")
     {
       Swal.fire(
-          'No Year Level',
-          'Please select year level',
+          'Batch Empty',
+          'Please select Batch',
           'error'
        )
     }
-    else if(data.res == "fullnameExist")
+    else if(data.res == "noCourse")
     {
       Swal.fire(
-          'Fullname Already Exist',
-          data.msg + ' are already exist',
+          'Course Empty',
+          'Please select course',
           'error'
        )
     }
@@ -328,6 +328,14 @@ $(document).on("submit","#addExamineeFrm" , function(){
       Swal.fire(
           'Email Already Exist',
           data.msg + ' are already exist',
+          'error'
+       )
+    }
+    else if(data.res == "noPhnnumber")
+    {
+      Swal.fire(
+          'Number Empty',
+          'Please enter number',
           'error'
        )
     }
