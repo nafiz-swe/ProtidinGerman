@@ -33,10 +33,11 @@
 
     <div class="scrollbar-sidebar">
         <div class="app-sidebar__inner">
+        <ul class="vertical-nav-menu">
 
             <a href="../index.php">
                 <ul class="app-sidebar__heading">
-                    <i class="fa fa-home" style="font-size:20px; padding-right:5px;"></i>
+                    <i class="metismenu-icon fa fa-home" style="font-size:20px; padding-right:5px;"></i>
                     হোম
                 </ul>
             </a>
@@ -44,7 +45,7 @@
             <!-- ক্লাস -->
             <a href="javascript:void(0);" onclick="toggleClassSections()" style="text-decoration: none;">
                 <ul class="app-sidebar__heading">
-                    <i class="fa fa-chalkboard-teacher" style="font-size:20px; padding-right:5px; margin-top:-15px;"></i>
+                    <i class="metismenu-icon fa fa-chalkboard-teacher" style="font-size:20px; padding-right:5px; margin-top:-15px;"></i>
                     ক্লাস
                     <i class="fa fa-caret-down" style="font-size:17px; padding-left:5px;"></i>
                 </ul>
@@ -68,7 +69,7 @@
             <!-- কোর্স ডিটেলস -->
             <a href="javascript:void(0);" onclick="toggleCourseSections()" style="text-decoration: none;">
                 <ul class="app-sidebar__heading">
-                    <i class="fa fa-info-circle" style="font-size:20px; padding-right:5px;"></i>
+                    <i class="metismenu-icon fa fa-info-circle" style="font-size:20px; padding-right:5px;"></i>
                     কোর্স ডিটেলস
                     <i class="fa fa-caret-down" style="font-size:17px; padding-left:5px;"></i>
                 </ul>
@@ -96,7 +97,7 @@
             <!-- পরীক্ষা দিন -->
             <a href="javascript:void(0);" onclick="toggleExamList()">
                 <ul class="app-sidebar__heading">
-                    <i class="fa fa-edit" style="font-size:20px; padding-right:5px;"></i>
+                    <i class="metismenu-icon fa fa-edit" style="font-size:20px; padding-right:5px;"></i>
                     পরীক্ষা দিন
                     <i class="fa fa-caret-down" style="font-size:17px; padding-right:5px;"></i>
                 </ul>
@@ -123,7 +124,7 @@
                 }
                 else
                 { ?>
-                    <p><i class="metismenu-icon"></i> No Exam's @ the moment</p>
+                    <p><i class="metismenu-icon"></i> No Exam</p>
                 <?php }
                 ?>
             </div>
@@ -142,7 +143,7 @@
             <!-- পরীক্ষার ফলাফল -->
             <a href="javascript:void(0);" onclick="toggleResultList()">
                 <ul class="app-sidebar__heading">
-                    <i class="fa fa-file-alt" style="font-size:20px; padding-right:5px;"></i>
+                    <i class="metismenu-icon fa fa-file-alt" style="font-size:20px; padding-right:5px;"></i>
                     পরীক্ষার ফলাফল
                     <i class="fa fa-caret-down" style="font-size:17px; padding-right:5px;"></i>
                 </ul>
@@ -182,14 +183,14 @@
 
             <a href="#" data-toggle="modal" data-target="#feedbacksModal" >
                 <ul class="app-sidebar__heading">
-                <i class="fa fa-id-badge" style="font-size:20px; padding-right:5px;"></i>
+                <i class="metismenu-icon fa fa-id-badge" style="font-size:20px; padding-right:5px;"></i>
                 একাউন্ট </ul>
             </a>
 
             <!-- লগ আউট লিংক -->
             <a href="javascript:void(0);" onclick="confirmLogout()" style="text-decoration: none;">
                 <ul class="app-sidebar__heading">
-                    <i class="fas fa-sign-out-alt" style="font-size:20px; padding-right:5px;"></i>
+                    <i class="metismenu-icon fas fa-sign-out-alt" style="font-size:20px; padding-right:5px;"></i>
                     লগ আউট
                 </ul>
             </a>
@@ -224,11 +225,11 @@
         <!-- প্রতিক্রিয়া জানান মেনু -->
         <a href="javascript:void(0);" data-toggle="modal" data-target="#feedbacksModal">
             <ul class="app-sidebar__heading">
-                <i class="fa fa-comment-dots" style="font-size:20px; padding-right:5px;"></i>
+                <i class="metismenu-icon fa fa-comment-dots" style="font-size:20px; padding-right:5px;"></i>
                 প্রতিক্রিয়া জানান
             </ul>
         </a>
-
+        </ul>
         </div>
     </div>
 
