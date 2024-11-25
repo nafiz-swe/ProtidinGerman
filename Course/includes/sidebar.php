@@ -35,13 +35,19 @@
         <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
 
-            <li class="app-sidebar__heading"><a href="index.php">Dashboards</a></li>
+            <li>
+                <a href="index.php">
+                     <i class="metismenu-icon fas fa-chess-board"></i>
+                     DASHBOARD
+                </a>
+            </li>
 
-            <li class="app-sidebar__heading">CLASSES</li>
+
+            <li class="app-sidebar__heading"></li>
             <li>
                 <a href="#">
                         <i class="metismenu-icon fa fa-chalkboard-teacher"></i>
-                        Class
+                        CLASS
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
                 <ul>
@@ -73,11 +79,11 @@
             </li>
 
 
-            <li class="app-sidebar__heading">LEARN GERMAN</li>
+            <li class="app-sidebar__heading"></li>
             <li>
                 <a href="#">
                         <i class="metismenu-icon fa fa-info-circle"></i>
-                        Course Details
+                        COURSE
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
                 <ul>
@@ -107,77 +113,65 @@
                     </li>
                 </ul>
             </li>
-                            
 
-
-            <!-- <ul class="vertical-nav-menu"> -->
-            <!-- পরীক্ষা দিন -->
-            <a href="javascript:void(0);" onclick="toggleExamList()">
-                <ul class="app-sidebar__heading">
-                    <i class="metismenu-icon fa fa-edit" style="font-size:20px; padding-right:5px;"></i>
-                    পরীক্ষা দিন
-                    <i class="fa fa-caret-down" style="font-size:17px; padding-right:5px;"></i>
-                </ul>
-            </a>
-
-            <div id="examList" style="display: none; padding-left: 20px;">
-                <?php 
-                if($selExam->rowCount() > 0)
-                {
-                    while ($selExamRow = $selExam->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <ul>
-                                <a href="#" id="startQuiz" data-id="<?php echo $selExamRow['ex_id']; ?>">
+            <li class="app-sidebar__heading"></li>
+            <li>
+                <a href="#">
+                     <i class="metismenu-icon fa fa-edit"></i>
+                     EXAM'S
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul >
+                    <?php 
+                        
+                        if($selExam->rowCount() > 0)
+                        {
+                            while ($selExamRow = $selExam->fetch(PDO::FETCH_ASSOC)) { ?>
+                                 <li>
+                                 <a href="#" id="startQuiz" data-id="<?php echo $selExamRow['ex_id']; ?>"  >
                                     <?php 
-                                    $lengthOfTxt = strlen($selExamRow['ex_title']);
-                                    if($lengthOfTxt >= 23) {
-                                        echo substr($selExamRow['ex_title'], 0, 20) . '...';
-                                    } else {
-                                        echo $selExamRow['ex_title'];
-                                    }
-                                    ?>
-                                </a>
-                        </ul>
-                    <?php }
-                }
-                else
-                { ?>
-                    <p><i class="metismenu-icon"></i> No Exam</p>
-                <?php }
-                ?>
-            </div>
-
-            <script>
-            function toggleExamList() {
-                var examList = document.getElementById("examList");
-                if (examList.style.display === "none") {
-                    examList.style.display = "block";
-                } else {
-                    examList.style.display = "none";
-                }
-            }
-            </script>
-
-            <!-- পরীক্ষার ফলাফল -->
-            <a href="javascript:void(0);" onclick="toggleResultList()">
-                <ul class="app-sidebar__heading">
-                    <i class="metismenu-icon fa fa-file-alt" style="font-size:20px; padding-right:5px;"></i>
-                    পরীক্ষার ফলাফল
-                    <i class="fa fa-caret-down" style="font-size:17px; padding-right:5px;"></i>
+                                        $lenthOfTxt = strlen($selExamRow['ex_title']);
+                                        if($lenthOfTxt >= 23)
+                                        { ?>
+                                            <?php echo substr($selExamRow['ex_title'], 0, 20);?>.....
+                                        <?php }
+                                        else
+                                        {
+                                            echo $selExamRow['ex_title'];
+                                        }
+                                     ?>
+                                 </a>
+                                 </li>
+                            <?php }
+                        }
+                        else
+                        { ?>
+                            <a href="#">
+                                <i class="metismenu-icon"></i>Exam's Not Available
+                            </a>
+                        <?php }
+                     ?>
                 </ul>
-            </a>
+            </li>
 
-            <div id="resultList" style="display: none; padding-left: 20px;">
+
+            <li class="app-sidebar__heading"></li>
+            <li>
+                <a href="#">
+                     <i class="metismenu-icon pe-7s-cup"></i>
+                     RESULTS
+                    <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul >
                 <?php 
                 $selTakenExam = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id = ea.exam_id WHERE student_id='$exmneId' ORDER BY ea.examat_id");
 
                 if($selTakenExam->rowCount() > 0)
                 {
                     while ($selTakenExamRow = $selTakenExam->fetch(PDO::FETCH_ASSOC)) { ?>
-                        <ul>
-                            <a href="home.php?page=result&id=<?php echo $selTakenExamRow['ex_id']; ?>">
+                            <a href="home.php?page=result&id=<?php echo $selTakenExamRow['ex_id']; ?>" style="padding: 0px 22px;">
                                 <?php echo $selTakenExamRow['ex_title']; ?>
                             </a>
-                        </ul>
                     <?php }
                 }
                 else
@@ -185,36 +179,28 @@
                     <p><i class="metismenu-icon"></i> You are not taking exam yet</p>
                 <?php }
                 ?>
-            </div>
-
-            <script>
-            function toggleResultList() {
-                var resultList = document.getElementById("resultList");
-                if (resultList.style.display === "none") {
-                    resultList.style.display = "block";
-                } else {
-                    resultList.style.display = "none";
-                }
-            }
-            </script>
-
-            <a href="#" data-toggle="modal" data-target="#feedbacksModal" >
-                <ul class="app-sidebar__heading">
-                <i class="metismenu-icon fa fa-id-badge" style="font-size:20px; padding-right:5px;"></i>
-                একাউন্ট </ul>
-            </a>
-
-            <!-- লগ আউট লিংক -->
-            <a href="javascript:void(0);" onclick="confirmLogout()" style="text-decoration: none;">
-                <ul class="app-sidebar__heading">
-                    <i class="metismenu-icon fas fa-sign-out-alt" style="font-size:20px; padding-right:5px;"></i>
-                    লগ আউট
                 </ul>
-            </a>
+            </li>
+                            
+            <li class="app-sidebar__heading"></li>
+            <li>
+                <a href="#">
+                     <i class="metismenu-icon fa fa-id-badge"></i>
+                     ACCOUNT
+                </a>
+            </li>
+
+            <li class="app-sidebar__heading"></li>
+            <li>
+                <a href="javascript:void(0);" onclick="confirmLogout()" style="text-decoration: none;">
+                     <i class="metismenu-icon fas fa-sign-out-alt"></i>
+                     LOGOUT
+                </a>
+            </li>
 
             <!-- লগ আউট কনফার্মেশন পপআপ -->
             <div id="logoutModal" class="modal" style="display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4);">
-                <div class="modal-content" style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 300px; border-radius: 8px; text-align: center;">
+                <div class="modal-content" style="background-color: #fefefe; margin: 15% auto; padding: 20px; border: 1px solid #888; width: 300px; border-radius: 8px; text-align: center; color: #000;">
                     <h3>আপনি কি লগ আউট করতে চান?</h3>
                     <button onclick="logout()" style="background-color: #28a745; color: white; padding: 10px 20px; margin: 10px; border: none; border-radius: 5px; cursor: pointer;">হ্যাঁ</button>
                     <button onclick="closeLogoutModal()" style="background-color: #dc3545; color: white; padding: 10px 20px; margin: 10px; border: none; border-radius: 5px; cursor: pointer;">না</button>
@@ -238,14 +224,15 @@
             }
             </script>
 
+            <li class="app-sidebar__heading"></li>
+            <li>
+                <a href="javascript:void(0);" data-toggle="modal" data-target="#feedbacksModal">
+                    <i class="metismenu-icon fa fa-comment-dots"></i>
+                    FEEDBACK
+                </a>
+            </li>
 
-        <!-- প্রতিক্রিয়া জানান মেনু -->
-        <a href="javascript:void(0);" data-toggle="modal" data-target="#feedbacksModal">
-            <ul class="app-sidebar__heading">
-                <i class="metismenu-icon fa fa-comment-dots" style="font-size:20px; padding-right:5px;"></i>
-                প্রতিক্রিয়া জানান
-            </ul>
-        </a>
+
         </ul>
         </div>
     </div>

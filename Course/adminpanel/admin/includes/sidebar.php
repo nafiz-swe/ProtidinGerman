@@ -1,4 +1,4 @@
-   <div class="app-sidebar sidebar-shadow">
+<div class="app-sidebar sidebar-shadow">
                     <div class="app-header__logo">
                         <div class="site-logo mr-auto w-25"><a href="../index.php"><img src="../webImg/Protidn-german-Home.svg" style="width:92px; height:50px;"></img></a></div>
 
@@ -32,13 +32,18 @@
                     </div>    <div class="scrollbar-sidebar">
                         <div class="app-sidebar__inner">
                             <ul class="vertical-nav-menu">
-                                <li class="app-sidebar__heading"><a href="home.php">Dashboards</a></li>
+                            <li>
+                                <a href="home.php">
+                                    <i class="metismenu-icon fas fa-chess-board"></i>
+                                    DASHBOARD
+                                </a>
+                            </li>
 
-                                <li class="app-sidebar__heading">MANAGE BATCH</li>
+                                <li class="app-sidebar__heading"></li>
                                 <li>
                                     <a href="#">
                                          <i class="metismenu-icon pe-7s-display2"></i>
-                                         Batch
+                                         ALL BATCH
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
                                     <ul>
@@ -58,11 +63,11 @@
                                     </ul>
                                 </li>
                                
-                                <li class="app-sidebar__heading">MANAGE EXAM</li>
+                                <li class="app-sidebar__heading"></li>
                                 <li>
                                     <a href="#">
                                          <i class="metismenu-icon pe-7s-display2"></i>
-                                         Exam
+                                         EXAMINATIONS
                                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                                     </a>
                                     <ul>
@@ -83,42 +88,42 @@
                                 </li>
                            
                          
-                                <li class="app-sidebar__heading">MANAGE STUDENTS</li>
+                                <li class="app-sidebar__heading"></li>
                                 <li>
                                     <a href="" data-toggle="modal" data-target="#modalForAddExaminee">
                                         <i class="metismenu-icon pe-7s-add-user">
-                                        </i>Add Student
+                                        </i>ADD STUDENTS
                                     </a>
                                 </li>
                                 <li>
                                     <a href="home.php?page=manage-examinee">
                                         <i class="metismenu-icon pe-7s-users">
-                                        </i>Update Student
+                                        </i>UPDATE STUDENTS
                                     </a>
                                 </li>
-                                <li class="app-sidebar__heading">RANKING</li>
+                                <li class="app-sidebar__heading"></li>
                                 <li>
                                     <a href="home.php?page=ranking-exam">
                                         <i class="metismenu-icon pe-7s-cup">
-                                        </i>Ranking By Exam
+                                        </i>EXAM TOPIC RESULTS
                                     </a>
                                 </li>
 
 
-                                <li class="app-sidebar__heading">REPORTS</li>
+                                <li class="app-sidebar__heading"></li>
                                 <li>
                                     <a href="home.php?page=examinee-result">
                                         <i class="metismenu-icon pe-7s-cup">
-                                        </i>Students Result
+                                        </i>ALL STUDENTS RESULT
                                     </a>
                                 </li>
                               
 
-                                 <li class="app-sidebar__heading">FEEDBACKS</li>
+                                 <li class="app-sidebar__heading"></li>
                                 <li>
                                     <a href="home.php?page=feedbacks">
                                         <i class="metismenu-icon pe-7s-chat">
-                                        </i>All Feedbacks
+                                        </i>ALL FEEDBACKS
                                     </a>
                                 </li>
                                 
