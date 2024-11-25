@@ -35,63 +35,80 @@
         <div class="app-sidebar__inner">
         <ul class="vertical-nav-menu">
 
-            <a href="../index.php">
-                <ul class="app-sidebar__heading">
-                    <i class="metismenu-icon fa fa-home" style="font-size:20px; padding-right:5px;"></i>
-                    হোম
+            <li class="app-sidebar__heading"><a href="index.php">Dashboards</a></li>
+
+            <li class="app-sidebar__heading">CLASSES</li>
+            <li>
+                <a href="#">
+                        <i class="metismenu-icon fa fa-chalkboard-teacher"></i>
+                        Class
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                    <li>
+                        <a  href="home.php?page=classDetails&section=join">
+                            <i class="metismenu-icon"></i>
+                            Join Class
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=classDetails&section=record">
+                            <i class="metismenu-icon">
+                            </i>Class Record
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=classDetails&section=attendance">
+                            <i class="metismenu-icon">
+                            </i>Class Attendance
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=classDetails&section=details">
+                            <i class="metismenu-icon">
+                            </i>Class Details
+                        </a>
+                    </li>
                 </ul>
-            </a>
+            </li>
 
-            <!-- ক্লাস -->
-            <a href="javascript:void(0);" onclick="toggleClassSections()" style="text-decoration: none;">
-                <ul class="app-sidebar__heading">
-                    <i class="metismenu-icon fa fa-chalkboard-teacher" style="font-size:20px; padding-right:5px; margin-top:-15px;"></i>
-                    ক্লাস
-                    <i class="fa fa-caret-down" style="font-size:17px; padding-left:5px;"></i>
+
+            <li class="app-sidebar__heading">LEARN GERMAN</li>
+            <li>
+                <a href="#">
+                        <i class="metismenu-icon fa fa-info-circle"></i>
+                        Course Details
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                    <li>
+                        <a  href="home.php?page=courseDetails&id=A1">
+                            <i class="metismenu-icon"></i>
+                            Deutsch A1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=courseDetails&id=A2">
+                            <i class="metismenu-icon">
+                            </i>Deutsch A2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=courseDetails&id=B1">
+                            <i class="metismenu-icon">
+                            </i>Deutsch B1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=courseDetails&id=A1A2B1">
+                            <i class="metismenu-icon">
+                            </i>German Express
+                        </a>
+                    </li>
                 </ul>
-            </a>
+            </li>
+                            
 
-            <div id="classSections" style="display: none; padding-left: 20px;">
-                <ul><a href="home.php?page=classDetails&section=join">Join Class</a></ul>
-                <ul><a href="home.php?page=classDetails&section=record">Class Record</a></ul>
-                <ul><a href="home.php?page=classDetails&section=attendance">Class Attendance</a></ul>
-                <ul><a href="home.php?page=classDetails&section=details">Class Details</a></ul>
-            </div>
-
-            <script>
-            function toggleClassSections() {
-                var classSections = document.getElementById("classSections");
-                classSections.style.display = classSections.style.display === "none" ? "block" : "none";
-            }
-            </script>
-
-
-            <!-- কোর্স ডিটেলস -->
-            <a href="javascript:void(0);" onclick="toggleCourseSections()" style="text-decoration: none;">
-                <ul class="app-sidebar__heading">
-                    <i class="metismenu-icon fa fa-info-circle" style="font-size:20px; padding-right:5px;"></i>
-                    কোর্স ডিটেলস
-                    <i class="fa fa-caret-down" style="font-size:17px; padding-left:5px;"></i>
-                </ul>
-            </a>
-
-            <div id="courseSections" style="display: none; padding-left: 20px;">
-                    <ul><a href="home.php?page=courseDetails&id=A1">Deutsch A1</a></ul>
-                    <ul><a href="home.php?page=courseDetails&id=A2">Deutsch A2</a></ul>
-                    <ul><a href="home.php?page=courseDetails&id=B1">Deutsch B1</a></ul>
-            </div>
-
-            <script>
-            function toggleResultList() {
-                var resultList = document.getElementById("resultList");
-                resultList.style.display = resultList.style.display === "none" ? "block" : "none";
-            }
-
-            function toggleCourseSections() {
-                var courseSections = document.getElementById("courseSections");
-                courseSections.style.display = courseSections.style.display === "none" ? "block" : "none";
-            }
-            </script>
 
             <!-- <ul class="vertical-nav-menu"> -->
             <!-- পরীক্ষা দিন -->
