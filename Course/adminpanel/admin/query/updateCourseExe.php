@@ -1,20 +1,20 @@
 <?php
- include("../../../conn.php");
- extract($_POST);
+include("../../../conn.php");
+extract($_POST);
 
+$updateBatch = strtoupper($updateBatch);
+$updateStartDate = $updateStartDate;
 
-$newCourseName = strtoupper($newCourseName);
-$updCourse = $conn->query("UPDATE course_tbl SET cou_name='$newCourseName' WHERE cou_id='$course_id' ");
+$updCourse = $conn->query("UPDATE batch_tbl SET batch_number='$updateBatch', start_date='$updateStartDate' WHERE batch_id='$batch_id_check'");
+
 if($updCourse)
 {
-	   $res = array("res" => "success", "newCourseName" => $newCourseName);
+    $res = array("res" => "success", "updateBatch" => $updateBatch, "updateStartDate" => $updateStartDate);
 }
 else
 {
-	   $res = array("res" => "failed");
+    $res = array("res" => "failed");
 }
 
-
-
- echo json_encode($res);	
+echo json_encode($res);
 ?>

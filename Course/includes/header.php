@@ -53,7 +53,7 @@
         <div class="app-header__menu">
             <div class="btn-group">
                 <?php 
-                echo strtoupper($selExmneeData['exmne_fullname']);
+                echo strtoupper($selExmneeData['student_fullname']);
                 ?>
             </div>
         </div>
@@ -67,7 +67,7 @@
                                 <div class="widget-content-left">
                                     <div class="btn-group">
                                         <?php 
-                                        echo strtoupper($selExmneeData['exmne_fullname']);
+                                        echo strtoupper($selExmneeData['student_fullname']);
                                         ?>
                                     </div>
                                 </div>

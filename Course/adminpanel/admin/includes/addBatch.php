@@ -1,4 +1,4 @@
-<!-- Modal For Add Course -->
+<!-- Modal For Add Batch -->
 <div class="modal fade" id="modalForAddCourse" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
    <form class="refreshFrm" id="addCourseFrm" method="post">
@@ -13,7 +13,11 @@
         <div class="col-md-12">
           <div class="form-group">
             <label>Batch Number</label>
-            <input type="" name="course_name" id="course_name" class="form-control" placeholder="Input Batch" required="" autocomplete="off">
+            <input type="" name="add_batch" id="add_batch" class="form-control" placeholder="Input Batch" required="" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label>Class Start Date</label>
+            <input type="" name="startDate" id="startDate" class="form-control" placeholder="Input Start Date" required="" autocomplete="off">
           </div>
         </div>
       </div>
@@ -27,13 +31,13 @@
 </div>
 
 
-<!-- Modal For Update Course -->
-<div class="modal fade myModal" id="updateCourse-<?php echo $selCourseRow['cou_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- Modal For Update Batch -->
+<div class="modal fade myModal" id="updateCourse-<?php echo $selBatchRow['batch_id']; ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog " role="document">
      <form class="refreshFrm" id="addCourseFrm" method="post" >
        <div class="modal-content myModal-content" >
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Update ( <?php echo $selCourseRow['cou_name']; ?> )</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Update ( <?php echo $selBatchRow['batch_number']; ?> )</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -42,7 +46,7 @@
           <div class="col-md-12">
             <div class="form-group">
               <label>Batch</label>
-              <input type="" name="course_name" id="course_name" class="form-control" value="<?php echo $selCourseRow['cou_name']; ?>">
+              <input type="" name="add_batch" id="add_batch" class="form-control" value="<?php echo $selBatchRow['batch_number']; ?>">
             </div>
           </div>
         </div>
@@ -74,11 +78,11 @@
             <select class="form-control" name="courseSelected">
               <option value="0">Select batch</option>
               <?php 
-                $selCourse = $conn->query("SELECT * FROM course_tbl ORDER BY cou_id DESC");
-                if($selCourse->rowCount() > 0)
+                $selBatch = $conn->query("SELECT * FROM batch_tbl ORDER BY batch_id DESC");
+                if($selBatch->rowCount() > 0)
                 {
-                  while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) { ?>
-                     <option value="<?php echo $selCourseRow['cou_id']; ?>"><?php echo $selCourseRow['cou_name']; ?></option>
+                  while ($selBatchRow = $selBatch->fetch(PDO::FETCH_ASSOC)) { ?>
+                     <option value="<?php echo $selBatchRow['batch_id']; ?>"><?php echo $selBatchRow['batch_number']; ?></option>
                   <?php }
                 }
                 else
@@ -108,8 +112,8 @@
           </div>
 
           <div class="form-group">
-            <label>Exam Title</label>
-            <input type="" name="examTitle" class="form-control" placeholder="Input Exam Title" required="">
+            <label>Exam Topic</label>
+            <input type="" name="examTitle" class="form-control" placeholder="Input Exam Topic" required="">
           </div>
 
           <div class="form-group">
@@ -130,7 +134,7 @@
 </div>
 
 
-<!-- Modal For Add Examinee -->
+<!-- Modal For Add Students -->
 <div class="modal fade" id="modalForAddExaminee" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
    <form class="refreshFrm" id="addExamineeFrm" method="post">
@@ -155,30 +159,30 @@
             <label>Gender</label>
             <select class="form-control" name="gender" id="gender">
               <option value="0">Select gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Batch Number</label>
-            <select class="form-control" name="course" id="course">
-              <option value="0">Select batch</option>
-              <?php 
-                $selCourse = $conn->query("SELECT * FROM course_tbl ORDER BY cou_id asc");
-                while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) { ?>
-                  <option value="<?php echo $selCourseRow['cou_id']; ?>"><?php echo $selCourseRow['cou_name']; ?></option>
-                <?php }
-               ?>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
           </div>
           <div class="form-group">
             <label>Course Name</label>
-            <select class="form-control" name="year_level" id="year_level">
+            <select class="form-control" name="course_level" id="course_level">
               <option value="0">Select level</option>
-              <option value="B2">AB German Express</option>
+              <option value="AB Express">AB Express</option>
               <option value="A1">A1</option>
               <option value="A2">A2</option>
               <option value="B1">B1</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Batch Number</label>
+            <select class="form-control" name="batch_serial" id="batch_serial">
+              <option value="0">Select batch</option>
+              <?php 
+                $selBatch = $conn->query("SELECT * FROM batch_tbl ORDER BY batch_id asc");
+                while ($selBatchRow = $selBatch->fetch(PDO::FETCH_ASSOC)) { ?>
+                  <option value="<?php echo $selBatchRow['batch_id']; ?>"><?php echo $selBatchRow['batch_number']; ?></option>
+                <?php }
+               ?>
             </select>
           </div>
           <div class="form-group">
@@ -187,11 +191,19 @@
           </div>
           <div class="form-group">
             <label>Phone Number</label>
-            <input type="number" name="phone_number" id="phone_number" class="form-control" placeholder="Enter phone number" autocomplete="off" required="">
+            <input type="number" name="student_phone_number" id="student_phone_number" class="form-control" placeholder="Enter phone number" autocomplete="off" required="">
           </div>
           <div class="form-group">
             <label>Password</label>
             <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" autocomplete="off" required="">
+          </div>
+          <div class="form-group">
+            <label>Status</label>
+            <select class="form-control" name="status" id="status">
+              <option value="0">Select Status</option>
+              <option value="Active">Active</option>
+              <option value="Deativated">Deativated</option>
+            </select>
           </div>
         </div>
       </div>

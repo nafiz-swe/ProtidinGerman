@@ -13,9 +13,9 @@
             <div class="page-title-wrapper">
                 <div class="page-title-heading">
                     <div>
-                        <?php echo $selExam['ex_title']; ?>
+                        <?php echo "Exam Topic: " . $selExam['ex_title']; ?>
                           <div class="page-title-subheading">
-                            <?php echo $selExam['ex_description']; ?>
+                            <?php echo nl2br(htmlspecialchars( $selExam['ex_description'])); ?>
                           </div>
 
                     </div>

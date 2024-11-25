@@ -4,8 +4,8 @@
 
 extract($_POST);
 
-$selExamineeFullname = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_fullname='$fullname' ");
-$selExamineeEmail = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_email='$email' ");
+$selExamineeFullname = $conn->query("SELECT * FROM students_tbl WHERE student_fullname='$fullname' ");
+$selExamineeEmail = $conn->query("SELECT * FROM students_tbl WHERE student_email='$email' ");
 
 if($selExamineeFullname->rowCount() > 0)
 {
@@ -15,25 +15,29 @@ else if($gender == "0")
 {
 	$res = array("res" => "noGender");
 }
-else if($year_level == "0")
+else if($course_level == "0")
 {
-	$res = array("res" => "noLevel");
+	$res = array("res" => "noCourseLevel");
 }
-else if($course == "0")
+else if($batch_serial == "0")
 {
-	$res = array("res" => "noCourse");
+	$res = array("res" => "noBatch");
 }
 else if($selExamineeEmail->rowCount() > 0)
 {
 	$res = array("res" => "emailExist", "msg" => $email);
 }
-else if($phone_number == "0")
+else if($student_phone_number == "0")
 {
 	$res = array("res" => "noPhnnumber");
 }
+else if($status == "0")
+{
+	$res = array("res" => "noStatus");
+}
 else
 {
-	$insData = $conn->query("INSERT INTO examinee_tbl(exmne_fullname, exmne_course, exmne_gender, exmne_birthdate, exmne_year_level, exmne_email, exmne_password, phone_number) VALUES('$fullname','$course','$gender','$bdate','$year_level','$email','$password','$phone_number')");
+	$insData = $conn->query("INSERT INTO students_tbl(student_fullname, student_batch_id, student_gender, student_birthdate, course_name, student_email, student_password, student_phone_number, student_status) VALUES('$fullname','$batch_serial','$gender','$bdate','$course_level','$email','$password','$student_phone_number','$status')");
 	if($insData)
 	{
 		$res = array("res" => "success", "msg" => $email);

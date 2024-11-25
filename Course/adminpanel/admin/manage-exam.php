@@ -23,8 +23,8 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
    $selExam = $conn->query("SELECT * FROM exam_tbl WHERE ex_id='$exId' ");
    $selExamRow = $selExam->fetch(PDO::FETCH_ASSOC);
 
-   $courseId = $selExamRow['cou_id'];
-   $selCourse = $conn->query("SELECT cou_name as courseName FROM course_tbl WHERE cou_id='$courseId' ")->fetch(PDO::FETCH_ASSOC);
+   $batchId = $selExamRow['batch_id'];
+   $selBatch = $conn->query("SELECT batch_number as courseName FROM batch_tbl WHERE batch_id='$batchId' ")->fetch(PDO::FETCH_ASSOC);
  ?>
 
 
@@ -53,28 +53,28 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                           <div class="card-body">
                            <form method="post" id="updateExamFrm">
                                <div class="form-group">
-                                <label>Course</label>
-                                <select class="form-control" name="courseId" required="">
-                                  <option value="<?php echo $selExamRow['cou_id']; ?>"><?php echo $selCourse['courseName']; ?></option>
+                                <label>Batch Number</label>
+                                <select class="form-control" name="batchId" required="">
+                                  <option value="<?php echo $selExamRow['batch_id']; ?>"><?php echo $selBatch['courseName']; ?></option>
                                   <?php 
-                                    $selAllCourse = $conn->query("SELECT * FROM course_tbl ORDER BY cou_id DESC");
+                                    $selAllCourse = $conn->query("SELECT * FROM batch_tbl ORDER BY batch_id DESC");
                                     while ($selAllCourseRow = $selAllCourse->fetch(PDO::FETCH_ASSOC)) { ?>
-                                      <option value="<?php echo $selAllCourseRow['cou_id']; ?>"><?php echo $selAllCourseRow['cou_name']; ?></option>
+                                      <option value="<?php echo $selAllCourseRow['batch_id']; ?>"><?php echo $selAllCourseRow['batch_number']; ?></option>
                                     <?php }
                                    ?>
                                 </select>
                               </div>
 
                               <div class="form-group">
-                                <label>Exam Title</label>
+                                <label>Exam Topic</label>
                                 <input type="hidden" name="examId" value="<?php echo $selExamRow['ex_id']; ?>">
                                 <input type="" name="examTitle" class="form-control" required="" value="<?php echo $selExamRow['ex_title']; ?>">
                               </div>  
-
                               <div class="form-group">
                                 <label>Exam Description</label>
-                                <input type="" name="examDesc" class="form-control" required="" value="<?php echo $selExamRow['ex_description']; ?>">
-                              </div>  
+                                <textarea name="examDesc" class="form-control" required="" rows="4"><?php echo $selExamRow['ex_description']; ?></textarea>
+                              </div>
+
 
                               <div class="form-group">
                                 <label>Exam Time limit</label>
@@ -94,7 +94,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                                 <input type="number" name="examQuestDipLimit" class="form-control" value="<?php echo $selExamRow['ex_questlimit_display']; ?>"> 
                               </div>
 
-                              <div class="form-group" align="right">
+                              <div class="form-group">
                                 <button type="submit" class="btn btn-primary btn-lg">Update</button>
                               </div> 
                            </form>                           
@@ -127,7 +127,7 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
                                     <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">
                                         <thead>
                                         <tr>
-                                            <th class="text-left pl-1">Course Name</th>
+                                            <th class="text-left pl-1">Total Questions</th>
                                             <th class="text-center" width="20%">Action</th>
                                         </tr>
                                         </thead>

@@ -18,22 +18,23 @@
                             <thead>
                             <tr>
                                 <th class="text-left pl-4">Batch Number</th>
+                                <th class="text-left pl-4">Class Start Date</th>
                                 <th class="text-center" width="20%">Status</th>
                             </tr>
                             </thead>
                             <tbody>
                               <?php 
-                                $selCourse = $conn->query("SELECT * FROM course_tbl ORDER BY cou_id DESC ");
-                                if($selCourse->rowCount() > 0)
+                                $selBatch = $conn->query("SELECT * FROM batch_tbl ORDER BY batch_id DESC ");
+                                if($selBatch->rowCount() > 0)
                                 {
-                                    while ($selCourseRow = $selCourse->fetch(PDO::FETCH_ASSOC)) { ?>
+                                    while ($selBatchRow = $selBatch->fetch(PDO::FETCH_ASSOC)) { ?>
                                         <tr>
                                             <td class="pl-4">
-                                                <?php echo $selCourseRow['cou_name']; ?>
+                                                <?php echo $selBatchRow['batch_number']; ?>
                                             </td>
                                             <td class="text-center">
-                                             <button type="button" data-toggle="modal" data-target="#updateCourse-<?php echo $selCourseRow['cou_id']; ?>"  class="btn btn-primary btn-sm">Update</button>
-                                             <button type="button" id="deleteCourse" data-id='<?php echo $selCourseRow['cou_id']; ?>'  class="btn btn-danger btn-sm">Delete</button>
+                                             <button type="button" data-toggle="modal" data-target="#updateCourse-<?php echo $selBatchRow['batch_id']; ?>"  class="btn btn-primary btn-sm">Update</button>
+                                             <button type="button" id="deleteCourse" data-id='<?php echo $selBatchRow['batch_id']; ?>'  class="btn btn-danger btn-sm">Delete</button>
                                             </td>
                                         </tr>
 

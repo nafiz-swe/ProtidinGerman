@@ -28,7 +28,7 @@ $(document).on("submit","#addCourseFrm" , function(){
   	{
   		Swal.fire(
   			'Already Exist',
-  			data.course_name.toUpperCase() + ' Already Exist',
+  			data.add_batch.toUpperCase() + ' Already Exist',
   			'error'
   		)
   	}
@@ -36,10 +36,10 @@ $(document).on("submit","#addCourseFrm" , function(){
   	{
   		Swal.fire(
   			'Success',
-  			data.course_name.toUpperCase() + ' Successfully Added',
+  			data.add_batch.toUpperCase() + ' Successfully Added',
   			'success'
   		)
-          // $('#course_name').val("");
+          // $('#add_batch').val("");
           refreshDiv();
             setTimeout(function(){ 
                 $('#body').load(document.URL);
@@ -56,7 +56,7 @@ $(document).on("submit","#updateCourseFrm" , function(){
      {
         Swal.fire(
             'Success',
-            'Selected course has been successfully updated!',
+            'Batch has been successfully updated!',
             'success'
           )
           refreshDiv();
@@ -66,70 +66,66 @@ $(document).on("submit","#updateCourseFrm" , function(){
 });
 
 
-// Delete Course
-$(document).on("click", "#deleteCourse", function(e){
-    e.preventDefault();
-    var id = $(this).data("id");
-     $.ajax({
-      type : "post",
-      url : "query/deleteCourseExe.php",
-      dataType : "json",  
-      data : {id:id},
-      cache : false,
-      success : function(data){
-        if(data.res == "success")
-        {
-          Swal.fire(
-            'Success',
-            'Selected Course successfully deleted',
-            'success'
-          )
-          refreshDiv();
-        }
-      },
-      error : function(xhr, ErrorStatus, error){
-        console.log(status.error);
-      }
+// Delete Batch
+// $(document).on("click", "#deleteCourse", function(e){
+//     e.preventDefault();
+//     var id = $(this).data("id");
+//      $.ajax({
+//       type : "post",
+//       url : "query/deleteCourseExe.php",
+//       dataType : "json",  
+//       data : {id:id},
+//       cache : false,
+//       success : function(data){
+//         if(data.res == "success")
+//         {
+//           Swal.fire(
+//             'Success',
+//             'Selected Batch successfully deleted',
+//             'success'
+//           )
+//           refreshDiv();
+//         }
+//       },
+//       error : function(xhr, ErrorStatus, error){
+//         console.log(status.error);
+//       }
 
-    });
-    
-   
+//     });
+//     return false;
+//   });
 
-    return false;
-  });
+
 
 
 // Delete Exam
-$(document).on("click", "#deleteExam", function(e){
-    e.preventDefault();
-    var id = $(this).data("id");
-     $.ajax({
-      type : "post",
-      url : "query/deleteExamExe.php",
-      dataType : "json",  
-      data : {id:id},
-      cache : false,
-      success : function(data){
-        if(data.res == "success")
-        {
-          Swal.fire(
-            'Success',
-            'Selected Course successfully deleted',
-            'success'
-          )
-          refreshDiv();
-        }
-      },
-      error : function(xhr, ErrorStatus, error){
-        console.log(status.error);
-      }
+// $(document).on("click", "#deleteExam", function(e){
+//     e.preventDefault();
+//     var id = $(this).data("id");
+//      $.ajax({
+//       type : "post",
+//       url : "query/deleteExamExe.php",
+//       dataType : "json",  
+//       data : {id:id},
+//       cache : false,
+//       success : function(data){
+//         if(data.res == "success")
+//         {
+//           Swal.fire(
+//             'Success',
+//             'Selected Course successfully deleted',
+//             'success'
+//           )
+//           refreshDiv();
+//         }
+//       },
+//       error : function(xhr, ErrorStatus, error){
+//         console.log(status.error);
+//       }
 
-    });
-    
-   
-
-    return false;
-  });
+//     });
+//     return false;
+//   });
 
 
 
@@ -177,7 +173,7 @@ $(document).on("submit","#addExamFrm" , function(){
         'success'
       )
           $('#addExamFrm')[0].reset();
-          $('#course_name').val("");
+          $('#add_batch').val("");
           refreshDiv();
     }
   },'json')
@@ -307,19 +303,19 @@ $(document).on("submit","#addExamineeFrm" , function(){
           'error'
        )
     }
-    else if(data.res == "noLevel")
+    else if(data.res == "noCourseLevel")
+    {
+      Swal.fire(
+          'Course Empty',
+          'Please select Course',
+          'error'
+       )
+    }
+    else if(data.res == "noBatch")
     {
       Swal.fire(
           'Batch Empty',
           'Please select Batch',
-          'error'
-       )
-    }
-    else if(data.res == "noCourse")
-    {
-      Swal.fire(
-          'Course Empty',
-          'Please select course',
           'error'
        )
     }
@@ -335,7 +331,15 @@ $(document).on("submit","#addExamineeFrm" , function(){
     {
       Swal.fire(
           'Number Empty',
-          'Please enter number',
+          'Please enter Number',
+          'error'
+       )
+    }
+    else if(data.res == "noStatus")
+    {
+      Swal.fire(
+          'Status Empty',
+          'Please select Status',
           'error'
        )
     }

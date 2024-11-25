@@ -1,33 +1,21 @@
 <?php 
- include("../../../conn.php");
+include("../../../conn.php");
 
- extract($_POST);
+extract($_POST);
 
-$course_name = strtoupper($course_name);
- $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_name='$course_name' ");
+$add_batch = strtoupper($add_batch);
+$selBatch = $conn->query("SELECT * FROM batch_tbl WHERE batch_number='$add_batch' ");
 
- if($selCourse->rowCount() > 0)
- {
-	$res = array("res" => "exist", "course_name" => $course_name);
- }
- else
- {
-    
-	$insCourse = $conn->query("INSERT INTO course_tbl(cou_name) VALUES('$course_name') ");
-	if($insCourse)
-	{
-		$res = array("res" => "success", "course_name" => $course_name);
-	}
-	else
-	{
-		$res = array("res" => "failed", "course_name" => $course_name);
-	}
+if ($selBatch->rowCount() > 0) {
+    $res = array("res" => "exist", "add_batch" => $add_batch);
+} else {
+    $insCourse = $conn->query("INSERT INTO batch_tbl(batch_number, start_date) VALUES('$add_batch', '$startDate') ");
+    if ($insCourse) {
+        $res = array("res" => "success", "add_batch" => $add_batch);
+    } else {
+        $res = array("res" => "failed", "add_batch" => $add_batch);
+    }
+}
 
-
- }
-
-
-
-
- echo json_encode($res);
- ?>
+echo json_encode($res);
+?>

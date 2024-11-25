@@ -1,19 +1,24 @@
 <?php 
- include("../../../conn.php");
+include("../../../conn.php");
 
+header('Content-Type: application/json'); // Set response as JSON
 
-extract($_POST);
+// Decode the JSON input
+$data = json_decode(file_get_contents("php://input"), true);
 
-$delExam = $conn->query("DELETE  FROM exam_tbl WHERE ex_id='$id'  ");
-if($delExam)
-{
-	$res = array("res" => "success");
+// Check if 'id' is provided
+if (isset($data['id'])) {
+    $id = $data['id'];
+    $delExam = $conn->query("DELETE FROM exam_tbl WHERE ex_id='$id'");
+    
+    if ($delExam) {
+        $res = array("res" => "success");
+    } else {
+        $res = array("res" => "failed");
+    }
+} else {
+    $res = array("res" => "failed", "message" => "No ID provided.");
 }
-else
-{
-	$res = array("res" => "failed");
-}
 
-
-	echo json_encode($res);
- ?>
+echo json_encode($res);
+?>

@@ -150,7 +150,7 @@
 
             <div id="resultList" style="display: none; padding-left: 20px;">
                 <?php 
-                $selTakenExam = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id = ea.exam_id WHERE exmne_id='$exmneId' ORDER BY ea.examat_id");
+                $selTakenExam = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id = ea.exam_id WHERE student_id='$exmneId' ORDER BY ea.examat_id");
 
                 if($selTakenExam->rowCount() > 0)
                 {

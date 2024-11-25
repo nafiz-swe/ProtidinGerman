@@ -4,9 +4,9 @@
  extract($_POST);
 
 
-$exmneSess = $_SESSION['examineeSession']['exmne_id'];
+$exmneSess = $_SESSION['examineeSession']['student_id'];
 
- $selMyFeedbacks = $conn->query("SELECT * FROM feedbacks_tbl WHERE exmne_id='$exmneSess' ");
+ $selMyFeedbacks = $conn->query("SELECT * FROM feedbacks_tbl WHERE student_id='$exmneSess' ");
 
  if($selMyFeedbacks->rowCount() >= 3)
  {
@@ -15,7 +15,7 @@ $exmneSess = $_SESSION['examineeSession']['exmne_id'];
  else
  {
  	$date = date("F d, Y");
- 	$insFedd = $conn->query("INSERT INTO feedbacks_tbl(exmne_id,fb_exmne_as,fb_feedbacks,fb_date) VALUES('$exmneSess','$asMe','$myFeedbacks','$date') ");
+ 	$insFedd = $conn->query("INSERT INTO feedbacks_tbl(student_id,fb_exmne_as,fb_feedbacks,fb_date) VALUES('$exmneSess','$asMe','$myFeedbacks','$date') ");
 
  	if($insFedd)
  	{

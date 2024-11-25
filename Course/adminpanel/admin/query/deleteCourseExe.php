@@ -1,20 +1,20 @@
 <?php 
- include("../../../conn.php");
+include("../../../conn.php");
 
+// JSON ডেটা গ্রহণ
+$data = json_decode(file_get_contents("php://input"), true);
+$id = $data['id'];
 
-extract($_POST);
+// Prepared statement ব্যবহার করে ডেটা ডিলিট করা
+$delCourse = $conn->prepare("DELETE FROM batch_tbl WHERE batch_id = :id");
+$delCourse->bindParam(':id', $id);
 
-$delCourse = $conn->query("DELETE  FROM course_tbl WHERE cou_id='$id'  ");
-if($delCourse)
-{
-	$res = array("res" => "success");
+if ($delCourse->execute()) {
+    $res = array("res" => "success");
+} else {
+    $res = array("res" => "failed");
 }
-else
-{
-	$res = array("res" => "failed");
-}
 
-
-
-	echo json_encode($res);
- ?>
+// JSON রেসপন্স ফেরত পাঠানো
+echo json_encode($res);
+?>

@@ -77,7 +77,7 @@
                             </div>
                             <div class="widget-content-right">
                                 <div class="widget-numbers text-white">
-                                    <span><?php echo $totalCourse = $selCourse['totCourse']; ?></span>
+                                    <span><?php echo $totalCourse = $selBatch['totCourse']; ?></span>
                                 </div>
                             </div>
                         </div>

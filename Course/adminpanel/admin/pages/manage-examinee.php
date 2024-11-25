@@ -4,55 +4,55 @@
             <div class="app-page-title">
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
-                        <div>MANAGE EXAMINEE</div>
+                        <div>MANAGE STUDENTS</div>
                     </div>
                 </div>
             </div>        
             
             <div class="col-md-12">
                 <div class="main-card mb-3 card">
-                    <div class="card-header">Examinee List
+                    <div class="card-header">Students List
                     </div>
                     <div class="table-responsive">
                         <table class="align-middle mb-0 table table-borderless table-striped table-hover" id="tableList">
                             <thead>
                             <tr>
-                                <th>Fullname</th>
+                                <th>Students Name</th>
                                 <th>Gender</th>
                                 <th>Birthdate</th>
-                                <th>Course</th>
-                                <th>Year level</th>
+                                <th>Course Name</th>
+                                <th>Batch Number</th>
                                 <th>Email</th>
                                 <th>Phone Number</th>
                                 <th>Password</th>
-                                <th>status</th>
+                                <th>Status</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
                               <?php 
-                                $selExmne = $conn->query("SELECT * FROM examinee_tbl ORDER BY exmne_id DESC ");
+                                $selExmne = $conn->query("SELECT * FROM students_tbl ORDER BY student_id DESC ");
                                 if($selExmne->rowCount() > 0)
                                 {
                                     while ($selExmneRow = $selExmne->fetch(PDO::FETCH_ASSOC)) { ?>
                                         <tr>
-                                           <td><?php echo $selExmneRow['exmne_fullname']; ?></td>
-                                           <td><?php echo $selExmneRow['exmne_gender']; ?></td>
-                                           <td><?php echo $selExmneRow['exmne_birthdate']; ?></td>
+                                           <td><?php echo $selExmneRow['student_fullname']; ?></td>
+                                           <td><?php echo $selExmneRow['student_gender']; ?></td>
+                                           <td><?php echo $selExmneRow['student_birthdate']; ?></td>
+                                           <td><?php echo $selExmneRow['course_name']; ?></td>
                                            <td>
                                             <?php 
-                                                 $exmneCourse = $selExmneRow['exmne_course'];
-                                                 $selCourse = $conn->query("SELECT * FROM course_tbl WHERE cou_id='$exmneCourse' ")->fetch(PDO::FETCH_ASSOC);
-                                                 echo $selCourse['cou_name'];
+                                                 $studentBatch = $selExmneRow['student_batch_id'];
+                                                 $selBatch = $conn->query("SELECT * FROM batch_tbl WHERE batch_id='$studentBatch' ")->fetch(PDO::FETCH_ASSOC);
+                                                 echo $selBatch['batch_number'];
                                              ?>
                                             </td>
-                                           <td><?php echo $selExmneRow['exmne_year_level']; ?></td>
-                                           <td><?php echo $selExmneRow['exmne_email']; ?></td>
-                                           <td><?php echo $selExmneRow['phone_number']; ?></td>
-                                           <td><?php echo $selExmneRow['exmne_password']; ?></td>
-                                           <td><?php echo $selExmneRow['exmne_status']; ?></td>
+                                           <td><?php echo $selExmneRow['student_email']; ?></td>
+                                           <td><?php echo $selExmneRow['student_phone_number']; ?></td>
+                                           <td><?php echo $selExmneRow['student_password']; ?></td>
+                                           <td><?php echo $selExmneRow['student_status']; ?></td>
                                            <td>
-                                               <a rel="facebox" href="facebox_modal/updateExaminee.php?id=<?php echo $selExmneRow['exmne_id']; ?>" class="btn btn-sm btn-primary">Update</a>
+                                               <a rel="facebox" href="facebox_modal/updateExaminee.php?id=<?php echo $selExmneRow['student_id']; ?>" class="btn btn-sm btn-primary">Update</a>
 
                                            </td>
                                         </tr>

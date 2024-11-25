@@ -9,6 +9,7 @@
     $selExamTimeLimit = $selExam['ex_time_limit'];
     $exDisplayLimit = $selExam['ex_questlimit_display'];
  ?>
+ 
 
 
 <div class="app-main__outer">
@@ -17,10 +18,10 @@
          <div class="app-page-title">
                 <div class="page-title-wrapper">
                     <div class="page-title-heading">
-                        <div>
-                            <?php echo $selExam['ex_title']; ?>
+                        <div> 
+                            <?php echo "Exam Topic: " .  $selExam['ex_title']; ?>
                             <div class="page-title-subheading">
-                              <?php echo $selExam['ex_description']; ?>
+                                <?php echo nl2br(htmlspecialchars($selExam['ex_description'])); ?>
                             </div>
                         </div>
                     </div>

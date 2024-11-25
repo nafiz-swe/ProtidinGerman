@@ -43,20 +43,20 @@ INSERT INTO `admin_acc` (`admin_id`, `admin_user`, `admin_pass`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `course_tbl`
+-- Table structure for table `batch_tbl`
 --
 
-CREATE TABLE `course_tbl` (
-  `cou_id` int(11) NOT NULL,
-  `cou_name` varchar(1000) NOT NULL,
+CREATE TABLE `batch_tbl` (
+  `batch_id` int(11) NOT NULL,
+  `batch_number` varchar(1000) NOT NULL,
   `cou_created` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `course_tbl`
+-- Dumping data for table `batch_tbl`
 --
 
-INSERT INTO `course_tbl` (`cou_id`, `cou_name`, `cou_created`) VALUES
+INSERT INTO `batch_tbl` (`batch_id`, `batch_number`, `cou_created`) VALUES
 (25, 'BATCH-4', '2024-11-02 12:32:12'),
 (65, 'BATCH-3', '2024-11-02 12:31:54'),
 (66, 'BATCH-2', '2024-11-02 12:31:38'),
@@ -68,26 +68,26 @@ INSERT INTO `course_tbl` (`cou_id`, `cou_name`, `cou_created`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `examinee_tbl`
+-- Table structure for table `students_tbl`
 --
 
-CREATE TABLE `examinee_tbl` (
-  `exmne_id` int(11) NOT NULL,
-  `exmne_fullname` varchar(1000) NOT NULL,
-  `exmne_course` varchar(1000) NOT NULL,
-  `exmne_gender` varchar(1000) NOT NULL,
-  `exmne_birthdate` varchar(1000) NOT NULL,
-  `exmne_year_level` varchar(1000) NOT NULL,
-  `exmne_email` varchar(1000) NOT NULL,
-  `exmne_password` varchar(1000) NOT NULL,
-  `exmne_status` varchar(1000) NOT NULL DEFAULT 'active'
+CREATE TABLE `students_tbl` (
+  `student_id` int(11) NOT NULL,
+  `student_fullname` varchar(1000) NOT NULL,
+  `student_batch_id` varchar(1000) NOT NULL,
+  `student_gender` varchar(1000) NOT NULL,
+  `student_birthdate` varchar(1000) NOT NULL,
+  `course_name` varchar(1000) NOT NULL,
+  `student_email` varchar(1000) NOT NULL,
+  `student_password` varchar(1000) NOT NULL,
+  `student_status` varchar(1000) NOT NULL DEFAULT 'active'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `examinee_tbl`
+-- Dumping data for table `students_tbl`
 --
 
-INSERT INTO `examinee_tbl` (`exmne_id`, `exmne_fullname`, `exmne_course`, `exmne_gender`, `exmne_birthdate`, `exmne_year_level`, `exmne_email`, `exmne_password`, `exmne_status`) VALUES
+INSERT INTO `students_tbl` (`student_id`, `student_fullname`, `student_batch_id`, `student_gender`, `student_birthdate`, `course_name`, `student_email`, `student_password`, `student_status`) VALUES
 (4, 'Rogz Nune', '26', 'male', '2019-11-15', 'third year', 'rogz.nunez2013@gmail.com', 'rogz', 'active'),
 (5, 'Jane Rivera', '25', 'female', '2019-11-14', 'second year', 'jane@gmail.com', 'jane', 'active'),
 (6, 'Glenn Duerme', '26', 'female', '2019-12-24', 'third year', 'glenn@gmail.com', 'glenn', 'active'),
@@ -167,7 +167,7 @@ INSERT INTO `exam_answers` (`exans_id`, `axmne_id`, `exam_id`, `quest_id`, `exan
 
 CREATE TABLE `exam_attempt` (
   `examat_id` int(11) NOT NULL,
-  `exmne_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
   `exam_id` int(11) NOT NULL,
   `examat_status` varchar(1000) NOT NULL DEFAULT 'used'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
@@ -176,7 +176,7 @@ CREATE TABLE `exam_attempt` (
 -- Dumping data for table `exam_attempt`
 --
 
-INSERT INTO `exam_attempt` (`examat_id`, `exmne_id`, `exam_id`, `examat_status`) VALUES
+INSERT INTO `exam_attempt` (`examat_id`, `student_id`, `exam_id`, `examat_status`) VALUES
 (51, 6, 12, 'used'),
 (52, 4, 11, 'used'),
 (53, 4, 12, 'used'),
@@ -249,7 +249,7 @@ INSERT INTO `exam_question_tbl` (`eqt_id`, `exam_id`, `exam_question`, `exam_ch1
 
 CREATE TABLE `exam_tbl` (
   `ex_id` int(11) NOT NULL,
-  `cou_id` int(11) NOT NULL,
+  `batch_id` int(11) NOT NULL,
   `ex_title` varchar(1000) NOT NULL,
   `ex_time_limit` varchar(1000) NOT NULL,
   `ex_questlimit_display` int(11) NOT NULL,
@@ -261,7 +261,7 @@ CREATE TABLE `exam_tbl` (
 -- Dumping data for table `exam_tbl`
 --
 
-INSERT INTO `exam_tbl` (`ex_id`, `cou_id`, `ex_title`, `ex_time_limit`, `ex_questlimit_display`, `ex_description`, `ex_created`) VALUES
+INSERT INTO `exam_tbl` (`ex_id`, `batch_id`, `ex_title`, `ex_time_limit`, `ex_questlimit_display`, `ex_description`, `ex_created`) VALUES
 (11, 26, 'Duerms', '1', 2, 'qwe', '2019-12-05 12:03:21'),
 (12, 26, 'Another Exam', '1', 5, 'Mabilisang Exam', '2019-12-04 15:19:18'),
 (13, 26, 'Exam Again', '5', 0, 'again and again\r\n', '2019-11-30 08:24:54'),
@@ -279,7 +279,7 @@ INSERT INTO `exam_tbl` (`ex_id`, `cou_id`, `ex_title`, `ex_time_limit`, `ex_ques
 
 CREATE TABLE `feedbacks_tbl` (
   `fb_id` int(11) NOT NULL,
-  `exmne_id` int(11) NOT NULL,
+  `student_id` int(11) NOT NULL,
   `fb_exmne_as` varchar(1000) NOT NULL,
   `fb_feedbacks` varchar(1000) NOT NULL,
   `fb_date` varchar(1000) NOT NULL
@@ -289,7 +289,7 @@ CREATE TABLE `feedbacks_tbl` (
 -- Dumping data for table `feedbacks_tbl`
 --
 
-INSERT INTO `feedbacks_tbl` (`fb_id`, `exmne_id`, `fb_exmne_as`, `fb_feedbacks`, `fb_date`) VALUES
+INSERT INTO `feedbacks_tbl` (`fb_id`, `student_id`, `fb_exmne_as`, `fb_feedbacks`, `fb_date`) VALUES
 (4, 6, 'Glenn Duerme', 'Gwapa kay Miss Pam', 'December 05, 2019'),
 (5, 6, 'Anonymous', 'Lageh, idol na nako!', 'December 05, 2019'),
 (6, 4, 'Rogz Nunezsss', 'Yes', 'December 08, 2019'),
@@ -314,14 +314,14 @@ CREATE TABLE `reviews` (
   `rating` int(11) NOT NULL CHECK (`rating` between 1 and 5),
   `review_text` text NOT NULL,
   `created_at` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT current_timestamp(),
-  `exmne_id` int(11) NOT NULL
+  `student_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `reviews`
 --
 
-INSERT INTO `reviews` (`id`, `rating`, `review_text`, `created_at`, `exmne_id`) VALUES
+INSERT INTO `reviews` (`id`, `rating`, `review_text`, `created_at`, `student_id`) VALUES
 (20, 3, 'dhaka time check, 3 star', '22 November 2024, 05:15 AM', 10),
 (21, 5, 'nafiz 5 star, post serial', '22 November 2024, 05:20 AM', 11),
 (22, 5, 'dtae formate display and serial reviews check, nn@mail', '22 November 2024, 05:24 AM', 8),
@@ -338,16 +338,16 @@ ALTER TABLE `admin_acc`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `course_tbl`
+-- Indexes for table `batch_tbl`
 --
-ALTER TABLE `course_tbl`
-  ADD PRIMARY KEY (`cou_id`);
+ALTER TABLE `batch_tbl`
+  ADD PRIMARY KEY (`batch_id`);
 
 --
--- Indexes for table `examinee_tbl`
+-- Indexes for table `students_tbl`
 --
-ALTER TABLE `examinee_tbl`
-  ADD PRIMARY KEY (`exmne_id`);
+ALTER TABLE `students_tbl`
+  ADD PRIMARY KEY (`student_id`);
 
 --
 -- Indexes for table `exam_answers`
@@ -396,16 +396,16 @@ ALTER TABLE `admin_acc`
   MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `course_tbl`
+-- AUTO_INCREMENT for table `batch_tbl`
 --
-ALTER TABLE `course_tbl`
-  MODIFY `cou_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+ALTER TABLE `batch_tbl`
+  MODIFY `batch_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
--- AUTO_INCREMENT for table `examinee_tbl`
+-- AUTO_INCREMENT for table `students_tbl`
 --
-ALTER TABLE `examinee_tbl`
-  MODIFY `exmne_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `students_tbl`
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `exam_answers`

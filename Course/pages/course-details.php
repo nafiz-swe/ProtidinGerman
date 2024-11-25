@@ -1,8 +1,8 @@
 <?php
 if (isset($_GET['id'])) {
-    $courseId = $_GET['id'];
+    $batchId = $_GET['id'];
 
-    switch ($courseId) {
+    switch ($batchId) {
         case 'A1':
             echo "<h2>Deutsch A1 Course Details</h2>";
             echo "<p>A1 লেভেলের কোর্স ডিটেলস এখানে দেখানো হবে।</p>";

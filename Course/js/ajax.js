@@ -1,22 +1,34 @@
 // Admin Log in
+// Admin Log in
 $(document).on("submit","#examineeLoginFrm", function(){
-   $.post("query/loginExe.php", $(this).serialize(), function(data){
-      if(data.res == "invalid")
-      {
-        Swal.fire(
-          'Invalid',
-          'Please input valid email / password',
-          'error'
-        )
-      }
-      else if(data.res == "success")
-      {
-        $('body').fadeOut();
-        window.location.href='home.php';
-      }
-   },'json');
+  $.post("query/loginExe.php", $(this).serialize(), function(data){
+     if(data.res == "invalid")
+     {
+       Swal.fire(
+         'Invalid',
+         'Please input valid email / password',
+         'error'
+       )
+     }
+     else if(data.res == "success")
+     {
+       $('body').fadeOut();
+       window.location.href='home.php';
+     }
+     else if(data.res == "deactivated")
+     {
+       Swal.fire(
+         'Account Deactivated',
+         'Your account has been deactivated. Please contact us.',
+         'warning'
+       ).then(() => {
+         // Redirect user to the login page or logout
+         window.location.href = '../index.php'; // Adjust as per your requirement
+       });
+     }
+  },'json');
 
-   return false;
+  return false;
 });
 
 

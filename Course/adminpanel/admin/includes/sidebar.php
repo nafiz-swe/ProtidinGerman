@@ -93,7 +93,7 @@
                                 <li>
                                     <a href="home.php?page=manage-examinee">
                                         <i class="metismenu-icon pe-7s-users">
-                                        </i>Manage Students
+                                        </i>Update Student
                                     </a>
                                 </li>
                                 <li class="app-sidebar__heading">RANKING</li>

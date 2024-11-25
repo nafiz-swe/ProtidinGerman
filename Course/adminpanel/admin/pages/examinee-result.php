@@ -18,8 +18,8 @@
                             <thead>
                             <tr>
                                 <th>Full Name</th>
+                                <th>Course Name</th>
                                 <th>Batch Number</th>
-                                <th>Language Level</th>
                                 <th>Exam Name</th>
                                 <th>Scores</th>
                                 <th>Ratings</th>
@@ -28,7 +28,7 @@
                             </thead>
                             <tbody>
                                 <?php 
-                                $selExmne = $conn->query("SELECT * FROM examinee_tbl et INNER JOIN exam_attempt ea ON et.exmne_id = ea.exmne_id ORDER BY ea.examat_id DESC ");
+                                $selExmne = $conn->query("SELECT * FROM students_tbl et INNER JOIN exam_attempt ea ON et.student_id = ea.student_id ORDER BY ea.examat_id DESC ");
                                 
                                 if($selExmne->rowCount() > 0)
                                 {
@@ -36,23 +36,28 @@
                                         <tr>
 
                                             <td>
-                                                <?php echo $selExmneRow['exmne_fullname']; ?>
+                                                <?php echo $selExmneRow['student_fullname']; ?>
+                                            </td>
+
+                                            <td>
+                                                <?php echo $selExmneRow['course_name']; ?>
                                             </td>
 
                                             <td>
                                                 <?php 
-// akahne Batch Number data show korao database theke.
+                                                // batch_tbl থেকে batch_number কলামটি ধরে আনুন
+                                                $batchId = $selExmneRow['student_batch_id'];
+                                                $selBatch = $conn->query("SELECT batch_number FROM batch_tbl WHERE batch_id='$batchId'")->fetch(PDO::FETCH_ASSOC);
+                                                // batch_number শো করুন
+                                                echo $selBatch['batch_number'];
                                                 ?>
                                             </td>
 
-                                            <td>
-                                                <?php echo $selExmneRow['exmne_year_level']; ?>
-                                            </td>
 
                                             <td>
                                                 <?php 
-                                                    $eid = $selExmneRow['exmne_id'];
-                                                    $selExName = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id=ea.exam_id WHERE  ea.exmne_id='$eid' ")->fetch(PDO::FETCH_ASSOC);
+                                                    $eid = $selExmneRow['student_id'];
+                                                    $selExName = $conn->query("SELECT * FROM exam_tbl et INNER JOIN exam_attempt ea ON et.ex_id=ea.exam_id WHERE  ea.student_id='$eid' ")->fetch(PDO::FETCH_ASSOC);
                                                     $exam_id = $selExName['ex_id'];
                                                     echo $selExName['ex_title'];
                                                 ?>
@@ -85,7 +90,7 @@
                                             </td>
 
                                            <td>
-                                               <a rel="facebox" href="facebox_modal/updateExaminee.php?id=<?php echo $selExmneRow['exmne_id']; ?>" class="btn btn-sm btn-primary">Print Result</a>
+                                               <a rel="facebox" href="facebox_modal/updateExaminee.php?id=<?php echo $selExmneRow['student_id']; ?>" class="btn btn-sm btn-primary">Print Result</a>
                                            </td>
                                         </tr>
                                     <?php }

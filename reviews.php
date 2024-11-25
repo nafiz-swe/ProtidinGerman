@@ -561,15 +561,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
 
     // Prepare SQL query to check the examinee email
-    $query = "SELECT exmne_id FROM examinee_tbl WHERE exmne_email = :email";
+    $query = "SELECT student_id FROM students_tbl WHERE student_email = :email";
     $stmt = $conn->prepare($query);
     $stmt->bindValue(':email', $email, PDO::PARAM_STR);
     $stmt->execute();
 
     if ($stmt->rowCount() > 0) {
-        // Email exists, retrieve exmne_id
+        // Email exists, retrieve student_id
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $exmne_id = $row['exmne_id'];
+        $student_id = $row['student_id'];
 
         // Validate rating
         if ($rating < 1 || $rating > 5) {
@@ -581,15 +581,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Format the current date as "25 January 2024, 10:46 PM" in Dhaka time
             $created_at = date("d F Y, h:i A");
 
-            // Prepare SQL query to insert the review along with the exmne_id and created_at
-            $query = "INSERT INTO reviews (service_name, rating, review_text, exmne_id, created_at) VALUES (:service_name, :rating, :review_text, :exmne_id, :created_at)";
+            // Prepare SQL query to insert the review along with the student_id and created_at
+            $query = "INSERT INTO reviews (service_name, rating, review_text, student_id, created_at) VALUES (:service_name, :rating, :review_text, :student_id, :created_at)";
             $stmt = $conn->prepare($query);
 
             // Bind the parameters
             $stmt->bindValue(':service_name', $service_name, PDO::PARAM_STR);
             $stmt->bindValue(':rating', $rating, PDO::PARAM_INT);
             $stmt->bindValue(':review_text', $review_text, PDO::PARAM_STR);
-            $stmt->bindValue(':exmne_id', $exmne_id, PDO::PARAM_INT);
+            $stmt->bindValue(':student_id', $student_id, PDO::PARAM_INT);
             $stmt->bindValue(':created_at', $created_at, PDO::PARAM_STR);
 
             // Execute the query
@@ -713,9 +713,9 @@ if (!in_array($order, ['ASC', 'DESC'])) {
 }
 
 // Fetch reviews from the database, sorted by date (created_at)
-$query = "SELECT reviews.*, examinee_tbl.exmne_fullname 
+$query = "SELECT reviews.*, students_tbl.student_fullname 
           FROM reviews 
-          JOIN examinee_tbl ON reviews.exmne_id = examinee_tbl.exmne_id 
+          JOIN students_tbl ON reviews.student_id = students_tbl.student_id 
           ORDER BY reviews.created_at $order";  // Order dynamically based on user selection
 $result = $conn->query($query);
 
@@ -778,7 +778,7 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
     <?php if (count($reviews) > 0): ?>
         <?php foreach ($reviews as $row): ?>
             <div class="review">
-                <p style="font-weight: bold; font-size: 16px;"><i class="fa fa-user" style="margin-right: 7px;"></i> <?php echo htmlspecialchars($row['exmne_fullname']); ?></p> <!-- Display full name here -->
+                <p style="font-weight: bold; font-size: 16px;"><i class="fa fa-user" style="margin-right: 7px;"></i> <?php echo htmlspecialchars($row['student_fullname']); ?></p> <!-- Display full name here -->
                 <p class="stars"><?php echo str_repeat('★', $row['rating']); ?></p>
                 <small><?php echo $row['created_at']; ?></small>
                 <p style="background: #8BC34A; color: #fff; display: inline-block; padding: 0 5px; border-radius: 2px;">

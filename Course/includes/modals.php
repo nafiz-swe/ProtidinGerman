@@ -14,9 +14,9 @@
           <div class="form-group">
             <label>Feedback AS</label><br>
             <?php 
-               $selMe = $conn->query("SELECT * FROM examinee_tbl WHERE exmne_id='$exmneId' ")->fetch(PDO::FETCH_ASSOC);
+               $selMe = $conn->query("SELECT * FROM students_tbl WHERE student_id='$exmneId' ")->fetch(PDO::FETCH_ASSOC);
              ?>
-            <input type="radio" name="asMe" value="<?php echo $selMe['exmne_fullname']; ?>"> <?php echo $selMe['exmne_fullname']; ?> <br>
+            <input type="radio" name="asMe" value="<?php echo $selMe['student_fullname']; ?>"> <?php echo $selMe['student_fullname']; ?> <br>
             <input type="radio" name="asMe" value="Anonymous"> Anonymous
             
           </div>
