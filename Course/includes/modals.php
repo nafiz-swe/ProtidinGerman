@@ -12,12 +12,12 @@
       <div class="modal-body">
         <div class="col-md-12">
           <div class="form-group">
-            <label>Feedback AS</label><br>
+            <label>Feedback As</label><br>
             <?php 
                $selMe = $conn->query("SELECT * FROM students_tbl WHERE student_id='$exmneId' ")->fetch(PDO::FETCH_ASSOC);
              ?>
-            <input type="radio" name="asMe" value="<?php echo $selMe['student_fullname']; ?>"> <?php echo $selMe['student_fullname']; ?> <br>
-            <input type="radio" name="asMe" value="Anonymous"> Anonymous
+            <input type="radio" name="asMe" value="<?php echo $selMe['student_fullname']; ?>"> <?php echo $selMe['student_fullname']; ?> 
+            <br> <input type="radio" name="asMe" value="Anonymous"> Anonymous
             
           </div>
           <div class="form-group">

@@ -50,6 +50,10 @@ if(!isset($_SESSION['examineeSession']['examineenakalogin']) == true) header("lo
      {
        include("pages/logout.php");
      }
+     else if($page == "sAccount")
+     {
+       include("pages/account.php");
+     }
    }
    // Else ang home nga page mo display
    else

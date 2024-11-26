@@ -26,7 +26,7 @@
         <div class="app-header__logo">
             <div class="site-logo mr-auto w-25">
                 <a href="../index.php">
-                    <img src="../webImg/ProtidinGerman-footer.webp">
+                    <img src="../webImg/ProtidinGerman-admin.svg">
                 </a>
             </div>
             <div class="header__pane ml-auto">

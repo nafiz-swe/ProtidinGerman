@@ -277,7 +277,7 @@
       padding: 6px;
       border-radius: 3px;
       border: 1px solid #ccc;
-      background: #8BC34A;
+      background: #4CAF50;
       color: #fff;
       text-align: center;
       font-size: 16px;

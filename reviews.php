@@ -1,12 +1,4 @@
 <style>
-        /* General body styling */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-}
 
 /* Star container */
 .star-rating {

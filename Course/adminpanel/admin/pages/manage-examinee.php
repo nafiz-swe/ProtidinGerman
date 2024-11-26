@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="css/mycss.css">
+<link href="css/facebox.css" media="screen" rel="stylesheet" type="text/css" />
 <div class="app-main__outer">
         <div class="app-main__inner">
             <div class="app-page-title">
@@ -26,7 +27,7 @@
                                 <th>Phone Number</th>
                                 <th>Password</th>
                                 <th>Status</th>
-                                <th></th>
+                                <th>Manage</th>
                             </tr>
                             </thead>
                             <tbody>

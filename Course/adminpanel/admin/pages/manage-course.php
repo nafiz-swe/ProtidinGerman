@@ -1,4 +1,16 @@
 <link rel="stylesheet" type="text/css" href="css/mycss.css">
+<link href="css/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- <script src="js/jquery.min.js"></script> -->
+<!-- <script src="js/facebox.js"></script> -->
+<!-- <script>
+    $(document).ready(function($) {
+        $('a[rel*=facebox]').facebox({
+            loadingImage : 'img/loading.gif',
+            closeImage   : 'img/closelabel.png'
+        });
+    });
+</script> -->
+
 <div class="app-main__outer">
         <div class="app-main__inner">
             <div class="app-page-title">

@@ -53,8 +53,14 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
      {
       include("pages/examinee-result.php");
      }
-
-       
+     else if($page == "courseDetails")
+     {
+       include("pages/course-details.php");
+     }
+     else if($page == "classDetails")
+     {
+       include("pages/class-details.php");
+     } 
    }
    // Else ang home nga page mo display
    else

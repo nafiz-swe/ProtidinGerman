@@ -22,7 +22,7 @@ if (isset($_GET['id'])) {
             echo "<h2>Deutsch A1 A2 & B1 Course Details</h2>";
             echo "<p>A1 A2 & B1 লেভেলের কোর্স ডিটেলস এখানে দেখানো হবে।</p>";
             break;
-
+            
         default:
             echo "<h2>কোর্স ডিটেলস পাওয়া যায়নি</h2>";
             break;

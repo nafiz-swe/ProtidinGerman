@@ -23,7 +23,7 @@ $(document).on("submit","#examineeLoginFrm", function(){
          'warning'
        ).then(() => {
          // Redirect user to the login page or logout
-         window.location.href = '../index.php'; // Adjust as per your requirement
+         window.location.href = '../index.php#contact-section'; // Adjust as per your requirement
        });
      }
   },'json');

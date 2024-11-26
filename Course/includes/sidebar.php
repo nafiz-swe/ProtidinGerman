@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class="app-sidebar sidebar-shadow">
     <div class="app-header__logo">
         <div class="site-logo mr-auto w-25"><a href="../index.php"><img src="../webImg/Protidn-german-Home.svg" style="width:92px; height:50px;"></img></a></div>
@@ -37,7 +38,7 @@
 
             <li>
                 <a href="index.php">
-                     <i class="metismenu-icon fas fa-chess-board"></i>
+                     <i class="metismenu-icon fa fa-dashboard"></i>
                      DASHBOARD
                 </a>
             </li>
@@ -46,7 +47,7 @@
             <li class="app-sidebar__heading"></li>
             <li>
                 <a href="#">
-                        <i class="metismenu-icon fa fa-chalkboard-teacher"></i>
+                        <i class="metismenu-icon fas fa-chalkboard-teacher"></i>
                         CLASS
                         <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
@@ -63,61 +64,13 @@
                             </i>Class Record
                         </a>
                     </li>
-                    <li>
-                        <a href="home.php?page=classDetails&section=attendance">
-                            <i class="metismenu-icon">
-                            </i>Class Attendance
-                        </a>
-                    </li>
-                    <li>
-                        <a href="home.php?page=classDetails&section=details">
-                            <i class="metismenu-icon">
-                            </i>Class Details
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-
-            <li class="app-sidebar__heading"></li>
-            <li>
-                <a href="#">
-                        <i class="metismenu-icon fa fa-info-circle"></i>
-                        COURSE
-                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
-                </a>
-                <ul>
-                    <li>
-                        <a  href="home.php?page=courseDetails&id=A1">
-                            <i class="metismenu-icon"></i>
-                            Deutsch A1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="home.php?page=courseDetails&id=A2">
-                            <i class="metismenu-icon">
-                            </i>Deutsch A2
-                        </a>
-                    </li>
-                    <li>
-                        <a href="home.php?page=courseDetails&id=B1">
-                            <i class="metismenu-icon">
-                            </i>Deutsch B1
-                        </a>
-                    </li>
-                    <li>
-                        <a href="home.php?page=courseDetails&id=A1A2B1">
-                            <i class="metismenu-icon">
-                            </i>German Express
-                        </a>
-                    </li>
                 </ul>
             </li>
 
             <li class="app-sidebar__heading"></li>
             <li>
                 <a href="#">
-                     <i class="metismenu-icon fa fa-edit"></i>
+                     <i class="metismenu-icon fas fa-file-signature"></i>
                      EXAM'S
                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
@@ -158,7 +111,7 @@
             <li class="app-sidebar__heading"></li>
             <li>
                 <a href="#">
-                     <i class="metismenu-icon pe-7s-cup"></i>
+                     <i class="metismenu-icon fas fa-trophy"></i>
                      RESULTS
                     <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
                 </a>
@@ -181,14 +134,60 @@
                 ?>
                 </ul>
             </li>
-                            
+
             <li class="app-sidebar__heading"></li>
             <li>
                 <a href="#">
-                     <i class="metismenu-icon fa fa-id-badge"></i>
-                     ACCOUNT
+                        <i class="metismenu-icon fa fa-info-circle"></i>
+                        COURSE
+                        <i class="metismenu-state-icon pe-7s-angle-down caret-left"></i>
+                </a>
+                <ul>
+                    <li>
+                        <a  href="home.php?page=courseDetails&id=A1">
+                            <i class="metismenu-icon"></i>
+                            Deutsch A1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=courseDetails&id=A2">
+                            <i class="metismenu-icon">
+                            </i>Deutsch A2
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=courseDetails&id=B1">
+                            <i class="metismenu-icon">
+                            </i>Deutsch B1
+                        </a>
+                    </li>
+                    <li>
+                        <a href="home.php?page=courseDetails&id=GermanExpress">
+                            <i class="metismenu-icon">
+                            </i>German Express
+                        </a>
+                    </li>
+                </ul>
+            </li>
+                            
+            <li class="app-sidebar__heading"></li>
+            <li>
+            <a href="home.php?page=sAccount&section=sAccont">
+    <i class="metismenu-icon fa fa-id-badge"></i>
+    ACCOUNT
+</a>
+
+</li>
+
+
+            <li class="app-sidebar__heading"></li>
+            <li>
+                <a href="../Course/pages/student-account.php">
+                    <i class="metismenu-icon fa fa-id-badge"></i>
+                    STUDENT ACCOUNT
                 </a>
             </li>
+
 
             <li class="app-sidebar__heading"></li>
             <li>
@@ -227,7 +226,7 @@
             <li class="app-sidebar__heading"></li>
             <li>
                 <a href="javascript:void(0);" data-toggle="modal" data-target="#feedbacksModal">
-                    <i class="metismenu-icon fa fa-comment-dots"></i>
+                    <i class="metismenu-icon fa fa-comments-o"></i>
                     FEEDBACK
                 </a>
             </li>
