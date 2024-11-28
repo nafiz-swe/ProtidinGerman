@@ -16,8 +16,43 @@
             <input type="" name="add_batch" id="add_batch" class="form-control" placeholder="Input Batch" required="" autocomplete="off">
           </div>
           <div class="form-group">
-            <label>Class Start Date</label>
-            <input type="" name="startDate" id="startDate" class="form-control" placeholder="Input Start Date" required="" autocomplete="off">
+            <label>Batch Start Date</label>
+            <input type="" name="startDate" class="form-control" placeholder="Input Start Date" required="" autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label>Class Day</label><br>
+            <input type="checkbox" name="classDay[]" value="Sunday"> Sunday<br>
+            <input type="checkbox" name="classDay[]" value="Monday"> Monday<br>
+            <input type="checkbox" name="classDay[]" value="Tuesday"> Tuesday<br>
+            <input type="checkbox" name="classDay[]" value="Wednesday"> Wednesday<br>
+            <input type="checkbox" name="classDay[]" value="Thursday"> Thursday<br>
+            <input type="checkbox" name="classDay[]" value="Friday"> Friday<br>
+            <input type="checkbox" name="classDay[]" value="Saturday"> Saturday<br>
+          </div>
+
+          <div class="form-group">
+            <label for="startTime">Class Time</label>
+            <input type="time" id="startTime" name="startTime" class="form-control" required autocomplete="off">
+          </div>
+
+          <div class="form-group">
+            <label>Class Link</label>
+            <input type="" name="classLink"  class="form-control" placeholder="Input Class Link" required="" autocomplete="off">
+          </div>
+          <div class="form-group">
+            <label>Batch Status</label>
+            <select class="form-control" name="classStatus" required="">
+              <option>Select Status</option>
+              <option value="Coming soon">Coming soon</option>  
+              <option value="On going">On going</option>
+              <option value="Holiday">Holiday</option>  
+              <option value="Complete">Complete</option> 
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Notice Board</label>
+            <textarea name="noticeBoard" class="form-control" rows="4" placeholder="Input Notice" required=""></textarea>
           </div>
         </div>
       </div>

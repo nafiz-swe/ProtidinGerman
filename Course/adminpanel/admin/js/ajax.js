@@ -21,34 +21,81 @@ $(document).on("submit","#adminLoginFrm", function(){
 
 
 
-// Add Course 
-$(document).on("submit","#addCourseFrm" , function(){
-  $.post("query/addCourseExe.php", $(this).serialize() , function(data){
-  	if(data.res == "exist")
-  	{
-  		Swal.fire(
-  			'Already Exist',
-  			data.add_batch.toUpperCase() + ' Already Exist',
-  			'error'
-  		)
-  	}
-  	else if(data.res == "success")
-  	{
-  		Swal.fire(
-  			'Success',
-  			data.add_batch.toUpperCase() + ' Successfully Added',
-  			'success'
-  		)
-          // $('#add_batch').val("");
-          refreshDiv();
-            setTimeout(function(){ 
-                $('#body').load(document.URL);
-             }, 2000);
-  	}
-  },'json')
+// Add Course
+$(document).on("submit","#addCourseFrm", function(){
+  $.post("query/addCourseExe.php", $(this).serialize(), function(data){
+     if(data.res == "success")
+     {
+        Swal.fire(
+            'Success',
+            'Batch has been successfully added!',
+            'success'
+          );
+          refreshDiv(); // Refresh the div or perform any other actions after success
+     } 
+     else if(data.res == "exist") {
+        Swal.fire(
+            'Error',
+            'Batch already exists!',
+            'error'
+        );
+     } 
+     else {
+        Swal.fire(
+            'Failed',
+            'An error occurred. Please try again.',
+            'error'
+        );
+     }
+  }, 'json');
   return false;
 });
 
+
+// $(document).on("submit","#addCourseFrm" , function(){
+//   $.post("query/addCourseExe.php", $(this).serialize() , function(data){
+//   	if(data.res == "exist")
+//   	{
+//   		Swal.fire(
+//   			'Already Exist',
+//   			data.add_batch.toUpperCase() + ' Already Exist',
+//   			'error'
+//   		)
+//   	}
+//   	else if(data.res == "success")
+//   	{
+//   		Swal.fire(
+//   			'Success',
+//   			data.add_batch.toUpperCase() + ' Successfully Added',
+//   			'success'
+//   		)
+//           // $('#add_batch').val("");
+//           refreshDiv();
+//             setTimeout(function(){ 
+//                 $('#body').load(document.URL);
+//              }, 2000);
+//   	}
+//   },'json')
+//   return false;
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//ok
+//ok
 // Update Course
 $(document).on("submit","#updateCourseFrm" , function(){
   $.post("query/updateCourseExe.php", $(this).serialize() , function(data){

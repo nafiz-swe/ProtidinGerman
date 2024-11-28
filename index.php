@@ -167,7 +167,7 @@
     .book-card {
         background: white;
         border-radius: 8px;
-        border: 1px solid #8BC34A;
+        border: 1px solid #4CAF50;
         overflow: hidden;
         box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s;
@@ -208,7 +208,7 @@
     }
 
     .course-details h3 {
-      color: #689F38;
+      color: #45A049;
     }
 
     .course-details p {
@@ -285,7 +285,7 @@
 
     .course-stats button:hover,
     .message-us button:hover {
-      background: #689F38;
+      background: #45A049;
       border: 1px solid #ccc;
     }
 
@@ -313,7 +313,7 @@
       margin: auto;
     }
     .footer-top {
-      background: #8BC34A;
+      background: #4CAF50;
       height: 50px;
       width: 100%;
       border-radius: 100% 100% 0 0;
@@ -368,7 +368,7 @@ li {
       color: #fff;
     }
     .footer-links i {
-      background: #689F38;
+      background: #45A049;
       color: #fff;
       border-radius: 5px;
     }
@@ -377,7 +377,7 @@ li {
 }
 .ribbon {
   position: absolute;
-  background-color: #689F38;
+  background-color: #45A049;
   color: #fff;
   padding: 5px 30px;
   font-size: 12px;

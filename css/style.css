@@ -10,7 +10,7 @@ body {
   color: #fff; }
 
 ::selection {
-  background: #689F38;
+  background: #45A049;
   color: #fff; }
 
 a {
@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5,
   border-width: 2px; }
 
 .text-black {
-  color: #689F38 !important;
+  color: #45A049 !important;
 }
 
 
@@ -118,7 +118,7 @@ h1, h2, h3, h4, h5,
   font-family: "Muli", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
   .form-control:active, .form-control:focus,
   .review-form:active, .review-form:focus {
-    border-color: #8BC34A; }
+    border-color: #4CAF50; }
   .form-control:hover, .form-control:active, .form-control:focus {
     -webkit-box-shadow: none !important;
     box-shadow: none !important; }
@@ -273,7 +273,7 @@ h1, h2, h3, h4, h5,
   .ul-check.white li:before {
     color: #fff; }
   .ul-check.success li:before {
-    color: #8bc34a; }
+    color: #4CAF50; }
   .ul-check.primary li:before {
     color: #7971ea; }
 
@@ -332,7 +332,7 @@ h1, h2, h3, h4, h5,
         display: inline-block;
         text-decoration: none !important; }
         .site-navbar .site-navigation .site-menu > li > a:hover {
-          color: #689F38; }
+          color: #45A049; }
     .site-navbar .site-navigation .site-menu .has-children {
       position: relative; }
       .site-navbar .site-navigation .site-menu .has-children > a {
@@ -413,7 +413,7 @@ h1, h2, h3, h4, h5,
             background: #f4f5f9;
             color: #25262a; }
       .site-navbar .site-navigation .site-menu .has-children:hover > a, .site-navbar .site-navigation .site-menu .has-children:focus > a, .site-navbar .site-navigation .site-menu .has-children:active > a {
-        color: #8BC34A; }
+        color: #4CAF50; }
       .site-navbar .site-navigation .site-menu .has-children:hover, .site-navbar .site-navigation .site-menu .has-children:focus, .site-navbar .site-navigation .site-menu .has-children:active {
         cursor: pointer; }
         .site-navbar .site-navigation .site-menu .has-children:hover > .dropdown, .site-navbar .site-navigation .site-menu .has-children:focus > .dropdown, .site-navbar .site-navigation .site-menu .has-children:active > .dropdown {
@@ -583,7 +583,7 @@ h1, h2, h3, h4, h5,
         position: relative; }
         .sticky-wrapper .site-navbar .site-menu > li > a.active:after {
           height: 2px;
-          background: #689F38;
+          background: #45A049;
           content: "";
           position: absolute;
           bottom: 0;
@@ -603,9 +603,9 @@ h1, h2, h3, h4, h5,
         display: inline-block;
         text-decoration: none !important; }
         .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover {
-          color: #689F38; }
+          color: #45A049; }
         .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a.active:after {
-          background: #689F38; }
+          background: #45A049; }
   .sticky-wrapper .shrink {
     padding-top: 5px !important;
     padding-bottom: 5px !important; }
@@ -681,7 +681,7 @@ h1, h2, h3, h4, h5,
   border-color: #7971ea;
   padding: 14px 20px;
   color: #fff;
-  background: #8BC34A;
+  background: #4CAF50;
   border-radius: 30px;
   font-size: .7rem;
   font-weight: 900;
@@ -693,7 +693,7 @@ h1, h2, h3, h4, h5,
     color: #fff; }
 
 .cta a:hover span {
-  background: #689F38;
+  background: #45A049;
   color: #fff; }
 
 .cta a.active {
@@ -997,7 +997,7 @@ h1, h2, h3, h4, h5,
 .contact-title,
 .book-title  {
   padding: 40px 0 150px 0;
-  background: #8BC34A; }
+  background: #4CAF50; }
 
   .courses-title .section-title,
   .teachers-title .section-title,
@@ -1082,7 +1082,7 @@ h1, h2, h3, h4, h5,
     position: absolute; }
 
 .teacher {
-  border: 1px solid #689F38;
+  border: 1px solid #45A049;
   padding: 30px;
   margin-bottom: 1.5rem; }
   .teacher img {
@@ -1192,8 +1192,8 @@ h1, h2, h3, h4, h5,
 }
 .sign button {
 	border-radius: 5px;
-	border: 1px solid #8BC34A;
-	background-color: #8BC34A;
+	border: 1px solid #4CAF50;
+	background-color: #4CAF50;
 	color: #FFFFFF;
 	font-size: 12px;
 	font-weight: bold;
@@ -1203,7 +1203,7 @@ h1, h2, h3, h4, h5,
 	transition: transform 80ms ease-in;
 }
 .sign button:hover {
-	background: #689F38;
+	background: #45A049;
 }
 .sign button:active {
 	transform: scale(0.95);
@@ -1492,7 +1492,7 @@ h1, h2, h3, h4, h5,
           .book-card {
               background: white;
               border-radius: 8px;
-              border: 1px solid #8BC34A;
+              border: 1px solid #4CAF50;
               overflow: hidden;
               box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
               transition: transform 0.3s;
@@ -1533,7 +1533,7 @@ h1, h2, h3, h4, h5,
           }
       
           .course-details h3 {
-            color: #689F38;
+            color: #45A049;
           }
       
           .course-details p {
@@ -1602,7 +1602,7 @@ h1, h2, h3, h4, h5,
             padding: 6px;
             border-radius: 3px;
             border: 1px solid #ccc;
-            background: #8BC34A;
+            background: #4CAF50;
             color: #fff;
             text-align: center;
             font-size: 16px;
@@ -1610,7 +1610,7 @@ h1, h2, h3, h4, h5,
       
           .course-stats button:hover,
           .message-us button:hover {
-            background: #689F38;
+            background: #45A049;
             border: 1px solid #ccc;
           }
       
@@ -1638,7 +1638,7 @@ h1, h2, h3, h4, h5,
             margin: auto;
           }
           .footer-top {
-            background: #8BC34A;
+            background: #4CAF50;
             height: 50px;
             width: 100%;
             border-radius: 100% 100% 0 0;
@@ -1693,7 +1693,7 @@ h1, h2, h3, h4, h5,
             color: #fff;
           }
           .footer-links i {
-            background: #689F38;
+            background: #45A049;
             color: #fff;
             border-radius: 5px;
           }
@@ -1702,7 +1702,7 @@ h1, h2, h3, h4, h5,
       }
       .ribbon {
         position: absolute;
-        background-color: #689F38;
+        background-color: #45A049;
         color: #fff;
         padding: 5px 30px;
         font-size: 12px;

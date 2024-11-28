@@ -199,7 +199,7 @@ $studentData = $stmt->fetch(PDO::FETCH_ASSOC);
       margin: auto;
     }
     .footer-top {
-      background: #8BC34A;
+      background: #4CAF50;
       height: 50px;
       width: 100%;
       border-radius: 100% 100% 0 0;
@@ -254,7 +254,7 @@ li {
       color: #fff;
     }
     .footer-links i {
-      background: #689F38;
+      background: #45A049;
       color: #fff;
       border-radius: 5px;
     }
@@ -263,7 +263,7 @@ li {
 }
 .ribbon {
   position: absolute;
-  background-color: #689F38;
+  background-color: #45A049;
   color: #fff;
   padding: 5px 30px;
   font-size: 12px;

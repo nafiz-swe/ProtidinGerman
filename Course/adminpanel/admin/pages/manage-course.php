@@ -30,8 +30,13 @@
                             <thead>
                             <tr>
                                 <th class="text-left pl-4">Batch Number</th>
-                                <th class="text-left pl-4">Class Start Date</th>
-                                <th class="text-center" width="20%">Status</th>
+                                <th class="text-left pl-4">Batch Start</th>
+                                <th class="text-left pl-4">Class Day</th>
+                                <th class="text-left pl-4">Class Time</th>
+                                <th class="text-left pl-4">Class Link</th>
+                                <th class="text-left pl-4">Batch Status</th>
+                                <th class="text-left pl-4">Notice Board</th>
+                                <th class="text-center" width="20%">Manage</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -47,8 +52,21 @@
                                                 <td class="pl-4">
                                                     <?php echo $selBatchRow['start_date']; ?>
                                                 </td>
-
-                                                
+                                                <td class="pl-4">
+                                                    <?php echo $selBatchRow['class_day']; ?>
+                                                </td>
+                                                <td class="pl-4">
+                                                    <?php echo $selBatchRow['class_time']; ?>
+                                                </td>
+                                                <td class="pl-4">
+                                                    <?php echo $selBatchRow['class_link']; ?>
+                                                </td>
+                                                <td class="pl-4">
+                                                    <?php echo $selBatchRow['class_status']; ?>
+                                                </td>
+                                                <td class="pl-4">
+                                                    <?php echo nl2br(htmlspecialchars($selBatchRow['notice_board'])); ?>
+                                                </td>                                              
 
 
 

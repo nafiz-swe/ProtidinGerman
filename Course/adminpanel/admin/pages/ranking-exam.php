@@ -24,7 +24,7 @@
                             <div><b class="text-primary">RANKING BY EXAM</b><br>
                                 Exam Topic : <?php echo $selEx['ex_title']; ?><br><br>
                                <span class="border" style="padding:10px;color:white;background-color: #15803d;">Excellent</span>
-                               <span class="border" style="padding:10px;color:white;background-color: #8BC34A;">Very Good</span>
+                               <span class="border" style="padding:10px;color:white;background-color: #4CAF50;">Very Good</span>
                                <span class="border" style="padding:10px;color:white;background-color: #0284c7;">Good</span>
                                <span class="border" style="padding:10px;color:white;background-color: #be123c;">Failed</span>
                                <span class="border" style="padding:10px;color:black;background-color: #cbd5e1;">Not Answering</span>
@@ -67,7 +67,7 @@
                                                 echo "background-color: #15803d;color:white";
                                              } 
                                              else if($ans >= 80){
-                                                echo "background-color: #8BC34A;color:white";
+                                                echo "background-color: #4CAF50;color:white";
                                              }
                                              else if($ans >= 60){
                                                 echo "background-color: #0284c7;color:white";

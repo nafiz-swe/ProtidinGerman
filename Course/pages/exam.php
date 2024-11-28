@@ -50,7 +50,7 @@
                       <?php $questId = $selQuestRow['eqt_id']; ?>
                     <tr>
                         <td>
-                            <p><b><?php echo $i++ ; ?> .) <?php echo $selQuestRow['exam_question']; ?></b></p>
+                            <p><b><?php echo $i++ ; ?> . <?php echo $selQuestRow['exam_question']; ?></b></p>
                             <div class="col-md-4 float-left">
                               <div class="form-group pl-4 ">
                                 <input name="answer[<?php echo $questId; ?>][correct]" value="<?php echo $selQuestRow['exam_ch1']; ?>" class="form-check-input" type="radio" value="" id="invalidCheck" required >
