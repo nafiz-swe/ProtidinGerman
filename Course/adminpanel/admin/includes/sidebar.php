@@ -164,13 +164,13 @@
                                     </a>
                                     <ul>
                                         <li>
-                                            <a  href="home.php?page=classDetails&section=join">
+                                            <a  href="">
                                                 <i class="metismenu-icon"></i>
-                                                Join Class
+                                                Check Batch Management
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="home.php?page=classDetails&section=record">
+                                            <a href="home.php?page=classRecord">
                                                 <i class="metismenu-icon">
                                                 </i>Class Record
                                             </a>

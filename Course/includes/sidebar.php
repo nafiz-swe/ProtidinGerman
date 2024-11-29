@@ -172,22 +172,11 @@
                             
             <li class="app-sidebar__heading"></li>
             <li>
-            <a href="home.php?page=sAccount&section=sAccont">
-    <i class="metismenu-icon fa fa-id-badge"></i>
-    ACCOUNT
-</a>
-
-</li>
-
-
-            <li class="app-sidebar__heading"></li>
-            <li>
-                <a href="../Course/pages/student-account.php">
+                <a href="home.php?page=sAccount">
                     <i class="metismenu-icon fa fa-id-badge"></i>
-                    STUDENT ACCOUNT
+                    ACCOUNT
                 </a>
             </li>
-
 
             <li class="app-sidebar__heading"></li>
             <li>

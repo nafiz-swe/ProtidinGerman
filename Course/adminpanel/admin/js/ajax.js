@@ -52,6 +52,59 @@ $(document).on("submit","#addCourseFrm", function(){
 });
 
 
+
+// Add Class Record
+// Add Class Record
+$(document).on("submit", "#addClassRecordFrm", function (e) {
+  e.preventDefault(); // ফর্ম সাবমিট ডিফল্ট আচরণ বন্ধ করা
+
+  // FormData অবজেক্ট তৈরি (ফাইল এবং অন্যান্য ডেটা পাঠানোর জন্য)
+  let formData = new FormData(this);
+
+  // Ajax অনুরোধ পাঠানো
+  $.ajax({
+      url: "query/addClassRrecord.php", // পিএইচপি ফাইলের লিংক
+      type: "POST",
+      data: formData,
+      contentType: false, // কনটেন্ট টাইপ স্বয়ংক্রিয় সেট করতে
+      processData: false, // ডেটা প্রসেসিং অক্ষম করতে
+      success: function (response) {
+          if (response.includes("সফলভাবে")) {
+              Swal.fire(
+                  'সফল!',
+                  'ক্লাস রেকর্ড সফলভাবে সংরক্ষিত হয়েছে।',
+                  'success'
+              );
+              $('#addClassRecordFrm')[0].reset(); // ফর্ম রিসেট
+          } else if (response.includes("ত্রুটি")) {
+              Swal.fire(
+                  'ত্রুটি!',
+                  response,
+                  'error'
+              );
+          } else {
+              Swal.fire(
+                  'ব্যর্থ!',
+                  'ডেটা সংরক্ষণ করতে সমস্যা হয়েছে।',
+                  'error'
+              );
+          }
+      },
+      error: function () {
+          Swal.fire(
+              'ব্যর্থ!',
+              'Ajax অনুরোধে সমস্যা হয়েছে।',
+              'error'
+          );
+      }
+  });
+});
+
+
+
+
+
+
 // $(document).on("submit","#addCourseFrm" , function(){
 //   $.post("query/addCourseExe.php", $(this).serialize() , function(data){
 //   	if(data.res == "exist")

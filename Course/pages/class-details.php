@@ -159,23 +159,92 @@ if (isset($_GET['section'])) {
             }
         break;
 
-
-        // Class Record Part
         case 'record':
             echo "<div class='record-part'>
-                <div class='record-info'>
-                    <h2>ক্লাস রেকর্ড গুলো পর্যায়ক্রমে পেয়ে যাবেন!</h2>
-                </div>
-                <div class='record'>
-                    <img src='../../../../../webImg/zoom-logo.webp' style='width:100%; height:100%;'></img>
-                    <h6><span>টপিকস:</span> Verb & Prepositions 😍</h6>
-                    <p><span>ক্লাস তারিখ:</span> </p>
-                    <div class='join-link'>
-                        <a target='_blank' href='$'>ক্লাস রেকর্ড দেখুন</a>
-                    </div>
-                </div>
-            </div>";           
-        break;
+                    <div class='record-info'>
+                        <h2>ক্লাস রেকর্ড গুলো পর্যায়ক্রমে পেয়ে যাবেন!</h2>
+                    </div>";
+        
+            // Query to fetch class records based on batch_number
+            $recordQuery = $conn->prepare("SELECT record_id, record_video, class_date, class_topics FROM class_record WHERE batch_number = :batch_number ORDER BY class_date ASC");
+            $recordQuery->bindParam(':batch_number', $studentBatch, PDO::PARAM_STR);
+            $recordQuery->execute();
+        
+            if ($recordQuery->rowCount() > 0) {
+                $records = $recordQuery->fetchAll(PDO::FETCH_ASSOC); // Fetch all records at once
+                echo "<div class='record-list'>";
+                $recordCount = count($records); // Start counting from the total number of records
+        
+                // Loop through records in reverse order to display the most recent first
+                for ($i = $recordCount - 1; $i >= 0; $i--) {
+                    $record = $records[$i];
+                    $recordVideo = $record['record_video'];
+                    $classDate = date('l, F j, Y', strtotime($record['class_date']));
+                    $classTopics = $record['class_topics']; // Get the topic from the record
+                    $videoPath = 'record/' . $studentBatch . '/' . $recordVideo;
+        
+                    if (file_exists($videoPath)) {
+                        echo "<div class='record-item'>
+                        
+                                <div class='ribbon'>Class: $recordCount</div>
+                                <p>$classDate</p>
+                                <h3><span>Topic:</span> $classTopics</h3>
+                                <div class='video-container'>
+                                    <video id='video-$recordCount' class='plyr' controls crossorigin>
+                                        <source src='$videoPath' type='video/mp4'>
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>";
+                    } else {
+                        echo "<div class='record-item'>
+                                <h3>ক্লাস #$recordCount</h3>
+                                <p><strong>Class Date:</strong> $classDate</p>
+                                <p>ভিডিওটি পাওয়া যায়নি।</p>
+                            </div>";
+                    }
+        
+                    $recordCount--;
+                }
+                echo "</div>";
+            } else {
+                echo "<p>কোনো রেকর্ড পাওয়া যায়নি।</p>";
+            }
+        
+            // Include Plyr CSS and JS
+            echo "<link href='https://cdn.jsdelivr.net/npm/plyr@3.6.8/dist/plyr.css' rel='stylesheet'>
+                  <script src='https://cdn.jsdelivr.net/npm/plyr@3.6.8/dist/plyr.min.js'></script>
+                  <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const players = document.querySelectorAll('.plyr');
+                        players.forEach(function (player) {
+                            const plyrInstance = new Plyr(player, {
+                                controls: [
+                                    'play', 'progress', 'current-time', 'duration', 'mute', 'volume', 'settings', 'pip', 'fullscreen'
+                                ],
+                                settings: ['speed', 'quality'],
+                                speed: {
+                                    selected: 1,
+                                    options: [0.5, 0.75, 1, 1.5, 1.75, 2],
+                                },
+                                quality: {
+                                    default: 720,
+                                    options: [360, 480, 720, 1080],
+                                    forced: true,
+                                },
+                                tooltips: { controls: true, seek: true }
+                            });
+                        });
+                    });
+                  </script>";
+        
+            echo "</div>"; // Close record part div
+            break;
+             
+        
+
+
+
 
         // Class Attendance Part
         case 'attendance':
@@ -231,8 +300,30 @@ setInterval(updateCountdown, 1000);
 </body>
 </html>
 <style>
+    .plyr__progress input[type=range],
+    .plyr__volume input[type=range]{
+        color: #4CAF50 !important;
+    }
+    .plyr__control{
+        background: #4CAF50 !important;
+    }
+    .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]:before{
+        background:#fff;
+    }
+    .plyr__menu__container .plyr__control[role=menuitemradio]:before{
+        background: #21774f;
+    }
+    .plyr__menu__container .plyr__control>span{
+        color: #fff;
+    }
+    .plyr__menu__container .plyr__control--forward:after{
+        border-left-color: #fff;
+    }
+    .plyr__menu__container .plyr__control--back:after{
+        border-right-color: #fff;
+    }
 .record-part {
-    margin: 30px auto 100px auto;
+    margin: 10px auto 100px auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -243,42 +334,85 @@ setInterval(updateCountdown, 1000);
 .record-info h2 {
     font-size: 35px;
     text-align: center;
-    margin: 20px auto;
+    margin: 0 auto 10px auto;
     padding: 20px;
     color: #fff;
 }
 
-.record {
-    text-align: center;
-    background-color: #fff;
-    border: 2px solid #4caf50;
-    padding: 20px 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 300px;
+
+
+
+
+
+
+
+
+.record-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 25px; /* Space between video items */
+    justify-content: center; /* Center align items */
+    padding: 20px;
+}
+
+.ribbon { 
+    position: absolute;
+    background-color: #45A049;
+    color: #fff;
+    padding: 1px 30px 3px 30px;
     font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: rotate(-45deg);
+    margin: 12px 158px 0px -100px;
+}
+
+.record-item {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
+    border: 1px solid #ccc;
+    padding: 0px;
+    background-color: #f9f9f9; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 310px; 
+    max-width: 100%;
 }
 
-.record span {
-    font-weight: bold;
+.record-item h3 {
+    margin: 0px auto 15px auto;
+    color: #666;
+    font-size: 18px;
+    padding-left: 28px;
+    padding-right: 3px;
+}
+.record-item span {
+    color: #4caf50;
+    font-weight: 500;
 }
 
-.record h6 {
-    margin: 20px auto auto auto;
-    padding: 5px 10px;
-    text-align: left;
-    width: 100%; /* পুরো জায়গায় টেক্সট দেখানোর জন্য */
+.record-item p {
+    margin: 10px auto 5px auto;
+    color: #000;
+    font-weight: 500;
 }
 
-.record p {
-    margin: auto;
-    padding: 5px 10px;
-    text-align: left;
-    width: 100%; /* পুরো জায়গায় টেক্সট দেখানোর জন্য */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 165px; /* Fixed height for the video container */
+    overflow: hidden; /* Hide overflow if the video is larger */
+}
+
+video {
+    width: 100%; /* Full width for the video */
+    height: 100%; /* Set fixed height */
+    object-fit: cover; /* Maintain aspect ratio without distortion */
+    border-radius: 4px; /* Optional: Rounded corners for the video */
 }
 
 .join-link a {

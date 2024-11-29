@@ -60,7 +60,11 @@ if(!isset($_SESSION['admin']['adminnakalogin']) == true) header("location:index.
      else if($page == "classDetails")
      {
        include("pages/class-details.php");
-     } 
+     }
+     else if($page == "classRecord")
+     {
+       include("pages/class-record.php");
+     }  
    }
    // Else ang home nga page mo display
    else
