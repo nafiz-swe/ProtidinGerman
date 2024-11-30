@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Student Login | PG</title>
-    <link rel="icon" type="webImg/png" href="../webImg/protidin-german-icon.png">
+    <title>Teacher Login | PG</title>
+    <link rel="icon" type="webImg/png" href="../../../webImg/protidin-german-icon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,400,700,900" rel="stylesheet">
@@ -33,7 +33,7 @@
 <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
 <div class="container-fluid">
   <div class="d-flex align-items-center">
-    <div class="site-logo mr-auto w-20"><a href="index.php"><img src="../../../../../webImg/Protidn-german-Home.svg" style="width:102px; height:55px;"></img></a></div>
+    <div class="site-logo mr-auto w-20"><a href="index.php"><img src="../../../webImg/Protidn-german-Home.svg" style="width:102px; height:55px;"></img></a></div>
 
     <div class="mx-auto text-center">
       <nav class="site-navigation position-relative text-right" role="navigation">

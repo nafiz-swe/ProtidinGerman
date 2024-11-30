@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="bn">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ক্লাস রেকর্ড সাবমিট করুন</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-</head>
-<body>
+<div class="app-main__outer">
+<div class="app-main__inner">
+    <div class="app-page-title">
+        <div class="page-title-wrapper">
+            <div class="page-title-heading">
+                <div>MANAGE CLASS</div>
+            </div>
+        </div>
+    </div>
     <h2>ক্লাস রেকর্ড আপলোড ফর্ম</h2>
     <form id="addClassRecordFrm" method="POST" enctype="multipart/form-data">
         <div>
@@ -46,25 +46,12 @@
 
         <button type="submit">সাবমিট করুন</button>
     </form>
+</div>
+</div>
 
-</body>
-</html>
 
 
 <style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    padding: 20px;
-}
-
-h2 {
-    text-align: center;
-    color: #4CAF50;
-    margin-bottom: 30px;
-}
-
 form {
     width: 60%;
     margin: 0 auto;
@@ -94,7 +81,7 @@ select, input[type="text"], input[type="date"], input[type="file"], button {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #7FBF4D;
     color: white;
     border: none;
     cursor: pointer;
@@ -102,7 +89,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #5F9E3F;
 }
 
 input[type="file"] {

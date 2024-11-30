@@ -161,9 +161,9 @@ if (isset($_GET['section'])) {
 
         case 'record':
             echo "<div class='record-part'>
-                    <div class='record-info'>
-                        <h2>ক্লাস রেকর্ড গুলো পর্যায়ক্রমে পেয়ে যাবেন!</h2>
-                    </div>";
+                <div class='head-info'>
+                    <h2>ক্লাস রেকর্ড গুলো পর্যায়ক্রমে পেয়ে যাবেন!</h2>
+                </div>";
         
             // Query to fetch class records based on batch_number
             $recordQuery = $conn->prepare("SELECT record_id, record_video, class_date, class_topics FROM class_record WHERE batch_number = :batch_number ORDER BY class_date ASC");
@@ -302,10 +302,10 @@ setInterval(updateCountdown, 1000);
 <style>
     .plyr__progress input[type=range],
     .plyr__volume input[type=range]{
-        color: #4CAF50 !important;
+        color: #7FBF4D !important;
     }
     .plyr__control{
-        background: #4CAF50 !important;
+        background: #7FBF4D !important;
     }
     .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]:before{
         background:#fff;
@@ -331,7 +331,7 @@ setInterval(updateCountdown, 1000);
     gap: 20px; /* কার্ডগুলোর মধ্যে ফাঁকা */
 }
 
-.record-info h2 {
+.head-info h2 {
     font-size: 35px;
     text-align: center;
     margin: 0 auto 10px auto;
@@ -357,17 +357,17 @@ setInterval(updateCountdown, 1000);
 
 .ribbon { 
     position: absolute;
-    background-color: #45A049;
+    background-color: #5F9E3F;
     color: #fff;
     padding: 1px 30px 3px 30px;
     font-size: 16px;
     font-weight: bold;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transform: rotate(-45deg);
-    margin: 12px 158px 0px -100px;
+    margin: 13px 167px 0px -100px;
 }
 
-.record-item {
+/* .record-item {
     position: relative;
     overflow: hidden;
     display: flex;
@@ -377,8 +377,30 @@ setInterval(updateCountdown, 1000);
     padding: 0px;
     background-color: #f9f9f9; 
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    width: 310px; 
+    width: 320px;
     max-width: 100%;
+    height: 244px;
+} */
+
+.record-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 0px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-width: 100%;
+    height: 244px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+.record-item:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
 }
 
 .record-item h3 {
@@ -389,7 +411,7 @@ setInterval(updateCountdown, 1000);
     padding-right: 3px;
 }
 .record-item span {
-    color: #4caf50;
+    color: #7FBF4D;
     font-weight: 500;
 }
 
@@ -404,7 +426,7 @@ setInterval(updateCountdown, 1000);
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 165px; /* Fixed height for the video container */
+    height: 170px; /* Fixed height for the video container */
     overflow: hidden; /* Hide overflow if the video is larger */
 }
 
@@ -418,21 +440,21 @@ video {
 .join-link a {
     text-decoration: none;
     color: #fff;
-    background-color: #4caf50;
+    background-color: #7FBF4D;
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .join-link a:hover {
-    background-color: #45a049;
+    background-color: #5F9E3F;
 }
 
 /* Box Styling */
 .box {
     text-align: center;
     background-color: #fff;
-    border: 2px solid #4caf50;
+    border: 2px solid #7FBF4D;
     padding: 20px 10px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -476,13 +498,13 @@ video {
     text-align: justify;
 }
 .notice-board span{
-    color: #45A049;
+    color: #5F9E3F;
     font-weight: bold;
     font-size: 17px;
 }
 #countdown {
     margin: 15px auto;
-    color: #45A049 ;
+    color: #5F9E3F ;
 }
 /* Link Styling */
 .join-link {
@@ -492,14 +514,14 @@ video {
     text-decoration: none;
     font-size: 18px;
     color: white;
-    background-color: #4CAF50;  /*#4caf50*/
+    background-color: #7FBF4D;  /*#7FBF4D*/
     padding: 10px 20px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 /* Link Hover Effect */
 .box a:hover {
-    background-color: #45A049 ;  /*#45a049*/
+    background-color: #5F9E3F ;  /*#5F9E3F*/
 }
 </style>
 

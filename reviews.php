@@ -31,8 +31,8 @@
 
 /* Active star styling */
 .star.active {
-    background-color: #4CAF50;
-    border-color: #4CAF50;
+    background-color: #7FBF4D;
+    border-color: #7FBF4D;
 }
 
 /* Hover effect starting from the left */
@@ -62,7 +62,7 @@
 .filter-reviews{
     margin-bottom: 50px;
     padding-bottom: 20px;
-    border-bottom: .1rem solid #4CAF50;
+    border-bottom: .1rem solid #7FBF4D;
 }
 
 .review-form h2 {
@@ -88,7 +88,7 @@
 }
 
 .review-form button {
-    background-color: #4CAF50;
+    background-color: #7FBF4D;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -99,7 +99,7 @@
 }
 
 .review-form button:hover {
-    background-color: #45A049;
+    background-color: #5F9E3F;
 }
 
 /* Review display container */
@@ -164,7 +164,7 @@
     display: block;
     margin-top: -6px;
     margin-bottom: 10px;
-    color: #45A049;
+    color: #5F9E3F;
 }
 
 .review:last-child {
@@ -195,7 +195,7 @@
             max-width: 400px;
             background-color: #fff;
             padding: 20px;
-            border: 1px solid #4CAF50;
+            border: 1px solid #7FBF4D;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             text-align: center;
@@ -203,12 +203,12 @@
                 }
         #popup h3 {
             margin: 0 0 15px;
-            color: #45A049;
+            color: #5F9E3F;
             font-size: 18px;
         }
         #popup button {
             padding: 5px 20px;
-            background: #4CAF50;
+            background: #7FBF4D;
             color: #fff;
             border: none;
             border-radius: 4px;
@@ -216,7 +216,7 @@
             font-size: 15px;
         }
         #popup button:hover {
-            background: #45A049;
+            background: #5F9E3F;
         }
         #overlay {
             display: none;
@@ -410,7 +410,7 @@
       margin: auto;
     }
     .footer-top {
-      background: #4CAF50;
+      background: #7FBF4D;
       height: 50px;
       width: 100%;
       border-radius: 100% 100% 0 0;
@@ -465,7 +465,7 @@ li {
       color: #fff;
     }
     .footer-links i {
-      background: #45A049;
+      background: #5F9E3F;
       color: #fff;
       border-radius: 5px;
     }
@@ -474,7 +474,7 @@ li {
 }
 .ribbon {
   position: absolute;
-  background-color: #45A049;
+  background-color: #5F9E3F;
   color: #fff;
   padding: 5px 30px;
   font-size: 12px;
@@ -773,7 +773,7 @@ $percentage = $averageScore * 20; // Each star corresponds to 20% (1 star = 20%,
                 <p style="font-weight: bold; font-size: 16px;"><i class="fa fa-user" style="margin-right: 7px;"></i> <?php echo htmlspecialchars($row['student_fullname']); ?></p> <!-- Display full name here -->
                 <p class="stars"><?php echo str_repeat('★', $row['rating']); ?></p>
                 <small><?php echo $row['created_at']; ?></small>
-                <p style="background: #4CAF50; color: #fff; display: inline-block; padding: 0 5px; border-radius: 2px;">
+                <p style="background: #7FBF4D; color: #fff; display: inline-block; padding: 0 5px; border-radius: 2px;">
                     <strong>Service taken:</strong> <?php echo htmlspecialchars($row['service_name']); ?>
                 </p>
 

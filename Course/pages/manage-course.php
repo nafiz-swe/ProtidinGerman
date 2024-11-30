@@ -33,7 +33,7 @@
                                                 <?php echo $selBatchRow['batch_number']; ?>
                                             </td>
                                             <td class="text-center">
-                                             <button type="button" data-toggle="modal" data-target="#updateCourse-<?php echo $selBatchRow['batch_id']; ?>"  class="btn btn-primary btn-sm">Update</button>
+                                             <button type="button" data-toggle="modal" data-target="#updateCourse-<?php echo $selBatchRow['batch_id']; ?>"  class="btn btn-primary btn-sm">Update</button></br></br>
                                              <button type="button" id="deleteCourse" data-id='<?php echo $selBatchRow['batch_id']; ?>'  class="btn btn-danger btn-sm">Delete</button>
                                             </td>
                                         </tr>

@@ -95,7 +95,7 @@
 
 <!-- Course List Table -->
 <td class="text-center">
-    <a rel="facebox" style="text-decoration: none;" class="btn btn-primary btn-sm" href="facebox_modal/updateCourse.php?id=<?php echo $selBatchRow['batch_id']; ?>" id="updateCourse">Update</a>
+    <a rel="facebox" style="text-decoration: none;" class="btn btn-primary btn-sm" href="facebox_modal/updateCourse.php?id=<?php echo $selBatchRow['batch_id']; ?>" id="updateCourse">Update</a></br></br>
     <button type="button" id="deleteCourse" onclick="showDeleteCoursePopup(<?php echo $selBatchRow['batch_id']; ?>)" class="btn btn-danger btn-sm">Delete</button>
 </td>
 
