@@ -1,0 +1,97 @@
+
+.exam-qs-updt-btn,
+.exam-qs-dlt-btn {
+    display: inline-block;
+    padding: 5px 14px;
+    margin: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+    color: #fff;
+    cursor: pointer;
+}
+
+.exam-qs-updt-btn {
+    background-color: #7FBF4D;
+    border-color: #7FBF4D;
+}
+
+.exam-qs-updt-btn:hover {
+    background-color: #6aa83f;
+    border-color: #6aa83f;
+    color: #fff;
+    text-decoration: none;
+}
+
+.exam-qs-dlt-btn {
+    background-color: #d92550;
+    border-color: #d92550;
+}
+
+.exam-qs-dlt-btn:hover {
+    background-color: #b31f42;
+    border-color: #b31f42;
+    color: #fff;
+}
+.center-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* vertically center */
+    background-color: #f9f9f9; /* optional */
+}
+
+fieldset {
+    width: 543px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        margin-top: 50px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+label {
+    font-weight: bold;
+}
+.exam-qs-btn {
+    color: #fff;
+    background-color: #d92550;
+    border-color: #d92550;
+    padding: .25rem .5rem;
+    line-height: 1.5;
+    border-radius: .2rem;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 5px;
+}
+button{
+    cursor: pointer;
+    border: 0;
+}
+.facebox-header {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.facebox-header i {
+  margin-right: 8px;
+  color: #7FBF4D; /* icon color (same as update button) */
+}
