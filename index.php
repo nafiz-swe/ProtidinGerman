@@ -508,9 +508,8 @@ li {
               <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
                 <h3 class="text-black">Nafizul Islam</h3>
-                <p class="position">Position: Ausbildung</p>
+                <!-- <p class="position">Position: Ausbildung</p> -->
                 <p>Subject: Software Techniker</p>
-                <p>Company: ABCD</p>
                 <p>Stay: Frankfurt, Germany</p>
                 <p>Stay from: 03 August 2025</p>
                 <p>German Proficiency: B1</p>
@@ -523,9 +522,8 @@ li {
             <img src="webimg/nafiz.webp" alt="Nafiz" class="img-fluid w-50 rounded-circle mx-auto mb-4">
               <div class="py-2">
               <h3 class="text-black">Nafizul Islam</h3>
-                <p class="position">Position: Ausbildung</p>
+                <!-- <p class="position">Position: Ausbildung</p> -->
                 <p>Subject: Software Techniker</p>
-                <p>Company: ABCD</p>
                 <p>Stay: Munich, Germany</p>
                 <p>Stay from: 05 August 2025</p>
                 <p>German Proficiency: B1</p>
@@ -540,9 +538,8 @@ li {
               <h3 class="text-black">Nafizul Islam</h3>
                 <p class="position">Position: Ausbildung</p>
                 <p>Subject: Software Techniker</p>
-                <p>Company: ABCD</p>
-                <p>Stay: Berlin, Germany</p>
-                <p>Stay from: 07 August 2025</p>
+                <p>Living in: Berlin, Germany</p>
+                <p>Residing since: 07 August 2025</p>
                 <p>German Proficiency: B1</p>
               </div>
             </div>

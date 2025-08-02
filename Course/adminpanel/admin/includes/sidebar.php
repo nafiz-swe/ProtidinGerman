@@ -188,7 +188,7 @@
                                 <li class="app-sidebar__heading"></li>
                                 <li>
                                     <a href="home.php?page=documentation">
-                                        <i class="metismenu-icon fa fa-id-badge"></i>
+                                        <i class="metismenu-icon fa fa-book"></i>
                                         DOCUMENTATION
                                     </a>
                                 </li>
